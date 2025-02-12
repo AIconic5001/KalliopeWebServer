@@ -276,114 +276,114 @@ const components = {
         fontSize: "12px",
       },
 
-      // root: ({ ownerState }) => ({
-      //   borderRadius: 6,
-      //   textTransform: "none",
-      //   fontWeight: 500,
-      //   boxShadow: "none",
+      root: ({ ownerState }) => ({
+        borderRadius: 6,
+        textTransform: "none",
+        fontWeight: 500,
+        boxShadow: "none",
 
-      //   "&.Mui-disabled": {
-      //     background: "var(--disable-btn)",
-      //     color: "var(--text-disable)",
-      //   },
-      //   ...(ownerState.variant === "contained" &&
-      //     ownerState.color === "primary" && {
-      //       color: "var(--white) ",
-      //       backgroundColor: "var(--primary)",
-      //       "&:hover": {
-      //         backgroundColor: "var(--hover-btn)",
-      //       },
-      //       "&:active": {
-      //         color: "var(--primary) ",
-      //         backgroundColor: "var(--white)",
-      //         boxShadow: "none",
-      //       },
-      //     }),
-      //   ...(ownerState.variant === "contained" &&
-      //     ownerState.color === "secondary" && {
-      //       color: "var(--primary) ",
-      //       backgroundColor: "var(--blue-60)",
-      //       "&:hover": {
-      //         backgroundColor: "var(--blue-80)",
-      //         boxShadow: "none",
-      //       },
-      //       "&:active": {
-      //         boxShadow: "none",
-      //         backgroundColor: "var(--turquoise-60)",
-      //       },
-      //     }),
-      //   ...(ownerState.variant === "contained" &&
-      //     ownerState.color === "tertiary" && {
-      //       color: "var(--text-primary) ",
-      //       backgroundColor: "var(--grey-primary-60)",
-      //       "&:hover": {
-      //         backgroundColor: "var(--grey-primary-80)",
-      //         boxShadow: "none",
-      //       },
-      //       "&:active": {
-      //         color: "var(--white) ",
-      //         backgroundColor: "var(--primary)",
-      //       },
-      //     }),
+        "&.Mui-disabled": {
+          background: "var(--disable-btn)",
+          color: "var(--text-disable)",
+        },
+        ...(ownerState.variant === "contained" &&
+          ownerState.color === "primary" && {
+            color: "var(--white) ",
+            backgroundColor: "var(--primary)",
+            "&:hover": {
+              backgroundColor: "var(--hover-btn)",
+            },
+            "&:active": {
+              color: "var(--primary) ",
+              backgroundColor: "var(--white)",
+              boxShadow: "none",
+            },
+          }),
+        ...(ownerState.variant === "contained" &&
+          ownerState.color === "secondary" && {
+            color: "var(--primary) ",
+            backgroundColor: "var(--blue-60)",
+            "&:hover": {
+              backgroundColor: "var(--blue-80)",
+              boxShadow: "none",
+            },
+            "&:active": {
+              boxShadow: "none",
+              backgroundColor: "var(--turquoise-60)",
+            },
+          }),
+        ...(ownerState.variant === "contained" &&
+          ownerState.color === "tertiary" && {
+            color: "var(--text-primary) ",
+            backgroundColor: "var(--grey-primary-60)",
+            "&:hover": {
+              backgroundColor: "var(--grey-primary-80)",
+              boxShadow: "none",
+            },
+            "&:active": {
+              color: "var(--white) ",
+              backgroundColor: "var(--primary)",
+            },
+          }),
 
-      //   ...(ownerState.variant === "outlined" &&
-      //     ownerState.color === "primary" && {
-      //       color: "var(--primary)",
-      //       borderWidth: 1,
-      //       borderColor: "var(--primary)",
-      //       "&:hover": {
-      //         backgroundColor: "var(--primary)",
-      //         color: "var(--white)",
-      //       },
-      //       "&:active": {
-      //         backgroundColor: "var(--primary)",
-      //         color: "var(--white)",
-      //       },
-      //     }),
-      //   ...(ownerState.variant === "outlined" &&
-      //     ownerState.color === "secondary" && {
-      //       color: "var(--primary)",
-      //       backgroundColor: "var(--white)",
-      //       borderWidth: 1,
-      //       borderColor: "var(--border-color)",
-      //       "&:hover": {
-      //         borderColor: "var(--primary)",
-      //         backgroundColor: "var(--white)",
-      //       },
-      //       "&:active": {
-      //         color: "var(--primary)",
-      //         backgroundColor: "var(--turquoise-60)",
-      //         borderColor: "var(--primary)",
-      //       },
-      //     }),
-      //   ...(ownerState.variant === "outlined" &&
-      //     ownerState.color === "tertiary" && {
-      //       color: "var(--text-primary)",
-      //       borderWidth: 1,
-      //       borderColor: "transparent",
+        ...(ownerState.variant === "outlined" &&
+          ownerState.color === "primary" && {
+            color: "var(--primary)",
+            borderWidth: 1,
+            borderColor: "var(--primary)",
+            "&:hover": {
+              backgroundColor: "var(--primary)",
+              color: "var(--white)",
+            },
+            "&:active": {
+              backgroundColor: "var(--primary)",
+              color: "var(--white)",
+            },
+          }),
+        ...(ownerState.variant === "outlined" &&
+          ownerState.color === "secondary" && {
+            color: "var(--primary)",
+            backgroundColor: "var(--white)",
+            borderWidth: 1,
+            borderColor: "var(--border-color)",
+            "&:hover": {
+              borderColor: "var(--primary)",
+              backgroundColor: "var(--white)",
+            },
+            "&:active": {
+              color: "var(--primary)",
+              backgroundColor: "var(--turquoise-60)",
+              borderColor: "var(--primary)",
+            },
+          }),
+        ...(ownerState.variant === "outlined" &&
+          ownerState.color === "tertiary" && {
+            color: "var(--text-primary)",
+            borderWidth: 1,
+            borderColor: "transparent",
 
-      //       "&:hover": {
-      //         backgroundColor: "var(--grey-primary-60)",
-      //       },
-      //       "&:active": {
-      //         color: "var(--primary)",
-      //         borderWidth: 1,
-      //         borderColor: "transparent",
-      //       },
-      //     }),
+            "&:hover": {
+              backgroundColor: "var(--grey-primary-60)",
+            },
+            "&:active": {
+              color: "var(--primary)",
+              borderWidth: 1,
+              borderColor: "transparent",
+            },
+          }),
 
-      //   ...(ownerState.variant === "text" &&
-      //     ownerState.color === "primary" && {
-      //       color: "var(--primary)",
+        ...(ownerState.variant === "text" &&
+          ownerState.color === "primary" && {
+            color: "var(--primary)",
 
-      //       "&:hover": {
-      //         textDecoration: "underline",
-      //       },
-      //       "&:active": {
-      //         color: "var(--text-primary)",
-      //       },
-      //     }),
-      // }),
+            "&:hover": {
+              textDecoration: "underline",
+            },
+            "&:active": {
+              color: "var(--text-primary)",
+            },
+          }),
+      }),
     },
   },
 

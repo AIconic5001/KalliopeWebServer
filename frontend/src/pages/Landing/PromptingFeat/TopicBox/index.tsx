@@ -1,3 +1,5 @@
+import React from "react";
+import PropTypes from "prop-types";
 import { Box, Button, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import "./styles.scss";

@@ -1,9 +1,11 @@
+import React from "react";
+import PropTypes from "prop-types";
+import HeroSection from "./HeroSection";
 import { Divider } from "@mui/material";
 import FeatureSection from "./Features";
-import HeroSection from "./HeroSection";
+import UploadFeature from "./UploadFeature";
 import PromptingFeat from "./PromptingFeat";
 import "./styles.scss";
-import UploadFeature from "./UploadFeature";
 LandingPage.propTypes = {};
 
 function LandingPage() {

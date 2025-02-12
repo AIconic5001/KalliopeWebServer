@@ -1,10 +1,12 @@
+import React from "react";
+import PropTypes from "prop-types";
+import "./styles.scss";
+import Grid from "@mui/material/Grid2";
+import { Typography } from "@mui/material";
 import ArticleTwoToneIcon from "@mui/icons-material/ArticleTwoTone";
+import YoutubeSearchedForTwoToneIcon from "@mui/icons-material/YoutubeSearchedForTwoTone";
 import BookmarkAddedTwoToneIcon from "@mui/icons-material/BookmarkAddedTwoTone";
 import TimelineTwoToneIcon from "@mui/icons-material/TimelineTwoTone";
-import YoutubeSearchedForTwoToneIcon from "@mui/icons-material/YoutubeSearchedForTwoTone";
-import { Typography } from "@mui/material";
-import Grid from "@mui/material/Grid2";
-import "./styles.scss";
 FeatureSection.propTypes = {};
 
 function FeatureSection() {

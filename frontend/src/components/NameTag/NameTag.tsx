@@ -1,3 +1,4 @@
+import React from "react";
 import PropTypes from "prop-types";
 import useRandomColor from "../../utils/useRandomColor";
 import { Typography } from "@mui/material";

@@ -1,7 +1,17 @@
-import ArrowCircleRightTwoToneIcon from "@mui/icons-material/ArrowCircleRightTwoTone";
-import SearchIcon from "@mui/icons-material/Search";
-import { Box, InputAdornment, OutlinedInput, Typography } from "@mui/material";
+import React from "react";
+import PropTypes from "prop-types";
+import {
+  Box,
+  Button,
+  InputAdornment,
+  OutlinedInput,
+  TextField,
+  Typography,
+} from "@mui/material";
 import Grid from "@mui/material/Grid2";
+import SearchIcon from "@mui/icons-material/Search";
+import SearchBar from "../Components/SearchBar/SearchBar";
+import ArrowCircleRightTwoToneIcon from "@mui/icons-material/ArrowCircleRightTwoTone";
 SearchBox.propTypes = {};
 
 function SearchBox() {

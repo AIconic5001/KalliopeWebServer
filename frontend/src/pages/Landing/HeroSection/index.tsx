@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import "./styles.scss";
+import { Link } from "react-router-dom";
 // import "../../../assets/images/HeroCover.png"
 HeroSection.propTypes = {};
 

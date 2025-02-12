@@ -1,5 +1,7 @@
-import { Button } from "@mui/material";
+import React from "react";
+import PropTypes from "prop-types";
 import Grid from "@mui/material/Grid2";
+import { Button } from "@mui/material";
 import "./styles.scss";
 ButtonGrid.propTypes = {};
 
