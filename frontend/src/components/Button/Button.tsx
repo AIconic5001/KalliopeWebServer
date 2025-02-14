@@ -1,5 +1,3 @@
-import React from "react";
-import PropTypes from "prop-types";
 import { Button } from "@mui/material";
 
 function CustomedButton() {
@@ -10,4 +8,4 @@ function CustomedButton() {
   );
 }
 
-export default Button;
+export default CustomedButton;

@@ -7,6 +7,7 @@ from routes.files import localFiles as files_blueprint
 from routes.test import test as test_blueprint
 # Create Flask app
 app = Flask(__name__, static_folder='frontend/build', static_url_path='/')
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Register blueprints
 app.register_blueprint(files_blueprint, url_prefix='/api/files')
@@ -22,20 +23,19 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 MAX_FILE_SIZE = 16 * 1024 * 1024  # 16MB
 
 @app.route('/')
-# def home():
-#     return jsonify({"message": "Frontend placeholder"})
 @cross_origin()
-def index():
-    return send_from_directory(app.static_folder, 'index.html')
+def home():
+    return jsonify({"message": "Frontend placeholder"})
+# def index():
+#     return send_from_directory(app.static_folder, 'index.html')
 
-# Serve React app in production
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def serve(path):
-    """Serve static files for React app in production"""
-    if path != "" and os.path.exists(app.static_folder + '/' + path):
-        return send_from_directory(app.static_folder, path)
-    return send_from_directory(app.static_folder, 'index.html')
+# @app.route('/', defaults={'path': ''})
+# @app.route('/<path:path>')
+# def serve(path):
+#     """Serve static files for React app in production"""
+#     if path != "" and os.path.exists(app.static_folder + '/' + path):
+#         return send_from_directory(app.static_folder, path)
+#     return send_from_directory(app.static_folder, 'index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=8000)
