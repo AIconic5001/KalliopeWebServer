@@ -1,35 +1,39 @@
-# WebServer
+# Kalliope
 
-This is for web server development: backend and frontend
+University of Cincinnati - CS5001 - CS Senior Design I
+Class of 2025
 
-Planned Tech Stacks:
-Frontend:
+## Project Abstract:
 
-- HTML, CSS
-- React
-- jQuery
-- Redux
+Kalliope aims to revolutionize the academic research landscape by providing an intelligent, user-centric tool for literature discovery and application. Unlike existing tools, our application not only identifies relevant research but also generates concise synopses for each paper, empowering users to quickly grasp essential insights and make well-informed decisions.
 
-Backend:
+## Team Information: 
 
-- SQL
-- Python: Flask, Jinja
+**Project Advisor:** Prf. Fred Annexstein
 
-Frontend Notes:
-The website is deployed from the branch `kalliopeWeb`. Any new updates should be merged into that branch after being reviewed for new deployments
+**Team Members:**
 
-### **!IMPORTANT:** Do NOT merge PR from branch `kalliopeWeb` into `main`.
+| Name        | Contact              |
+| ----------- | -------------------- |
+| Huu Quang Nhat Nguyen | nguye2hq@mail.uc.edu |
+| Du Nguyen | nguye2d6@mail.uc.edu |
+| Huy Le    | leh8@mail.uc.edu |
+| Nhat Phan     | phann3@mail.uc.edu   |
 
-## Requirements to test
+## Project Description
 
-Node.js
-Python
+The Kalliope project aims to transform academic research through an AI-driven platform that enhances literature discovery and understanding. Leveraging arXiv for data and Google Colab for model training, Kalliope uses PySpark for large-scale processing, Flask for API management, and SQL for data storage to support synopsis generation and personalized recommendations. A frontend built with React, TypeScript, Material UI, and Tailwind ensures a responsive user experience, with Postman facilitating API testing. This comprehensive tech stack enables researchers to explore complex literature, share insights, and foster collaboration in an accessible academic environment.​
 
-## How to run this app
+#### Project Goals
 
-- Step 1: Clone this branch
-- Step 2: `npm i` to install all package in frontend folder
-- Step 3: `python -m venv venv` to create a virtual env
-- Step 4: `pip install -r requirements.txt` to install python package
-- Step 5: `flask run` to deploy local backend server
-- Step 6: On another CLI, `npm run dev` to deploy the frontend and start testing
+- **Streamline Research Process**: Enable researchers, students, and professionals to access and digest academic content efficiently through automatically generated synopses and relevant recommendations.
+- **Innovative Recommendation Engine**: Facilitate literature discovery with features like Related Paper Suggestions and Reverse Recommendation, allowing users to find research based on specific queries.
+- **Collaboration and Sharing**: Support collaborative research efforts by enabling users to save, share, and discuss collections of related papers, fostering a connected academic community.
+- **Increase Research Accessibility**: Simplify complex academic literature through synopses, making knowledge more accessible across disciplines and expertise levels.
+
+#### Potential Features:
+- Research Paper Synopsis (NLP)
+- Related Papers Recommendation
+- Reverse Recommendation (Query-to-Paper Matching)
+- Save Related Papers
+- Collaborations and Sharings

@@ -1,21 +1,26 @@
-import React, { useCallback, useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import axios from "axios";
-import { FileTypes } from "../../../@types/FileTypes/file.type";
-import "./styles.scss";
+import { Alert, Button, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import { Typography } from "@mui/material";
+import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import { ALLOWED_TYPES, API_CONFIG } from "../../../constants/api.constant";
+import { FileTypes } from "../../../@types/FileTypes/file.type";
+import { ALLOWED_TYPES } from "../../../constants/api.constant";
+import { useUploadFile } from "../handleFilesApi";
+import FeatSummaries from "./Components/FeatSummaries";
+import "./styles.scss";
 
 UploadFeature.propTypes = {};
 
 function UploadFeature() {
   const [file, setFile] = useState<Array<FileTypes>>([]);
-  const queryClient = useQueryClient();
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [fileError, setFileError] = useState<string | null>(null);
+
+  const {
+    mutate: uploadFile,
+    isSuccess: uploadSuccess,
+    isPending: pendingUpload,
+    isError: uploadError,
+  } = useUploadFile();
 
   // Improved file validation
   const validateFile = (file: File): boolean => {
@@ -29,40 +34,15 @@ function UploadFeature() {
       return false;
     }
 
-    if (file.size > 10 * 1024 * 1024) {
-      // 10MB limit
-      setFileError("File size exceeds 10MB limit");
-      return false;
-    }
+    // if (file.size > 10 * 1024 * 1024) {
+    //   // 10MB limit
+    //   setFileError("File size exceeds 10MB limit");
+    //   return false;
+    // }
 
     setFileError(null);
     return true;
   };
-
-  // Enhanced upload mutation
-  const uploadMutation = useMutation({
-    mutationFn: async (file: File) => {
-      const formData = new FormData();
-      formData.append("file", file);
-
-      const response = await axios.post(API_CONFIG.UPLOAD, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-      return response.data;
-    },
-    onSuccess: (data) => {
-      queryClient.invalidateQueries({ queryKey: [API_CONFIG.FILES] });
-      setSelectedFile(null);
-    },
-    onError: (error: any) => {
-      console.error(
-        "Upload error:",
-        error.response?.data?.error || error.message
-      );
-    },
-  });
 
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -73,13 +53,12 @@ function UploadFeature() {
 
   const handleUpload = () => {
     if (selectedFile && validateFile(selectedFile)) {
-      uploadMutation.mutate(selectedFile);
+      uploadFile(selectedFile);
     }
   };
 
   const onDrop = useCallback((acceptedFiles: Array<File>) => {
     // Do something with the files
-    console.log(acceptedFiles);
     const updatedList = [
       ...file,
       ...acceptedFiles.map((f: File) => ({
@@ -91,102 +70,87 @@ function UploadFeature() {
   }, []);
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
-  // const handleSubmit = (event: any) => {
-  //   // event.preventDefault();
-  //   event.preventDefault();
-  //   const formData = new FormData(event.target);
-  //   // file.forEach((f) => {
-  //   //   formData.append("file", f);
-  //   // });
-  //   // console.log("formData", formData, file);
-
-  //   const testUpload = async () =>
-  //     await axios.post("/api/files/upload", formData, {
-  //       headers: {
-  //         "Content-Type": "multipart/form-data",
-  //       },
-  //     });
-
-  //   try {
-  //     testUpload();
-  //   } catch (error) {
-  //     console.log("error", error);
-  //   }
-  // };
-
   return (
-    <div className="upload-container">
-      <h3>Upload your research paper</h3>
+    <section className="upload-container" id="upload">
+      <Grid container spacing={4}>
+        <Grid size={12} mb={4} fontSize={"80px"}>
+          <Typography variant="h1" align="center" className="title">
+            Upload your research paper
+          </Typography>
+        </Grid>
 
-      <form>
-        <div {...getRootProps()} className="dropzone-container">
-          <input
-            {...getInputProps()}
-            onChange={handleFileSelect}
-            accept={ALLOWED_TYPES.map((t) => `.${t}`).join(",")}
-          />
-          {isDragActive ? (
-            <p>Drop the files here ...</p>
-          ) : (
-            <p>Drag 'n' drop some files here, or click to select files</p>
+        <Grid size={10} m={"auto"}>
+          <div {...getRootProps()} className="dropzone-container">
+            <input
+              {...getInputProps()}
+              onChange={handleFileSelect}
+              accept={ALLOWED_TYPES.map((t) => `.${t}`).join(",")}
+            />
+            {isDragActive ? (
+              <Typography variant="body2" className="secondary-text">
+                Drop the files here ...
+              </Typography>
+            ) : (
+              <Typography
+                variant="body1"
+                sx={{ fontStyle: "italic", fontSize: "1.5rem" }}
+                className="secondary-text"
+              >
+                Drop some files here, or
+                <span style={{ color: "var(--primary-dark)" }}> click</span> to
+                select files
+              </Typography>
+            )}
+          </div>
+        </Grid>
+        <Stack spacing={2} mb={0} sx={{ width: "83%" }} margin={"auto"}>
+          {fileError && (
+            <Alert severity="warning">{`Error: ${
+              fileError || "Invalid file"
+            }`}</Alert>
           )}
+
+          {/* Upload status */}
+          {uploadError && (
+            <Alert severity="error">{`Error: ${
+              uploadError || "Upload failed"
+            }`}</Alert>
+          )}
+
+          {uploadSuccess && (
+            <Alert severity="success">{`File ${
+              selectedFile && selectedFile.name
+            } uploaded successfully!`}</Alert>
+          )}
+
+          {/* File preview */}
+          {selectedFile && <div className="file-preview"></div>}
+        </Stack>
+        {selectedFile && (
+          <Grid container size={12} sx={{ textAlign: "center" }}>
+            <Grid size={6}>
+              <Typography variant="h6">Selected file:</Typography>
+              <Typography variant="body1">{selectedFile.name}</Typography>
+            </Grid>
+            <Grid size={6}>
+              <Button
+                color="secondary"
+                onClick={handleUpload}
+                disabled={!selectedFile || pendingUpload}
+                variant="outlined"
+                sx={{ width: "50%" }}
+              >
+                {pendingUpload ? "Uploading..." : "Upload File"}
+              </Button>
+            </Grid>
+          </Grid>
+        )}
+
+        <div className="feat-summaries-container">
+          <FeatSummaries />
         </div>
-
-        <button
-          onClick={handleUpload}
-          disabled={!selectedFile || uploadMutation.isPending}
-          className="upload-button"
-        >
-          {uploadMutation.isPending ? "Uploading..." : "Upload File"}
-        </button>
-      </form>
-
-      {fileError && <p className="error-message">{fileError}</p>}
-
-      {/* Upload status */}
-      {uploadMutation.isError && (
-        <p className="error-message">
-          Error:{" "}
-          {uploadMutation.error?.response?.data?.error || "Upload failed"}
-        </p>
-      )}
-
-      {uploadMutation.isSuccess && (
-        <p className="success-message">
-          File {uploadMutation.data.filename} uploaded successfully!
-        </p>
-      )}
-
-      {/* File preview */}
-      {selectedFile && (
-        <div className="file-preview">
-          <p>Selected File: {selectedFile.name}</p>
-          <p>Size: {(selectedFile.size / 1024).toFixed(2)} KB</p>
-        </div>
-      )}
-
-      <Grid className="feat-summaries-container" container spacing={3} mt={2}>
-        <Grid size={6}>
-          <Typography>
-            Provide insights into research paper: synopsis, research method,
-            findings, limitations
-          </Typography>
-        </Grid>
-        <Grid size={6}>
-          <Typography>
-            Recommend next-to-read paper based on your paper and related fields
-          </Typography>
-        </Grid>
-        <Grid size={6}>
-          <Typography>Save and share insights of your paper</Typography>
-        </Grid>
-        <Grid size={6}>
-          <Typography>
-            Visualize the timeline and the relevance of the citations
-          </Typography>
-        </Grid>
       </Grid>
-    </div>
+    </section>
   );
 }
 
