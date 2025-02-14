@@ -7,7 +7,7 @@ const sizeButton = {
 };
 
 const typography = {
-  fontFamily: ["Inter"].join(","),
+  fontFamily: "var(--sans-font)",
   button1: {
     fontSize: 18,
     fontWeight: 500,
@@ -105,19 +105,22 @@ const components = {
   MuiOutlinedInput: {
     styleOverrides: {
       input: {
-        padding: "10px 16px",
+        padding: "18px 20px",
       },
       root: {
         borderRadius: "6px",
         borderWidth: "1px!important",
-        borderColor: "var(--neutral)",
+        borderColor: "var(--primary-light)",
         "&.Mui-focused": {
           borderWidth: "1px!important",
-          borderColor: "var(--neutral)",
+          borderColor: "var(--primary-light)",
         },
         "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
           borderWidth: "1px!important",
-          borderColor: "var(--neutral)",
+          borderColor: "var(--primary-light)",
+        },
+        "&:hover .MuiOutlinedInput-notchedOutline": {
+          borderColor: "var(--primary-dark)",
         },
       },
     },
@@ -391,21 +394,29 @@ const components = {
       },
     },
   },
-  MuiDataGrid: {
+  MuiTable: {
     styleOverrides: {
       root: {
-        "& .MuiDataGrid-cell:focus": {
-          outline: "none",
-        },
-        "& .MuiDataGrid-cell:focus-within": {
-          outline: "none",
-        },
-        "& .MuiDataGrid-columnHeader:focus": {
-          outline: "none",
-        },
-        "& .MuiDataGrid-row--lastVisible": {
-          borderBottom: "1px solid var(--grey-primary-80) !important",
-        },
+        marginBottom: "0px",
+        marginTop: "0px",
+        boxShadow: "none",
+        // "& .MuiDataGrid-cell:focus": {
+        //   outline: "none",
+        // },
+        // "& .MuiDataGrid-cell:focus-within": {
+        //   outline: "none",
+        // },
+        // "& .MuiDataGrid-columnHeader:focus": {
+        //   outline: "none",
+        // },
+        // "& .MuiDataGrid-row--lastVisible": {
+        //   borderBottom: "1px solid var(--grey-primary-80) !important",
+        // },
+        // "& .MuiTable-root": {
+        //   marginBottom: "0px",
+        // },
+        "& .MuiTableBody:focus": { outline: "none" },
+        "& .MuiTableRow:focus": { outline: "none" },
       },
     },
   },
@@ -472,21 +483,12 @@ const theme = createTheme({
       main: "#D9E1E8",
     },
     text: {
-      primary: "#3A3D41",
-      secondary: "#737982",
+      primary: "#4F46E5",
+      secondary: "#06B6D4",
     },
   },
   typography: typography,
   components: components,
-  breakpoints: {
-    values: {
-      mobile: 0,
-      tablet: 744,
-      miniLaptop: 1280,
-      laptop: 1440,
-      desktop: 1728,
-    },
-  },
 } as ThemeOptions);
 
 export default theme;

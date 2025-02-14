@@ -34,21 +34,6 @@ declare module "@mui/material/Typography" {
   }
 }
 
-declare module "@mui/material/styles" {
-  interface BreakpointOverrides {
-    xs: false;
-    sm: false;
-    md: false;
-    lg: false;
-    xl: false;
-    mobile: true;
-    tablet: true;
-    miniLaptop: true;
-    laptop: true;
-    desktop: true;
-  }
-}
-
 declare module "@mui/material/Button" {
   interface ButtonPropsColorOverrides {
     tertiary: true;

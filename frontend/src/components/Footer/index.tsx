@@ -1,12 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "./styles.scss";
+import './styles.scss';
 
 Footer.propTypes = {};
 
 function Footer() {
   return (
-    <div className="footer">
+    <div className='footer'>
       <footer>&copy; Kalliope</footer>
     </div>
   );

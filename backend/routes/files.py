@@ -13,7 +13,7 @@ localFiles = Blueprint('files', __name__, static_folder='uploads')
 # ALLOWED_EXTENSIONS = {'pdf', 'docx'}
 # Configuration
 UPLOAD_FOLDER = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'uploads')
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg'}
 MAX_FILE_SIZE = 16 * 1024 * 1024  # 16MB
 
 # Ensure the upload folder exists
