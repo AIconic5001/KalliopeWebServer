@@ -5,9 +5,9 @@ import { useEffect, useState } from 'react';
 import { GridDataType, SummariesDataType } from '../../@types/SynopsisData/grid.type';
 import DataGrid from '../../components/DataGrid/DataGrid';
 import ButtonGrid from './ButtonGrid/ButtonGrid';
+import CardItem from './CardItemList/CardItemList';
 import { useGetSummaries } from './handleFilesApi';
 import './styles.scss';
-import SummariesGrid from './SummariesGrid/SummariesGrid';
 
 // Rest of code.
 SynopsisPage.propTypes = {};
@@ -39,30 +39,25 @@ function SynopsisPage() {
   return (
     <div className='synopsis-page-container'>
       <Stack spacing={6} mt={8}>
-        <div className='title-container'>
-          <Grid container spacing={2}>
-            <Grid size={2}>
-              <a href='/'>
-                <Button variant='outlined' startIcon={<ReplyIcon sx={{ color: 'var(--primary-dark' }} />}>
-                  Back
-                </Button>
-              </a>
-            </Grid>
-            {/* <Grid size={10}>
-              <Typography variant="h3" sx={{ color: "var(--primary)" }}>
-                Synopsis
-              </Typography>
-            </Grid> */}
-          </Grid>
-        </div>
+        <div className='title-container'></div>
         <div className='dataGrid-container'>
-          <DataGrid row={row} />
-        </div>
-        {data && (
-          <div className='summaries-container'>
-            <SummariesGrid data={data} />
+          <div className='back-button-container'>
+            <Grid container spacing={2}>
+              <Grid>
+                <a href='/'>
+                  <Button variant='outlined' startIcon={<ReplyIcon sx={{ color: 'var(--primary-dark' }} />}>
+                    Back
+                  </Button>
+                </a>
+              </Grid>
+            </Grid>
           </div>
-        )}
+          <DataGrid row={row} />
+          <div> </div>
+        </div>
+
+        <CardItem summariesData={data} />
+
         {/* <PdfDisplay /> */}
         <ButtonGrid />
       </Stack>

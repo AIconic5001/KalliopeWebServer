@@ -1,405 +1,405 @@
-import { createTheme, ThemeOptions } from "@mui/material/styles";
-import { CaretDown } from "@phosphor-icons/react";
+import { createTheme, ThemeOptions } from '@mui/material/styles';
+import { CaretDown } from '@phosphor-icons/react';
 const sizeButton = {
-  small: "6px 12px",
-  medium: "9px 16px",
-  large: "12px 32px",
+  small: '6px 12px',
+  medium: '9px 16px',
+  large: '12px 32px'
 };
 
 const typography = {
-  fontFamily: "var(--sans-font)",
+  fontFamily: 'var(--sans-font)',
   button1: {
     fontSize: 18,
     fontWeight: 500,
-    lineHeight: "28px",
+    lineHeight: '28px'
   },
   button2: {
     fontSize: 16,
     fontWeight: 500,
-    lineHeight: "24px",
+    lineHeight: '24px'
   },
   button3: {
     fontSize: 14,
     fontWeight: 600,
-    lineHeight: "20px",
+    lineHeight: '20px'
   },
   h1: {
     fontSize: 56,
-    lineHeight: "72px",
-    fontWeight: 700,
+    lineHeight: '72px',
+    fontWeight: 700
   },
   h2: {
     fontSize: 48,
-    lineHeight: "56px",
-    fontWeight: 700,
+    lineHeight: '56px',
+    fontWeight: 700
   },
   h3: {
     fontSize: 40,
-    lineHeight: "48px",
-    fontWeight: 700,
+    lineHeight: '48px',
+    fontWeight: 700
   },
   h4: {
     fontSize: 32,
-    lineHeight: "40px",
-    fontWeight: 600,
+    lineHeight: '40px',
+    fontWeight: 600
   },
   h5: {
     fontSize: 24,
-    lineHeight: "32px",
-    fontWeight: 600,
+    lineHeight: '32px',
+    fontWeight: 600
   },
   h6: {
     fontSize: 20,
-    lineHeight: "24px",
-    fontWeight: 600,
+    lineHeight: '24px',
+    fontWeight: 600
   },
 
   label1: {
     fontSize: 18,
-    lineHeight: "28px",
-    fontWeight: 600,
+    lineHeight: '28px',
+    fontWeight: 600
   },
   label2: {
     fontSize: 16,
-    lineHeight: "24px",
-    fontWeight: 600,
+    lineHeight: '24px',
+    fontWeight: 600
   },
   label3: {
     fontSize: 14,
-    lineHeight: "20px",
-    fontWeight: 600,
+    lineHeight: '20px',
+    fontWeight: 600
   },
   label4: {
     fontSize: 12,
-    lineHeight: "18px",
-    fontWeight: 600,
+    lineHeight: '18px',
+    fontWeight: 600
   },
   body1: {
     fontSize: 18,
-    lineHeight: "28px",
-    fontWeight: 400,
+    lineHeight: '28px',
+    fontWeight: 400
   },
   body2: {
     fontSize: 16,
-    lineHeight: "24px",
-    fontWeight: 400,
+    lineHeight: '24px',
+    fontWeight: 400
   },
   body3: {
     fontSize: 14,
-    lineHeight: "20px",
-    fontWeight: 400,
+    lineHeight: '20px',
+    fontWeight: 400
   },
   caption1: {
     fontSize: 12,
-    lineHeight: "18px",
-    fontWeight: 400,
+    lineHeight: '18px',
+    fontWeight: 400
   },
   caption2: {
     fontSize: 10,
-    lineHeight: "16px",
-    fontWeight: 400,
-  },
+    lineHeight: '16px',
+    fontWeight: 400
+  }
 };
 
 const components = {
   MuiOutlinedInput: {
     styleOverrides: {
       input: {
-        padding: "18px 20px",
+        padding: '18px 20px'
       },
       root: {
-        borderRadius: "6px",
-        borderWidth: "1px!important",
-        borderColor: "var(--primary-light)",
-        "&.Mui-focused": {
-          borderWidth: "1px!important",
-          borderColor: "var(--primary-light)",
+        borderRadius: '6px',
+        borderWidth: '1px!important',
+        borderColor: 'var(--primary-light)',
+        '&.Mui-focused': {
+          borderWidth: '1px!important',
+          borderColor: 'var(--primary-light)'
         },
-        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-          borderWidth: "1px!important",
-          borderColor: "var(--primary-light)",
+        '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+          borderWidth: '1px!important',
+          borderColor: 'var(--primary-light)'
         },
-        "&:hover .MuiOutlinedInput-notchedOutline": {
-          borderColor: "var(--primary-dark)",
-        },
-      },
-    },
+        '&:hover .MuiOutlinedInput-notchedOutline': {
+          borderColor: 'var(--primary-dark)'
+        }
+      }
+    }
   },
   // Override maxHeight for select MUI globally
   MuiMenu: {
     styleOverrides: {
       paper: {
-        maxHeight: 500, // Override maxHeight globally
-      },
-    },
+        maxHeight: 500 // Override maxHeight globally
+      }
+    }
   },
   MuiSelect: {
     defaultProps: {
       fullWidth: true,
-      IconComponent: CaretDown,
+      IconComponent: CaretDown
     },
     styleOverrides: {
       root: () => ({
-        "& .MuiOutlinedInput-notchedOutline": {
-          borderColor: "var(--border-color)",
+        '& .MuiOutlinedInput-notchedOutline': {
+          borderColor: 'var(--border-color)'
         },
-        "&:hover .MuiOutlinedInput-notchedOutline": {
-          borderColor: "var(--grey-neutral-300)",
+        '&:hover .MuiOutlinedInput-notchedOutline': {
+          borderColor: 'var(--grey-neutral-300)'
         },
-        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-          borderColor: "var(--primary) !important",
-        },
-
-        "&.MuiInputBase-root": {
-          height: "40px",
-          borderRadius: "6px",
-          borderWidth: "0px !important",
+        '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+          borderColor: 'var(--primary) !important'
         },
 
-        "& .MuiSelect-icon": {
-          width: "24px",
-          height: "24px",
-          top: "20%",
-          right: "10px",
+        '&.MuiInputBase-root': {
+          height: '40px',
+          borderRadius: '6px',
+          borderWidth: '0px !important'
         },
-        "&.Mui-disabled": {
-          backgroundColor: "rgba(158, 162, 169, 0.5)",
+
+        '& .MuiSelect-icon': {
+          width: '24px',
+          height: '24px',
+          top: '20%',
+          right: '10px'
         },
-      }),
-    },
+        '&.Mui-disabled': {
+          backgroundColor: 'rgba(158, 162, 169, 0.5)'
+        }
+      })
+    }
   },
 
   MuiTextField: {
     defaultProps: {
       fullWidth: true,
       InputLabelProps: {
-        shrink: false,
-      },
+        shrink: false
+      }
     },
 
     styleOverrides: {
       root: () => ({
-        "& .MuiFormHelperText-root": {
+        '& .MuiFormHelperText-root': {
           marginLeft: 0,
-          marginTop: "6px",
-          "&.Mui-error": {
-            color: "var(--alert)",
-          },
+          marginTop: '6px',
+          '&.Mui-error': {
+            color: 'var(--alert)'
+          }
         },
-        "& .MuiInputLabel-root": {
-          position: "static",
-          color: "var(--text-primary)",
-          transform: "none",
-          fontWeight: "600",
-          fontSize: "14px",
-          marginBottom: "8px",
-          "&.Mui-focused ": {
-            color: "var(--text-primary)",
+        '& .MuiInputLabel-root': {
+          position: 'static',
+          color: 'var(--text-primary)',
+          transform: 'none',
+          fontWeight: '600',
+          fontSize: '14px',
+          marginBottom: '8px',
+          '&.Mui-focused ': {
+            color: 'var(--text-primary)'
           },
-          "&.Mui-error ": {
-            color: "var(--text-primary)",
+          '&.Mui-error ': {
+            color: 'var(--text-primary)'
           },
-          "&.Mui-disabled ": {
-            color: "var(--text-tertiary)",
-          },
+          '&.Mui-disabled ': {
+            color: 'var(--text-tertiary)'
+          }
         },
-        "& .MuiOutlinedInput-root": {
-          borderRadius: "6px",
-          "& input": {
-            color: "var(--text-primary)",
-            "&::placeholder": {
-              color: "var(--text-secondary)",
+        '& .MuiOutlinedInput-root': {
+          borderRadius: '6px',
+          '& input': {
+            color: 'var(--text-primary)',
+            '&::placeholder': {
+              color: 'var(--text-secondary)',
               fontSize: 14,
-              height: "24px",
+              height: '24px'
             },
-            overflow: "hidden",
+            overflow: 'hidden',
             fontSize: 16,
-            padding: "8px 16px",
-            height: "24px",
+            padding: '8px 16px',
+            height: '24px'
           },
-          "& fieldset": {
-            border: "1px solid",
-            borderColor: "var(--border-color)",
+          '& fieldset': {
+            border: '1px solid',
+            borderColor: 'var(--border-color)'
           },
 
           //hover
-          "&:hover fieldset": {
-            borderColor: "var(--grey-neutral-300)",
+          '&:hover fieldset': {
+            borderColor: 'var(--grey-neutral-300)'
           },
           //focus
-          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "var(--primary)",
-            borderWidth: "1px",
+          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+            borderColor: 'var(--primary)',
+            borderWidth: '1px'
           },
 
-          "&.Mui-error fieldset": {
-            borderColor: "var(--alert) ",
+          '&.Mui-error fieldset': {
+            borderColor: 'var(--alert) '
           },
-          "&.Mui-disabled fieldset": {
-            borderColor: "var(--grey-neutral-200)",
-            color: "var(--text-disable)",
-          },
+          '&.Mui-disabled fieldset': {
+            borderColor: 'var(--grey-neutral-200)',
+            color: 'var(--text-disable)'
+          }
         },
-        "& .MuiInputBase-root.Mui-disabled": {
-          backgroundColor: "var(--grey-neutral-80)",
-          color: "var(--text-disable)",
-        },
-      }),
-    },
+        '& .MuiInputBase-root.Mui-disabled': {
+          backgroundColor: 'var(--grey-neutral-80)',
+          color: 'var(--text-disable)'
+        }
+      })
+    }
   },
   MuiInputBase: {
     fullWidth: true,
     styleOverrides: {
       root: {
         fontSize: 14,
-        lineHeight: "20px",
-        fontWeight: 400,
-      },
-    },
+        lineHeight: '20px',
+        fontWeight: 400
+      }
+    }
   },
   MuiButton: {
     defaultProps: {
       disableRipple: true,
-      size: "medium",
+      size: 'medium'
     },
     styleOverrides: {
       sizeLarge: {
         padding: sizeButton.large,
-        fontSize: "20px",
+        fontSize: '20px'
       },
       sizeMedium: {
         padding: sizeButton.medium,
-        fontSize: "16px",
+        fontSize: '16px'
       },
       sizeSmall: {
         padding: sizeButton.small,
-        fontSize: "12px",
+        fontSize: '12px'
       },
 
       root: ({ ownerState }) => ({
         borderRadius: 6,
-        textTransform: "none",
+        textTransform: 'none',
         fontWeight: 500,
-        boxShadow: "none",
+        boxShadow: 'none',
 
-        "&.Mui-disabled": {
-          background: "var(--disable-btn)",
-          color: "var(--text-disable)",
+        '&.Mui-disabled': {
+          background: 'var(--disable-btn)',
+          color: 'var(--text-disable)'
         },
-        ...(ownerState.variant === "contained" &&
-          ownerState.color === "primary" && {
-            color: "var(--white) ",
-            backgroundColor: "var(--primary)",
-            "&:hover": {
-              backgroundColor: "var(--hover-btn)",
+        ...(ownerState.variant === 'contained' &&
+          ownerState.color === 'primary' && {
+            color: 'var(--white) ',
+            backgroundColor: 'var(--primary)',
+            '&:hover': {
+              backgroundColor: 'var(--hover-btn)'
             },
-            "&:active": {
-              color: "var(--primary) ",
-              backgroundColor: "var(--white)",
-              boxShadow: "none",
-            },
+            '&:active': {
+              color: 'var(--primary) ',
+              backgroundColor: 'var(--white)',
+              boxShadow: 'none'
+            }
           }),
-        ...(ownerState.variant === "contained" &&
-          ownerState.color === "secondary" && {
-            color: "var(--primary) ",
-            backgroundColor: "var(--blue-60)",
-            "&:hover": {
-              backgroundColor: "var(--blue-80)",
-              boxShadow: "none",
+        ...(ownerState.variant === 'contained' &&
+          ownerState.color === 'secondary' && {
+            color: 'var(--primary) ',
+            backgroundColor: 'var(--blue-60)',
+            '&:hover': {
+              backgroundColor: 'var(--blue-80)',
+              boxShadow: 'none'
             },
-            "&:active": {
-              boxShadow: "none",
-              backgroundColor: "var(--turquoise-60)",
-            },
+            '&:active': {
+              boxShadow: 'none',
+              backgroundColor: 'var(--turquoise-60)'
+            }
           }),
-        ...(ownerState.variant === "contained" &&
-          ownerState.color === "tertiary" && {
-            color: "var(--text-primary) ",
-            backgroundColor: "var(--grey-primary-60)",
-            "&:hover": {
-              backgroundColor: "var(--grey-primary-80)",
-              boxShadow: "none",
+        ...(ownerState.variant === 'contained' &&
+          ownerState.color === 'tertiary' && {
+            color: 'var(--text-primary) ',
+            backgroundColor: 'var(--grey-primary-60)',
+            '&:hover': {
+              backgroundColor: 'var(--grey-primary-80)',
+              boxShadow: 'none'
             },
-            "&:active": {
-              color: "var(--white) ",
-              backgroundColor: "var(--primary)",
-            },
+            '&:active': {
+              color: 'var(--white) ',
+              backgroundColor: 'var(--primary)'
+            }
           }),
 
-        ...(ownerState.variant === "outlined" &&
-          ownerState.color === "primary" && {
-            color: "var(--primary)",
+        ...(ownerState.variant === 'outlined' &&
+          ownerState.color === 'primary' && {
+            color: 'var(--primary)',
             borderWidth: 1,
-            borderColor: "var(--primary)",
-            "&:hover": {
-              backgroundColor: "var(--primary)",
-              color: "var(--white)",
+            borderColor: 'var(--primary)',
+            '&:hover': {
+              backgroundColor: 'var(--primary)',
+              color: 'var(--white)'
             },
-            "&:active": {
-              backgroundColor: "var(--primary)",
-              color: "var(--white)",
-            },
+            '&:active': {
+              backgroundColor: 'var(--primary)',
+              color: 'var(--white)'
+            }
           }),
-        ...(ownerState.variant === "outlined" &&
-          ownerState.color === "secondary" && {
-            color: "var(--primary)",
-            backgroundColor: "var(--white)",
+        ...(ownerState.variant === 'outlined' &&
+          ownerState.color === 'secondary' && {
+            color: 'var(--primary)',
+            backgroundColor: 'var(--white)',
             borderWidth: 1,
-            borderColor: "var(--border-color)",
-            "&:hover": {
-              borderColor: "var(--primary)",
-              backgroundColor: "var(--white)",
+            borderColor: 'var(--border-color)',
+            '&:hover': {
+              borderColor: 'var(--primary)',
+              backgroundColor: 'var(--white)'
             },
-            "&:active": {
-              color: "var(--primary)",
-              backgroundColor: "var(--turquoise-60)",
-              borderColor: "var(--primary)",
-            },
+            '&:active': {
+              color: 'var(--primary)',
+              backgroundColor: 'var(--turquoise-60)',
+              borderColor: 'var(--primary)'
+            }
           }),
-        ...(ownerState.variant === "outlined" &&
-          ownerState.color === "tertiary" && {
-            color: "var(--text-primary)",
+        ...(ownerState.variant === 'outlined' &&
+          ownerState.color === 'tertiary' && {
+            color: 'var(--text-primary)',
             borderWidth: 1,
-            borderColor: "transparent",
+            borderColor: 'transparent',
 
-            "&:hover": {
-              backgroundColor: "var(--grey-primary-60)",
+            '&:hover': {
+              backgroundColor: 'var(--grey-primary-60)'
             },
-            "&:active": {
-              color: "var(--primary)",
+            '&:active': {
+              color: 'var(--primary)',
               borderWidth: 1,
-              borderColor: "transparent",
-            },
+              borderColor: 'transparent'
+            }
           }),
 
-        ...(ownerState.variant === "text" &&
-          ownerState.color === "primary" && {
-            color: "var(--primary)",
+        ...(ownerState.variant === 'text' &&
+          ownerState.color === 'primary' && {
+            color: 'var(--primary)',
 
-            "&:hover": {
-              textDecoration: "underline",
+            '&:hover': {
+              textDecoration: 'underline'
             },
-            "&:active": {
-              color: "var(--text-primary)",
-            },
-          }),
-      }),
-    },
+            '&:active': {
+              color: 'var(--text-primary)'
+            }
+          })
+      })
+    }
   },
 
   MuiFormHelperText: {
     styleOverrides: {
       root: {
-        margin: "5px 0 0 0",
-      },
-    },
+        margin: '5px 0 0 0'
+      }
+    }
   },
   MuiTable: {
     styleOverrides: {
       root: {
-        marginBottom: "0px",
-        marginTop: "0px",
-        boxShadow: "none",
+        marginBottom: '0px',
+        marginTop: '0px',
+        boxShadow: 'none',
         // "& .MuiDataGrid-cell:focus": {
         //   outline: "none",
         // },
@@ -415,80 +415,86 @@ const components = {
         // "& .MuiTable-root": {
         //   marginBottom: "0px",
         // },
-        "& .MuiTableBody:focus": { outline: "none" },
-        "& .MuiTableRow:focus": { outline: "none" },
-      },
-    },
+        '& .MuiTableBody:focus': { outline: 'none' },
+        '& .MuiTableRow:focus': { outline: 'none' }
+      }
+    }
   },
 
   MuiTabs: {
     styleOverrides: {
       root: {
-        "& .MuiTabs-indicator": {
-          backgroundColor: "var(--primary)",
-        },
-      },
-    },
+        '& .MuiTabs-indicator': {
+          backgroundColor: 'var(--primary)'
+        }
+      }
+    }
   },
   MuiTab: {
     styleOverrides: {
       root: {
-        color: "var(--tertiary)",
-        textTransform: "unset",
+        color: 'var(--tertiary)',
+        textTransform: 'unset',
         fontSize: 14,
         fontWeight: 600,
-        lineHeight: "20px",
-        "&.Mui-selected": {
-          color: "var(--primary)",
+        lineHeight: '20px',
+        '&.Mui-selected': {
+          color: 'var(--primary)'
         },
-        "&:hover": {
-          color: "var(--primary)",
-        },
-      },
-    },
+        '&:hover': {
+          color: 'var(--primary)'
+        }
+      }
+    }
   },
   MuiList: {
     styleOverrides: {
       root: {
         // Example of style overrides
-        padding: "8px",
-        borderRadius: "8px",
-        "& .MuiMenuItem-root": {
+        padding: '8px',
+        borderRadius: '8px',
+        '& .MuiMenuItem-root': {
           // Styling ListItem within the List
-          borderRadius: "6px",
+          borderRadius: '6px'
         },
-        "& .Mui-selected": {
-          backgroundColor: "var(--grey-primary-80) !important",
-        },
-      },
-    },
+        '& .Mui-selected': {
+          backgroundColor: 'var(--grey-primary-80) !important'
+        }
+      }
+    }
   },
   MuiAutocomplete: {
     styleOverrides: {
       listbox: {
         // Example of style overrides for the listbox
-        padding: "8px !important",
-        "& .MuiAutocomplete-option": {
+        padding: '8px !important',
+        '& .MuiAutocomplete-option': {
           // Styling options within the listbox
-          borderRadius: "6px",
-        },
-      },
-    },
-  },
+          borderRadius: '6px'
+        }
+      }
+    }
+  }
 };
 
 const theme = createTheme({
   palette: {
     tertiary: {
-      main: "#D9E1E8",
+      main: '#D9E1E8'
+    },
+    button: {
+      primary: '#06b6d4',
+      primaryLight: '#67e8f9',
+      secondary: '#64748b'
     },
     text: {
-      primary: "#4F46E5",
-      secondary: "#06B6D4",
-    },
+      primary: '#06b6d4',
+      primaryLight: '#67e8f9',
+      secondary: '#64748b'
+    }
   },
   typography: typography,
-  components: components,
+  components: components
 } as ThemeOptions);
 
 export default theme;
