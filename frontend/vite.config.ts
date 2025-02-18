@@ -7,17 +7,17 @@ export default defineConfig({
   //   port: 8080,
   //   strictPort: true,
   // },
-  server: {
-    // port: 8080,
-    // strictPort: true,
-    // host: true,
-    // origin: "http://0.0.0.0:8080",
-    proxy: {
-      "/api": {
-        target: "http://localhost:8000",
-        changeOrigin: true,
-        secure: false,
-      },
-    },
-  },
+  // server: {
+  //   // port: 8080,
+  //   // strictPort: true,
+  //   // host: true,
+  //   // origin: "http://0.0.0.0:8080",
+  //   proxy: {
+  //     "/api": {
+  //       target: "http://kalliope-be-488144718577.us-central1.run.app",
+  //       changeOrigin: true,
+  //       secure: false,
+  //     },
+  //   },
+  // },
 });
