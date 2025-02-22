@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import './styles.scss';
+import { useNavigate } from 'react-router';
 
 TopicBox.propTypes = {};
 
@@ -8,8 +9,9 @@ const demoTopic = ['Topic 1', 'Topic 2', 'Topic 3', 'Topic 4', 'Topic 5', 'Topic
 
 function TopicBox() {
   const dynamicNumOfCol = Math.floor(demoTopic.length / 2);
+  const navigate = useNavigate();
   function handleTopicClick() {
-    console.log('Topic clicked');
+    navigate('/recommendations');
   }
   return (
     <div className='topic-box'>
