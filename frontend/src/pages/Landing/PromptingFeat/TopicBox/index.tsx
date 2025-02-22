@@ -15,15 +15,19 @@ function TopicBox() {
     <div className='topic-box'>
       <Box className='box-container'>
         <Grid container size={12} spacing={12} textAlign={'center'}>
-          <Grid size={12} spacing={4}>
-            <Typography variant='h3'>Browse by Topic</Typography>
-            <Typography variant='body1' color='textSecondary'>
-              Explore our resources by subject
-            </Typography>
+          <Grid container size={12} spacing={2}>
+            <Grid size={12}>
+              <Typography variant='h3'>Browse by Topic</Typography>
+            </Grid>
+            <Grid size={12}>
+              <Typography variant='body1' color='textSecondary'>
+                Explore our resources by subject
+              </Typography>
+            </Grid>
           </Grid>
           <Grid container size={12} spacing={3} textAlign={'center'}>
             {demoTopic.map((topic) => (
-              <Grid size={dynamicNumOfCol} textAlign={'center'}>
+              <Grid size={dynamicNumOfCol} textAlign={'center'} key={topic}>
                 <Button variant='outlined' color='secondary' onClick={handleTopicClick} sx={{ width: '80%' }}>
                   {topic}
                 </Button>

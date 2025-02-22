@@ -59,7 +59,10 @@ function SynopsisPage() {
         <CardItem summariesData={data} />
 
         {/* <PdfDisplay /> */}
-        <ButtonGrid />
+        <div className='dataGrid-container'>
+          <div></div>
+          <ButtonGrid />
+        </div>
       </Stack>
     </div>
   );

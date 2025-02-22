@@ -1,0 +1,9 @@
+.recommendations-container {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr min(100vw, 80%) 1fr;
+}
+
+.recommendation-list-container {
+  margin-top: 20px;
+}
