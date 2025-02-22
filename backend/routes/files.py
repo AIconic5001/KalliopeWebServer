@@ -1,9 +1,10 @@
 from flask import Flask, request, jsonify, send_from_directory, Blueprint, request
 from werkzeug.utils import secure_filename
 import os
+import requests
 
 import logging
-from werkzeug.exceptions import RequestEntityTooLarge
+
 
 # Create a blueprint for auth routes
 localFiles = Blueprint('files', __name__, static_folder='uploads')
@@ -32,12 +33,21 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@localFiles.errorhandler(RequestEntityTooLarge)
-def handle_file_too_large(error):
-    """Handle file size limit errors"""
-    return jsonify({
-        "error": f"File size exceeds {MAX_FILE_SIZE//(1024*1024)}MB limit"
-    }), 413
+
+def send_post_req( file_path):
+    url = 'https://86fe-2603-6010-53f0-7560-59e5-e524-dea2-877f.ngrok-free.app/'
+    files = {'file': open(file_path, 'rb')}
+
+    response = requests.post(url, files=files)
+    return response
+
+
+# @localFiles.errorhandler(RequestEntityTooLarge)
+# def handle_file_too_large(error):
+#     """Handle file size limit errors"""
+#     return jsonify({
+#         "error": f"File size exceeds {MAX_FILE_SIZE//(1024*1024)}MB limit"
+#     }), 413
 
 @localFiles.route('/upload', methods=['POST'])
 def upload_file():
@@ -62,6 +72,11 @@ def upload_file():
         logger.info(f"Saving file: {filename}")
         file.save(save_path)
         logger.info(f"File saved successfully: {save_path}")
+        try:
+            send_post_req(save_path)
+            print("File sent")
+        except Exception as e:
+            logger.error(f"Error sending file: {str(e)}")
         
         return jsonify({
             "message": "File uploaded successfully",
@@ -104,6 +119,9 @@ def download_file(filename):
     except Exception as e:
         logger.error(f"Download error: {str(e)}")
         return jsonify({"error": "File download failed"}), 500
+
+
+
 
 
 

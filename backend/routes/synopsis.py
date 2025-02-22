@@ -3,7 +3,7 @@ from werkzeug.utils import secure_filename
 import os
 
 import logging
-from werkzeug.exceptions import RequestEntityTooLarge
+
 
 # import sys
 # sys.path.append('../')
