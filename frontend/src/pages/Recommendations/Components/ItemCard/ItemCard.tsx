@@ -31,7 +31,7 @@ function ItemCard({ title, authors, publicationDate, relatedtopics }: GridDataTy
               </Grid>
             </Grid>
             <Typography variant='h5' component='div' color='text.primary' mt={1}>
-              {`Publication Date: ${publicationDate.toLocaleDateString()}`}
+              {`Publication Date: ${new Date(publicationDate).toDateString()}`}
             </Typography>
             <Grid container spacing={1}>
               <Grid size={1}>

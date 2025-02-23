@@ -4,8 +4,8 @@
 }
 
 .atom-spinner {
-  height: 60px;
-  width: 60px;
+  height: 150px;
+  width: 150px;
   overflow: hidden;
 }
 
@@ -20,7 +20,7 @@
   display: block;
   position: absolute;
   color: var(--primary);
-  font-size: calc(60px * 0.24);
+  font-size: calc(150px * 0.24);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -32,8 +32,8 @@
   height: 100%;
   border-radius: 50%;
   animation-duration: 1s;
-  border-left-width: calc(60px / 25);
-  border-top-width: calc(60px / 25);
+  border-left-width: calc(150px / 25);
+  border-top-width: calc(150px / 25);
   border-left-color: var(--primary);
   border-left-style: solid;
   border-top-style: solid;
@@ -91,6 +91,33 @@
 .wave-text span:nth-child(4) {
   animation-delay: 0.6s;
 }
+.wave-text span:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.wave-text span:nth-child(6) {
+  animation-delay: 1s;
+}
+.wave-text span:nth-child(7) {
+  animation-delay: 1.2s;
+}
+.wave-text span:nth-child(8) {
+  animation-delay: 1.4s;
+}
+.wave-text span:nth-child(9) {
+  animation-delay: 1.6s;
+}
+.wave-text span:nth-child(10) {
+  animation-delay: 1.8s;
+}
+.wave-text span:nth-child(11) {
+  animation-delay: 2s;
+}
+.wave-text span:nth-child(12) {
+  animation-delay: 2.2s;
+}
+.wave-text span:nth-child(13) {
+  animation-delay: 2.4s;
+}
 
 @keyframes wave {
   0%,
@@ -100,6 +127,14 @@
   50% {
     transform: translateY(-20px);
   }
+}
+
+.spin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 .suspense-container {

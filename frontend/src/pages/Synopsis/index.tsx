@@ -37,69 +37,6 @@ function SynopsisPage() {
     setData(res?.data);
   }, [res]);
 
-  const [result, setResult] = useState(null);
-  const { fileName } = useParams();
-  const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   const checkStatus = async () => {
-  //     try {
-  //       const response = await fetch(`/api/check-status/${fileName}`);
-
-  //       if (!response.ok) {
-  //         throw new Error('Failed to fetch status');
-  //       }
-
-  //       const data = await response.json();
-
-  //       if (data.status === 'completed') {
-  //         setStatus('completed');
-  //         setResult(data.result);
-  //       } else if (data.status === 'failed') {
-  //         setStatus('failed');
-  //       } else {
-  //         // Continue polling
-  //         setTimeout(checkStatus, 2000);
-  //       }
-  //     } catch (error) {
-  //       console.error('Error:', error);
-  //       setStatus('failed');
-  //     }
-  //   };
-
-  //   checkStatus();
-
-  //   return () => {
-  //     // Cleanup function to handle component unmount
-  //   };
-  // }, [__filename]);
-
-  // const handleRetry = () => {
-  //   navigate('/upload');
-  // };
-
-  // if (status === 'loading') {
-  //   return (
-  //     <div className='text-center'>
-  //       <div className='animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto'></div>
-  //       <p className='mt-4'>Processing your file...</p>
-  //     </div>
-  //   );
-  // }
-
-  // if (status === 'failed') {
-  //   return (
-  //     <div className='text-center'>
-  //       <p className='text-red-500'>Processing failed</p>
-  //       <button onClick={handleRetry} className='mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600'>
-  //         Try Again
-  //       </button>
-  //     </div>
-  //   );
-  // }
-
-  // const data2 = res.data?.data;
-  // console.log(data);
   return (
     <div className='synopsis-page-container'>
       {data ? (

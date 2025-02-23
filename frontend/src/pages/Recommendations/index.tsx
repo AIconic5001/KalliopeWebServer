@@ -9,15 +9,29 @@ import ItemCard from './Components/ItemCard/ItemCard';
 
 import './styles.scss';
 import { useGetRecommendations } from './handleRecommendationApi';
+import LoadingSuspense from '../../components/LoadingSuspense';
 
 function Recommedations() {
   const res = useGetRecommendations();
+  const [recommendations, setRecommendations] = useState<GridDataType[]>([]);
   const pageCount = mockData.length ? Math.ceil(mockData.length / 5) : 1;
+  const [pageSize, setPageSize] = useState(3);
   const [page, setPage] = useState(1);
   const [data, setData] = useState(mockData.slice(0, 5));
   useEffect(() => {
-    setData(res['recommendations'].slice((page - 1) * 5, page * 5));
+    if (res?.data) {
+      console.log(res?.data['recommendations']);
+      const recs = res?.data['recommendations'].map((rec: GridDataType) => rec);
+      setRecommendations(recs);
+    }
   }, [res]);
+
+  useEffect(() => {
+    const start = (page - 1) * 5;
+    const end = start + 5;
+    setPageSize(recommendations.length ? Math.ceil(mockData.length / 5) : 1);
+    setData(recommendations.slice(start, end));
+  }, [page, recommendations]);
   return (
     <div className='recommendations-container'>
       <div className='back-button-container'>
@@ -31,6 +45,7 @@ function Recommedations() {
           </Grid>
         </Grid>
       </div>
+
       <div>
         <div className='recommendations-list-header'>
           <Grid container spacing={0}>
@@ -44,29 +59,33 @@ function Recommedations() {
             </Grid>
           </Grid>
         </div>
-        <div className='recommendation-list-container'>
-          <Stack spacing={3}>
-            {data.map((data: GridDataType, index: number) => (
-              <div key={index}>
-                <ItemCard {...data} />
-              </div>
-            ))}
-          </Stack>
-          <Pagination
-            count={pageCount}
-            color='primary'
-            page={page}
-            sx={{
-              backgroundColor: 'none',
-              padding: '20px'
-            }}
-            onChange={(event: React.ChangeEvent<unknown>, value: number) => {
-              console.log(event);
-              setPage(value);
-              window.scrollTo(0, 0);
-            }}
-          />
-        </div>
+        {recommendations.length ? (
+          <div className='recommendation-list-container'>
+            <Stack spacing={3}>
+              {data.map((data: GridDataType, index: number) => (
+                <div key={index}>
+                  <ItemCard {...data} />
+                </div>
+              ))}
+            </Stack>
+            <Pagination
+              count={pageSize}
+              color='primary'
+              page={page}
+              sx={{
+                backgroundColor: 'none',
+                padding: '20px'
+              }}
+              onChange={(event: React.ChangeEvent<unknown>, value: number) => {
+                console.log(event);
+                setPage(value);
+                window.scrollTo(0, 0);
+              }}
+            />
+          </div>
+        ) : (
+          <LoadingSuspense />
+        )}
       </div>
     </div>
   );
