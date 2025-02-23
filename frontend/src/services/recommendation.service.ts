@@ -14,6 +14,13 @@ const recommendationService = {
     } catch (error) {
       console.log('Error sending keywords: ', error);
     }
+  },
+  getRecommendations() {
+    try {
+      return axios.get(`${url}`);
+    } catch (error) {
+      console.log('Error getting recommendations: ', error);
+    }
   }
 };
 

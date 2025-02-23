@@ -5,9 +5,11 @@ import Grid from '@mui/material/Grid2';
 import { useCallback, useEffect, useState } from 'react';
 import debounce from 'lodash/debounce';
 import './styles.scss';
+import { useNavigate } from 'react-router';
 SearchBox.propTypes = {};
 
 function SearchBox() {
+  let navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const debouncedFetchData = useCallback(
     debounce((value: string) => {
@@ -25,9 +27,8 @@ function SearchBox() {
     debouncedFetchData(inputText);
   }
 
-  function handleSearchClick(e: any) {
-    e.preventDefault();
-    console.log('Search clicked');
+  function handleSearchClick() {
+    navigate('/recommendations');
   }
   return (
     <div className='search-box'>
@@ -60,8 +61,10 @@ function SearchBox() {
                   sx={{ color: 'var(--primary)', lineHeight: '1.5', fontSize: '20px' }}
                 />
               </Grid>
-              <IconButton aria-label='search' onClick={handleSearchClick} type='submit'>
-                <ArrowCircleRightTwoToneIcon sx={{ color: 'var(--primary)', fontSize: '40px' }} />
+              <IconButton aria-label='search' onClick={handleSearchClick} type='submit' disabled={!searchQuery}>
+                <ArrowCircleRightTwoToneIcon
+                  sx={{ color: searchQuery ? 'var(--primary)' : 'var(--tertiary)', fontSize: '40px' }}
+                />
               </IconButton>
             </Grid>
           </Grid>

@@ -26,12 +26,12 @@ function ItemCard({ title, authors, publicationDate, relatedtopics }: GridDataTy
               </Grid>
               <Grid container size={11} direction='row' justifyContent={'flex-start'} textAlign={'center'} mt={1}>
                 {authors.map((author: string) => (
-                  <NameTag data={author} />
+                  <NameTag data={author} key={author} />
                 ))}
               </Grid>
             </Grid>
             <Typography variant='h5' component='div' color='text.primary' mt={1}>
-              {`Publication Date: ${publicationDate.toLocaleDateString()}`}
+              {`Publication Date: ${new Date(publicationDate).toDateString()}`}
             </Typography>
             <Grid container spacing={1}>
               <Grid size={1}>
@@ -41,7 +41,7 @@ function ItemCard({ title, authors, publicationDate, relatedtopics }: GridDataTy
               </Grid>
               <Grid container size={11} direction='row' justifyContent={'flex-start'} textAlign={'center'} mt={1}>
                 {relatedtopics.map((topic: string) => (
-                  <NameTag data={topic} />
+                  <NameTag data={topic} key={topic} />
                 ))}
               </Grid>
             </Grid>

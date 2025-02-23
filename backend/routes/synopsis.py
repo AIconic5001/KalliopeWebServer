@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, send_from_directory, Blueprint, request
 from werkzeug.utils import secure_filename
 import os
-
+import time
 import logging
 
 
@@ -24,4 +24,7 @@ def summaries():
     file_path = 'final_synopsis.txt'
     # output_json_path = '../mock/Output/output_sections.json'
     response = split_text_sections(file_path)
+
+    time.sleep(10) # Simulate a long process
+
     return jsonify(response), 200

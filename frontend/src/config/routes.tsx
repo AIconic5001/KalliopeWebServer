@@ -24,7 +24,7 @@ export const routes = createBrowserRouter([
         element: <Citations />
       },
       {
-        path: '/synopsis',
+        path: '/synopsis/:fileName',
         element: <SynopsisPage />
       },
       {
