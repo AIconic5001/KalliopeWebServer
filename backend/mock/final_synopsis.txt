@@ -1,3 +1,8 @@
+Title 1
+Authors: Author1, Author2, Author3, Author4
+Publication: 1996
+Related Topics: CS, AI, ML
+
 
 Research Problem and Objectives
 --------------------------------------------------------------------------------

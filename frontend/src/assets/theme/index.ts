@@ -385,6 +385,48 @@ const components = {
           })
       })
     }
+
+  },
+
+  MuiPaginationItem: {
+    defaultProps: {
+      disableRipple: true,
+      size: 'medium'
+    },
+    styleOverrides: {
+      root: ({ ownerState }) => ({
+        textTransform: 'none',
+        fontWeight: 500,
+        boxShadow: 'none',
+
+        '&.Mui-disabled': {
+          color: 'var(--text-disable)'
+        },
+
+        '&.Mui-selected': {
+          backgroundColor: 'var(--primary)',
+          color: 'var(--white)',
+          '&:hover': {
+            backgroundColor: 'var(--primary)',
+            color: 'var(--white)'
+          }
+        },
+
+        ...(ownerState.variant === 'contained' &&
+          ownerState.color === 'primary' && {
+            color: 'var(--white) ',
+            backgroundColor: 'var(--primary)',
+            '&:hover': {
+              backgroundColor: 'var(--hover-btn)'
+            },
+            '&:active': {
+              color: 'var(--primary) ',
+              backgroundColor: 'var(--white)',
+              boxShadow: 'none'
+            }
+          })
+      })
+    }
   },
 
   MuiFormHelperText: {
@@ -474,6 +516,51 @@ const components = {
         }
       }
     }
+  },
+  MuiPagination: {
+    styleOverrides: {
+      root: {
+        width: '100%',
+        justifyContent: 'center',
+        padding: '10px auto',
+        ul: {
+          width: 'fit-content',
+          margin: '0 auto',
+          li: {
+            '&.MuiPaginationItem-root': {
+              borderRadius: '6px',
+              color: 'var(--text-primary)',
+              '&.Mui-selected': {
+                backgroundColor: 'var(--primary)',
+                color: 'var(--white)'
+              },
+              '&:hover': {
+                backgroundColor: 'var(--primary)',
+                color: 'var(--white)'
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  MuiCard: {
+    styleOverrides: {
+      root: {
+        borderRadius: '8px',
+
+        // border: '1px solid var(--border-color)',
+        // backgroundColor: 'var(--white)',
+        // '&.MuiPaper-elevation1': {
+        //   boxShadow: 'none'
+        // }
+        ':hover': {
+          boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.3)'
+        }
+      }
+    }
+
   }
 };
 
