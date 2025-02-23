@@ -6,10 +6,13 @@ import { useCallback, useEffect, useState } from 'react';
 import debounce from 'lodash/debounce';
 import './styles.scss';
 import { useNavigate } from 'react-router';
+import { useSendQuery } from '../../../Recommendations/handleRecommendationApi';
+import { send } from 'process';
 SearchBox.propTypes = {};
 
 function SearchBox() {
   let navigate = useNavigate();
+  const { mutate: sendQuery } = useSendQuery();
   const [searchQuery, setSearchQuery] = useState('');
   const debouncedFetchData = useCallback(
     debounce((value: string) => {
@@ -17,17 +20,15 @@ function SearchBox() {
     }, 50),
     []
   );
-  // useEffect(() => {
-  //   console.log(searchQuery);
-  // }, [searchQuery]);
 
   function handleQueryChange(e: any) {
     e.preventDefault();
-    const inputText = e.target.value?.trim();
+    const inputText = e.target.value;
     debouncedFetchData(inputText);
   }
 
   function handleSearchClick() {
+    sendQuery(searchQuery);
     navigate('/recommendations');
   }
   return (
