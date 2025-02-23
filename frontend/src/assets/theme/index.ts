@@ -385,6 +385,7 @@ const components = {
           })
       })
     }
+
   },
 
   MuiPaginationItem: {
@@ -559,6 +560,7 @@ const components = {
         }
       }
     }
+
   }
 };
 

@@ -11,6 +11,7 @@ import './styles.scss';
 import { useNavigate, useParams } from 'react-router';
 import LoadingSuspense from '../../components/LoadingSuspense';
 
+
 // Rest of code.
 SynopsisPage.propTypes = {};
 
@@ -69,6 +70,7 @@ function SynopsisPage() {
       ) : (
         <LoadingSuspense />
       )}
+
     </div>
   );
 }
