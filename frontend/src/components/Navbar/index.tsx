@@ -9,14 +9,14 @@ function Navbar() {
     <header>
       <Grid container spacing={2} justifyContent={'space-between'} className='nav'>
         <Grid size={7}>
-          <Typography variant='h6' sx={{ color: 'var(--orange-700)' }}>
-            Kalliope
+          <Typography variant='h4' sx={{ color: 'var(--orange-700)' }}>
+            <a href='/'>Kalliope</a>
           </Typography>
         </Grid>
         <Grid textAlign={'right'} size={5} container spacing={0}>
           <Grid size={3}>
             <Typography variant='h6' sx={{ color: 'var(--primary-dark) ' }}>
-              <a href='/'>Home</a>
+              <a href='/recommendations'>Recommendations</a>
             </Typography>
           </Grid>
           <Grid size={3}>

@@ -15,7 +15,7 @@ export default function DataGrid({ row }: { row: GridDataType }) {
       <Table sx={{ minWidth: 650 }}>
         <TableBody>
           <TableRow key={'title'} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-            <TableCell component='th' scope='row' width={'25%'}>
+            <TableCell component='th' scope='row' width={'15%'}>
               <Typography variant='h5' className='text-color'>
                 Title
               </Typography>

@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import './styles.scss';
+import { useNavigate } from 'react-router';
 
 TopicBox.propTypes = {};
 
@@ -8,22 +9,27 @@ const demoTopic = ['Topic 1', 'Topic 2', 'Topic 3', 'Topic 4', 'Topic 5', 'Topic
 
 function TopicBox() {
   const dynamicNumOfCol = Math.floor(demoTopic.length / 2);
+  const navigate = useNavigate();
   function handleTopicClick() {
-    console.log('Topic clicked');
+    navigate('/recommendations');
   }
   return (
     <div className='topic-box'>
       <Box className='box-container'>
         <Grid container size={12} spacing={12} textAlign={'center'}>
-          <Grid size={12} spacing={4}>
-            <Typography variant='h3'>Browse by Topic</Typography>
-            <Typography variant='body1' color='textSecondary'>
-              Explore our resources by subject
-            </Typography>
+          <Grid container size={12} spacing={2}>
+            <Grid size={12}>
+              <Typography variant='h3'>Browse by Topic</Typography>
+            </Grid>
+            <Grid size={12}>
+              <Typography variant='body1' color='textSecondary'>
+                Explore our resources by subject
+              </Typography>
+            </Grid>
           </Grid>
           <Grid container size={12} spacing={3} textAlign={'center'}>
             {demoTopic.map((topic) => (
-              <Grid size={dynamicNumOfCol} textAlign={'center'}>
+              <Grid size={dynamicNumOfCol} textAlign={'center'} key={topic}>
                 <Button variant='outlined' color='secondary' onClick={handleTopicClick} sx={{ width: '80%' }}>
                   {topic}
                 </Button>

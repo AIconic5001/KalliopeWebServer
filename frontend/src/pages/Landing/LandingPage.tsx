@@ -16,25 +16,8 @@ function LandingPage() {
       <UploadFeature />
       <Divider />
       <PromptingFeat />
-      <Test />
     </div>
   );
 }
 
 export default LandingPage;
-
-function Test() {
-  return (
-    <div
-      style={{
-        color: 'white',
-        fontSize: '2rem',
-        textAlign: 'center',
-        padding: '2rem',
-        background: 'black'
-      }}
-    >
-      Test
-    </div>
-  );
-}

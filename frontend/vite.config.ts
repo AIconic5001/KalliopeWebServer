@@ -14,7 +14,10 @@ export default defineConfig({
     // origin: "http://0.0.0.0:8080",
     proxy: {
       "/api": {
-        target: "http://localhost:8000",
+        // target: "http://kalliope-be-488144718577.us-central1.run.app",
+        // target: "http://18.226.166.202",
+        target: "http://localhost:5000",
+
         changeOrigin: true,
         secure: false,
       },

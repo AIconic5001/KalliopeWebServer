@@ -1,14 +1,13 @@
 import { Typography } from '@mui/material';
-import PropTypes from 'prop-types';
 import useRandomColor from '../../utils/useRandomColor';
 import './styles.scss';
 
-NameTag.propTypes = {
-  data: PropTypes.string,
-  defaultColor: PropTypes.string
-};
+interface NameTagProps {
+  data: string;
+  defaultColor?: string;
+}
 
-function NameTag({ data, defaultColor }: { data: string; defaultColor: string }) {
+function NameTag({ data, defaultColor }: NameTagProps) {
   const color = defaultColor ? defaultColor : useRandomColor();
   return (
     <div className='rounded-tag' style={{ border: `1px solid ${color}` }}>

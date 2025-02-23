@@ -5,9 +5,11 @@ import { useEffect, useState } from 'react';
 import { GridDataType, SummariesDataType } from '../../@types/SynopsisData/grid.type';
 import DataGrid from '../../components/DataGrid/DataGrid';
 import ButtonGrid from './ButtonGrid/ButtonGrid';
+import CardItem from './CardItemList/CardItemList';
 import { useGetSummaries } from './handleFilesApi';
 import './styles.scss';
-import SummariesGrid from './SummariesGrid/SummariesGrid';
+import { useNavigate, useParams } from 'react-router';
+import LoadingSuspense from '../../components/LoadingSuspense';
 
 // Rest of code.
 SynopsisPage.propTypes = {};
@@ -21,6 +23,7 @@ const row: GridDataType = {
 
 function SynopsisPage() {
   // const queryClient = useQueryClient();
+  const [status, setStatus] = useState('loading');
   const [data, setData] = useState<SummariesDataType>({
     'Conclusion and Implications': '',
     Methodology: '',
@@ -34,38 +37,38 @@ function SynopsisPage() {
     setData(res?.data);
   }, [res]);
 
-  // const data2 = res.data?.data;
-  // console.log(data);
   return (
     <div className='synopsis-page-container'>
-      <Stack spacing={6} mt={8}>
-        <div className='title-container'>
-          <Grid container spacing={2}>
-            <Grid size={2}>
-              <a href='/'>
-                <Button variant='outlined' startIcon={<ReplyIcon sx={{ color: 'var(--primary-dark' }} />}>
-                  Back
-                </Button>
-              </a>
-            </Grid>
-            {/* <Grid size={10}>
-              <Typography variant="h3" sx={{ color: "var(--primary)" }}>
-                Synopsis
-              </Typography>
-            </Grid> */}
-          </Grid>
-        </div>
-        <div className='dataGrid-container'>
-          <DataGrid row={row} />
-        </div>
-        {data && (
-          <div className='summaries-container'>
-            <SummariesGrid data={data} />
+      {data ? (
+        <Stack spacing={6} mt={8}>
+          <div className='title-container'></div>
+          <div className='dataGrid-container'>
+            <div className='back-button-container'>
+              <Grid container spacing={2}>
+                <Grid>
+                  <a href='/'>
+                    <Button variant='outlined' startIcon={<ReplyIcon sx={{ color: 'var(--primary-dark' }} />}>
+                      Back
+                    </Button>
+                  </a>
+                </Grid>
+              </Grid>
+            </div>
+            <DataGrid row={row} />
+            <div> </div>
           </div>
-        )}
-        {/* <PdfDisplay /> */}
-        <ButtonGrid />
-      </Stack>
+
+          <CardItem summariesData={data} />
+
+          {/* <PdfDisplay /> */}
+          <div className='dataGrid-container'>
+            <div></div>
+            <ButtonGrid />
+          </div>
+        </Stack>
+      ) : (
+        <LoadingSuspense />
+      )}
     </div>
   );
 }
