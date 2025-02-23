@@ -2,6 +2,8 @@ import { Box, Button, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import './styles.scss';
 import { useNavigate } from 'react-router';
+import { useSendQuery } from '../../../Recommendations/handleRecommendationApi';
+import { send } from 'process';
 
 TopicBox.propTypes = {};
 
@@ -9,8 +11,10 @@ const demoTopic = ['Topic 1', 'Topic 2', 'Topic 3', 'Topic 4', 'Topic 5', 'Topic
 
 function TopicBox() {
   const dynamicNumOfCol = Math.floor(demoTopic.length / 2);
+  const { mutate: sendQuery } = useSendQuery();
   const navigate = useNavigate();
-  function handleTopicClick() {
+  function handleTopicClick(e: any) {
+    sendQuery(e.target.value);
     navigate('/recommendations');
   }
   return (
@@ -30,7 +34,13 @@ function TopicBox() {
           <Grid container size={12} spacing={3} textAlign={'center'}>
             {demoTopic.map((topic) => (
               <Grid size={dynamicNumOfCol} textAlign={'center'} key={topic}>
-                <Button variant='outlined' color='secondary' onClick={handleTopicClick} sx={{ width: '80%' }}>
+                <Button
+                  value={topic}
+                  variant='outlined'
+                  color='secondary'
+                  onClick={handleTopicClick}
+                  sx={{ width: '80%' }}
+                >
                   {topic}
                 </Button>
               </Grid>

@@ -15,13 +15,18 @@ logger.info(f"Upload directory configured at: {MOCK_FOLDER}")
 
 
 @recommendations.route('/', methods=['GET'])
-def summaries():
+def recommendationList():
     """Get all summaries"""
+    # TODO: Change to a dynamic file path or web socket
     file_path = 'recommendations_mock.json'
-
-    # output_json_path = '../mock/Output/output_sections.json'
-    # response = split_text_sections(file_path)
-
     time.sleep(2) # Simulate a long process
     
     return send_from_directory(MOCK_FOLDER, file_path), 200
+
+
+@recommendations.route('/query', methods=['POST'])
+def query():
+    query = request.json['query']
+    logger.info(f"Received query: {query}")
+    # TODO: Implement query sending to the model
+    return jsonify({"message": "Query received"}), 200
