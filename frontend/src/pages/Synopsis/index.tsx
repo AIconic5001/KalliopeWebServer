@@ -9,6 +9,7 @@ import CardItem from './CardItemList/CardItemList';
 import { useGetSummaries } from './handleFilesApi';
 import './styles.scss';
 import { useNavigate, useParams } from 'react-router';
+import LoadingSuspense from '../../components/LoadingSuspense';
 
 // Rest of code.
 SynopsisPage.propTypes = {};
@@ -22,6 +23,7 @@ const row: GridDataType = {
 
 function SynopsisPage() {
   // const queryClient = useQueryClient();
+  const [status, setStatus] = useState('loading');
   const [data, setData] = useState<SummariesDataType>({
     'Conclusion and Implications': '',
     Methodology: '',
@@ -35,7 +37,6 @@ function SynopsisPage() {
     setData(res?.data);
   }, [res]);
 
-  const [status, setStatus] = useState('loading');
   const [result, setResult] = useState(null);
   const { fileName } = useParams();
   const navigate = useNavigate();
@@ -101,32 +102,36 @@ function SynopsisPage() {
   // console.log(data);
   return (
     <div className='synopsis-page-container'>
-      <Stack spacing={6} mt={8}>
-        <div className='title-container'></div>
-        <div className='dataGrid-container'>
-          <div className='back-button-container'>
-            <Grid container spacing={2}>
-              <Grid>
-                <a href='/'>
-                  <Button variant='outlined' startIcon={<ReplyIcon sx={{ color: 'var(--primary-dark' }} />}>
-                    Back
-                  </Button>
-                </a>
+      {data ? (
+        <Stack spacing={6} mt={8}>
+          <div className='title-container'></div>
+          <div className='dataGrid-container'>
+            <div className='back-button-container'>
+              <Grid container spacing={2}>
+                <Grid>
+                  <a href='/'>
+                    <Button variant='outlined' startIcon={<ReplyIcon sx={{ color: 'var(--primary-dark' }} />}>
+                      Back
+                    </Button>
+                  </a>
+                </Grid>
               </Grid>
-            </Grid>
+            </div>
+            <DataGrid row={row} />
+            <div> </div>
           </div>
-          <DataGrid row={row} />
-          <div> </div>
-        </div>
 
-        <CardItem summariesData={data} />
+          <CardItem summariesData={data} />
 
-        {/* <PdfDisplay /> */}
-        <div className='dataGrid-container'>
-          <div></div>
-          <ButtonGrid />
-        </div>
-      </Stack>
+          {/* <PdfDisplay /> */}
+          <div className='dataGrid-container'>
+            <div></div>
+            <ButtonGrid />
+          </div>
+        </Stack>
+      ) : (
+        <LoadingSuspense />
+      )}
     </div>
   );
 }

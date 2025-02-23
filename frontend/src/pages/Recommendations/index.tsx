@@ -8,14 +8,16 @@ import NameTag from '../../components/NameTag/NameTag';
 import ItemCard from './Components/ItemCard/ItemCard';
 
 import './styles.scss';
+import { useGetRecommendations } from './handleRecommendationApi';
 
 function Recommedations() {
+  const res = useGetRecommendations();
   const pageCount = mockData.length ? Math.ceil(mockData.length / 5) : 1;
   const [page, setPage] = useState(1);
   const [data, setData] = useState(mockData.slice(0, 5));
   useEffect(() => {
-    setData(mockData.slice((page - 1) * 5, page * 5));
-  }, [page]);
+    setData(res['recommendations'].slice((page - 1) * 5, page * 5));
+  }, [res]);
   return (
     <div className='recommendations-container'>
       <div className='back-button-container'>
@@ -44,8 +46,10 @@ function Recommedations() {
         </div>
         <div className='recommendation-list-container'>
           <Stack spacing={3}>
-            {data.map((data: GridDataType) => (
-              <ItemCard {...data} />
+            {data.map((data: GridDataType, index: number) => (
+              <div key={index}>
+                <ItemCard {...data} />
+              </div>
             ))}
           </Stack>
           <Pagination

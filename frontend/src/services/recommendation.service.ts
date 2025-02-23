@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { get } from 'http';
 const url = '/api/recommendations';
 const recommendationService = {
   sendQuery(query: string) {
@@ -13,6 +14,13 @@ const recommendationService = {
       return axios.post(`${url}/keyword`, { keyword });
     } catch (error) {
       console.log('Error sending keywords: ', error);
+    }
+  },
+  getRecommendations() {
+    try {
+      return axios.get(`${url}`);
+    } catch (error) {
+      console.log('Error getting recommendations: ', error);
     }
   }
 };

@@ -26,7 +26,7 @@ function ItemCard({ title, authors, publicationDate, relatedtopics }: GridDataTy
               </Grid>
               <Grid container size={11} direction='row' justifyContent={'flex-start'} textAlign={'center'} mt={1}>
                 {authors.map((author: string) => (
-                  <NameTag data={author} />
+                  <NameTag data={author} key={author} />
                 ))}
               </Grid>
             </Grid>
@@ -41,7 +41,7 @@ function ItemCard({ title, authors, publicationDate, relatedtopics }: GridDataTy
               </Grid>
               <Grid container size={11} direction='row' justifyContent={'flex-start'} textAlign={'center'} mt={1}>
                 {relatedtopics.map((topic: string) => (
-                  <NameTag data={topic} />
+                  <NameTag data={topic} key={topic} />
                 ))}
               </Grid>
             </Grid>

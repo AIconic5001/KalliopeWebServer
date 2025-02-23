@@ -1,8 +1,8 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQueryClient, useQuery } from '@tanstack/react-query';
 import { API_CONFIG } from '../../constants/api.constant';
 import recommendationService from '../../services/recommendation.service';
 
-export const usesendKe = () => {
+export const useSendQuery = () => {
   const queryClient = useQueryClient();
   const { isPending, isSuccess, mutate, isError } = useMutation({
     mutationKey: ['sendQuery'],
@@ -30,4 +30,17 @@ export const useSendKeywordQuery = () => {
     }
   });
   return { isPending, isSuccess, mutate, isError };
+};
+
+export const useGetRecommendations = () => {
+  try {
+    const { data } = useQuery({
+      queryKey: ['recommendations'],
+      queryFn: () => recommendationService.getRecommendations(),
+      staleTime: 1000 * 60 * 2 // 5 minutes
+    });
+    return data;
+  } catch (error) {
+    console.error('getRecommendations error:', error.response?.data?.error || error.message);
+  }
 };
