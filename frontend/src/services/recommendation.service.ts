@@ -11,7 +11,7 @@ const recommendationService = {
 
   getRecommendations() {
     try {
-      return axios.get(`${url}`);
+      return axios.get(`${url}/`);
     } catch (error) {
       console.log('Error getting recommendations: ', error);
     }

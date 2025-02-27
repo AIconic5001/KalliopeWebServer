@@ -15,7 +15,7 @@ export default defineConfig({
     proxy: {
       "/api": {
         // target: "http://kalliope-be-488144718577.us-central1.run.app",
-        // target: "http://18.226.166.202",
+        // target: "http://52.15.187.50",
         target: "http://localhost:5000",
 
         changeOrigin: true,

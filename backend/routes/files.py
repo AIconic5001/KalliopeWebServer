@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory, Blueprint, request
+from flask import Flask, request, jsonify, send_from_directory, Blueprint, request, send_file
 from werkzeug.utils import secure_filename
 import os
 import requests
@@ -15,7 +15,6 @@ localFiles = Blueprint('files', __name__, static_folder='uploads')
 # Configuration
 UPLOAD_FOLDER = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'uploads')
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg'}
-MAX_FILE_SIZE = 16 * 1024 * 1024  # 16MB
 
 # Ensure the upload folder exists
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -35,12 +34,21 @@ def allowed_file(filename):
 
 
 def send_post_req( file_path):
-    url = 'https://86fe-2603-6010-53f0-7560-59e5-e524-dea2-877f.ngrok-free.app/'
-    files = {'file': open(file_path, 'rb')}
+    url = 'https://747b-2603-6010-53f0-7560-1da3-a4be-6756-ff0.ngrok-free.app/uploadedFileTransaction'
+    
+    try:
+        files = {'file': open(file_path, 'rb')}
 
-    response = requests.post(url, files=files)
-    return response
+        response = requests.post(url, files=files)
+        # return send_file(
+        #     url,
+        #     attachment_filename=file_path,
+        #     as_attachment=True
+        # )
 
+    except Exception as e :
+        logger.error(f"Error sending file: {str(e)}")
+    
 
 # @localFiles.errorhandler(RequestEntityTooLarge)
 # def handle_file_too_large(error):
