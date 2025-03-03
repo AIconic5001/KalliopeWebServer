@@ -7,7 +7,6 @@ import debounce from 'lodash/debounce';
 import './styles.scss';
 import { useNavigate } from 'react-router';
 import { useSendQuery } from '../../../Recommendations/handleRecommendationApi';
-import { send } from 'process';
 SearchBox.propTypes = {};
 
 function SearchBox() {
