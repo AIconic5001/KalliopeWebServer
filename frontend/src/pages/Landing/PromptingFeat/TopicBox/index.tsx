@@ -3,7 +3,6 @@ import Grid from '@mui/material/Grid2';
 import './styles.scss';
 import { useNavigate } from 'react-router';
 import { useSendQuery } from '../../../Recommendations/handleRecommendationApi';
-import { send } from 'process';
 
 TopicBox.propTypes = {};
 
