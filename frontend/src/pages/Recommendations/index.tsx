@@ -10,13 +10,28 @@ import ItemCard from './Components/ItemCard/ItemCard';
 import './styles.scss';
 import { useGetRecommendations } from './handleRecommendationApi';
 import LoadingSuspense from '../../components/LoadingSuspense';
+import { io } from 'socket.io-client';
+// import FileProcessor from './Components/FileProcessor';
+// import { useWebSocket } from '../../utils/useWebSocket';
 
 function Recommedations() {
+  const socket = io('http://localhost:8000', { autoConnect: false });
+  useEffect(() => {
+    socket.connect();
+    socket.on('connect', () => {
+      console.log('Connected to WebSocket server');
+    });
+    socket.on('file_status_update', (data: any) => {
+      console.log('Received file status update:', data);
+    });
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
   const res = useGetRecommendations();
   const [recommendations, setRecommendations] = useState<GridDataType[]>([]);
-  const pageCount = mockData.length ? Math.ceil(mockData.length / 5) : 1;
-  const [pageSize, setPageSize] = useState(3);
   const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(3);
   const [data, setData] = useState(mockData.slice(0, 5));
   useEffect(() => {
     if (res?.data) {
@@ -55,6 +70,7 @@ function Recommedations() {
                   Next-to-read List for {'Topic1'}
                 </Typography>
                 <NameTag data='Topic1' />
+                {/* <FileProcessor /> */}
               </div>
             </Grid>
           </Grid>

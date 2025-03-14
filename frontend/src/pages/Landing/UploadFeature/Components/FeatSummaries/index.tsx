@@ -22,11 +22,13 @@ function FeatSummaries() {
         </Grid>
         <Grid container size={12} alignContent={'center'}>
           <CheckBoxTwoToneIcon sx={{ color: 'var(--primary)', fontSize: '28px' }} />
-          <Typography variant='body1'>Only 1 file can be uploaded at a time</Typography>
+          <Typography variant='body1'>
+            <strong>Only one</strong> file can be uploaded at a time
+          </Typography>
         </Grid>
         <Grid container size={12} alignContent={'center'}>
           <CheckBoxTwoToneIcon sx={{ color: 'var(--primary)', fontSize: '28px' }} />
-          <Typography variant='body1'>
+          <Typography variant='body1' maxWidth={'70%'}>
             It usually takes a few minutes to process a file. Larger files may take longer to process
           </Typography>
         </Grid>
