@@ -231,7 +231,6 @@ function SynopsisPage() {
       {data && status === 'done' ? (
         <Stack spacing={6} mt={8}>
           <div className='title-container'></div>
-
           <div className='dataGrid-container'>
             <div className='back-button-container'>
               <Grid container spacing={2}>
@@ -245,47 +244,14 @@ function SynopsisPage() {
               </Grid>
             </div>
             <DataGrid row={row} />
+            <div> </div>
           </div>
 
           <CardItem summariesData={data} />
 
-          {/* Display file statuses */}
-          <div className='file-status-container'>
-            <h3>File Status Updates</h3>
-            {Object.keys(files).length > 0 ? (
-              Object.entries(files).map(([sessionId, fileData]: [string, any]) => (
-                <div
-                  key={sessionId}
-                  className='file-status-item'
-                  style={{
-                    border: '1px solid #ccc',
-                    borderRadius: '4px',
-                    padding: '10px',
-                    margin: '5px 0'
-                  }}
-                >
-                  <p>
-                    <strong>File:</strong> {fileData.filename}
-                  </p>
-                  <p>
-                    <strong>Status:</strong> {fileData.status}
-                  </p>
-                  <p>
-                    <strong>Progress:</strong> {fileData.progress}%
-                  </p>
-                  {fileData.error_message && (
-                    <p style={{ color: 'red' }}>
-                      <strong>Error:</strong> {fileData.error_message}
-                    </p>
-                  )}
-                </div>
-              ))
-            ) : (
-              <p>No file status updates received yet.</p>
-            )}
-          </div>
-
+          {/* <PdfDisplay /> */}
           <div className='dataGrid-container'>
+            <div></div>
             <ButtonGrid />
           </div>
         </Stack>

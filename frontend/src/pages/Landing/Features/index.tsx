@@ -25,7 +25,7 @@ function FeatureSection() {
                   <Grid size={12}>
                     <ArticleTwoToneIcon sx={{ fontSize: '60px', color: 'var(--primary)' }} />
                   </Grid>
-                  <Grid>
+                  <Grid size={12}>
                     <Typography variant='h3' className='subtitle-color'>
                       Research Paper Summary
                     </Typography>
@@ -47,7 +47,7 @@ function FeatureSection() {
                   <Grid size={12}>
                     <YoutubeSearchedForTwoToneIcon sx={{ fontSize: '60px', color: 'var(--primary)' }} />
                   </Grid>
-                  <Grid>
+                  <Grid size={12}>
                     <Typography variant='h3' className='subtitle-color'>
                       Reverse Recommendation
                     </Typography>
@@ -70,7 +70,7 @@ function FeatureSection() {
                   <Grid size={12}>
                     <BookmarkAddedTwoToneIcon sx={{ fontSize: '60px', color: 'var(--primary)' }} />
                   </Grid>
-                  <Grid>
+                  <Grid size={12}>
                     <Typography variant='h3' className='subtitle-color'>
                       Save Related Papers
                     </Typography>
@@ -91,12 +91,12 @@ function FeatureSection() {
                   <Grid size={12}>
                     <TimelineTwoToneIcon sx={{ fontSize: '60px', color: 'var(--primary)' }} />
                   </Grid>
-                  <Grid>
+                  <Grid size={12}>
                     <Typography variant='h3' className='subtitle-color'>
                       Research Paper Timeline
                     </Typography>
                   </Grid>
-                  <Grid>
+                  <Grid size={12}>
                     <Typography variant='body1'>
                       Visualizes the research paper timeline, including the publication date, citation count, and the
                       number of references.
