@@ -7,7 +7,6 @@ import { useCallback, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useSendQuery } from '../../../Recommendations/handleRecommendationApi';
 import './styles.scss';
-SearchBox.propTypes = {};
 
 function SearchBox() {
   let navigate = useNavigate();

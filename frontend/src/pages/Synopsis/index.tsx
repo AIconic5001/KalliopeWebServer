@@ -12,6 +12,7 @@ import { useNavigate, useParams } from 'react-router';
 import LoadingSuspense from '../../components/LoadingSuspense';
 import { io, Socket } from 'socket.io-client';
 
+
 // Main component
 function SynopsisPage() {
   // const [status, setStatus] = useState('loading');
@@ -74,6 +75,7 @@ function SynopsisPage() {
       ) : (
         <LoadingSuspense />
       )}
+
     </div>
   );
 }
