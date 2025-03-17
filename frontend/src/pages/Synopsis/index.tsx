@@ -1,7 +1,7 @@
 import ReplyIcon from '@mui/icons-material/Reply';
 import { Button, Stack } from '@mui/material';
 import Grid from '@mui/material/Grid2';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { GridDataType, SummariesDataType } from '../../@types/SynopsisData/grid.type';
 import DataGrid from '../../components/DataGrid/DataGrid';
 import ButtonGrid from './ButtonGrid/ButtonGrid';
@@ -10,21 +10,12 @@ import { useGetSummaries } from './handleFilesApi';
 import './styles.scss';
 import { useNavigate, useParams } from 'react-router';
 import LoadingSuspense from '../../components/LoadingSuspense';
+import { io, Socket } from 'socket.io-client';
 
 
-// Rest of code.
-SynopsisPage.propTypes = {};
-
-const row: GridDataType = {
-  title: 'Demo Paper',
-  authors: ['Prf. A', 'Prf. B'],
-  publicationDate: new Date('08/09/1996'),
-  relatedtopics: ['CS', 'AI', 'SWE']
-};
-
+// Main component
 function SynopsisPage() {
-  // const queryClient = useQueryClient();
-  const [status, setStatus] = useState('loading');
+  // const [status, setStatus] = useState('loading');
   const [data, setData] = useState<SummariesDataType>({
     'Conclusion and Implications': '',
     Methodology: '',
@@ -32,14 +23,29 @@ function SynopsisPage() {
     'Research Problem and Objectives': ''
   });
 
+  // Use the custom hook
+  // const { socket, isConnected, files, status } = useSocket('http://localhost:8000');
+
+  // Get summaries data
   const res = useGetSummaries();
 
+  // Update data when API response changes
   useEffect(() => {
-    setData(res?.data);
+    if (res?.data) {
+      setData(res.data);
+    }
   }, [res]);
+
+  const row: GridDataType = {
+    title: 'Demo Paper',
+    authors: ['Prf. A', 'Prf. B'],
+    publicationDate: new Date('08/09/1996'),
+    relatedtopics: ['CS', 'AI', 'SWE']
+  };
 
   return (
     <div className='synopsis-page-container'>
+      {/* {data && status === 'done' ? ( */}
       {data ? (
         <Stack spacing={6} mt={8}>
           <div className='title-container'></div>
@@ -58,7 +64,6 @@ function SynopsisPage() {
             <DataGrid row={row} />
             <div> </div>
           </div>
-
           <CardItem summariesData={data} />
 
           {/* <PdfDisplay /> */}

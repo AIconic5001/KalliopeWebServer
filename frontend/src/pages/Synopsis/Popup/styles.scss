@@ -1,0 +1,35 @@
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+// .MuiDialog-container {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+.MuiDialog-paper {
+  width: 100%;
+  max-width: 1000px;
+  height: fit-content;
+  min-height: 50vh;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}

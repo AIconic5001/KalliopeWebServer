@@ -15,9 +15,13 @@ export default defineConfig({
     proxy: {
       "/api": {
         // target: "http://kalliope-be-488144718577.us-central1.run.app",
-        target: "http://localhost:5000",
-        changeOrigin: true,
-        secure: false,
+// <<<<<<< VizFeat
+//         // target: "http://52.15.187.50",
+// =======
+// >>>>>>> Kalliope-DEV
+//         target: "http://localhost:5000",
+//         changeOrigin: true,
+//         secure: false,
       },
     },
   },
