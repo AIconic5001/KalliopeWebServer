@@ -67,7 +67,7 @@ function UploadFeature() {
   return (
     <section className='upload-container' id='upload'>
       <Grid container spacing={4}>
-        <Grid size={12} mb={4} fontSize={'80px'}>
+        <Grid size={12} mb={4} mt={4} fontSize={'80px'}>
           <Typography variant='h1' align='center' className='title'>
             Upload your research paper
           </Typography>

@@ -1,15 +1,40 @@
 .footer {
-  padding: 20px 0;
+  padding: 10px 32px;
   text-align: center;
   font-size: 14px;
   color: black;
   bottom: 0;
   border-top: 1px solid #e9ecef;
-  a {
-    color: #6c757d;
-    text-decoration: none;
-    &:hover {
-      color: #007bff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-container {
+  display: flex;
+  align-items: center;
+
+  .logo {
+    width: 100px;
+  }
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20px;
+    margin-left: 20px;
+    .contact {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      .icon {
+        margin-right: 10px;
+      }
     }
   }
+}
+
+.grid-container2 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
