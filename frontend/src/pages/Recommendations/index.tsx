@@ -22,7 +22,6 @@ function Recommedations() {
   const [data, setData] = useState(mockData.slice(0, 5));
   useEffect(() => {
     if (res?.data) {
-      console.log(res?.data['recommendations']);
       const recs = res?.data['recommendations'].map((rec: GridDataType) => rec);
       setRecommendations(recs);
     }

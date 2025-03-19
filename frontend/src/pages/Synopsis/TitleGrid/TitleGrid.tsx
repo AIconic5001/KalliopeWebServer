@@ -49,7 +49,7 @@ function TitleGrid({ data, recommendations }: TitleGridProps) {
                 </Typography>
               </Grid>
               <Grid size={8}>
-                <Typography variant='body1' color='black' margin={1}>
+                <Typography variant='h6' color='black' margin={1}>
                   {data.publicationDate.toLocaleDateString()}
                 </Typography>
               </Grid>
@@ -61,11 +61,9 @@ function TitleGrid({ data, recommendations }: TitleGridProps) {
                 </Typography>
               </Grid>
               <Grid size={8}>
-                <Typography variant='body1'>
-                  {data.relatedtopics.map((topic) => (
-                    <NameTag key={topic} data={topic} defaultColor='' />
-                  ))}
-                </Typography>
+                {data.relatedtopics.map((topic) => (
+                  <NameTag key={topic} data={topic} defaultColor='' />
+                ))}
               </Grid>
             </Grid>
           </Grid>
@@ -81,7 +79,7 @@ function TitleGrid({ data, recommendations }: TitleGridProps) {
             <Grid size={12} sx={{ height: '90%', overflowY: 'scroll' }} padding={2}>
               <div className='recommendation-list-container'>
                 {recommendations?.length ? (
-                  recommendations.map((data: GridDataType, index: number) => (
+                  recommendations.slice(0, 5).map((data: GridDataType, index: number) => (
                     <Grid
                       container
                       spacing={0}
