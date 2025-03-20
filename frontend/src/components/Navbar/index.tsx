@@ -14,7 +14,7 @@ function Navbar() {
               <a href='/'>Kalliope</a>
             </Typography>
           </Grid>
-          <Grid textAlign={'right'} size={5} container spacing={0} justifyContent={'space-between'}>
+          <Grid textAlign={'right'} size={5} container spacing={0} justifyContent={'flex-end'}>
             <Grid size={3}>
               <Typography variant='h6' sx={{ color: 'var(--primary-dark)' }}>
                 <a href='/about'>About Us</a>
@@ -25,11 +25,11 @@ function Navbar() {
                 <a href='/citations'>Citations</a>
               </Typography>
             </Grid>
-            <Grid size={3}>
+            {/* <Grid size={3}>
               <Typography variant='h6' sx={{ color: 'var(--primary-dark)' }}>
                 <a href='#contacts'>Contacts</a>
               </Typography>
-            </Grid>
+            </Grid> */}
           </Grid>
         </Grid>
       </div>
