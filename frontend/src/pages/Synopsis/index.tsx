@@ -12,6 +12,7 @@ import CardItem from './CardItemList/CardItemList';
 import { useGetRecommendations, useGetSummaries } from './handleFilesApi';
 import './styles.scss';
 import TitleGrid from './TitleGrid/TitleGrid';
+// import { io, Socket } from 'socket.io-client';
 // Main component
 function SynopsisPage() {
   // const [status, setStatus] = useState('loading');
