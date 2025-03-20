@@ -1,11 +1,7 @@
-.text-color {
-  color: var(--primary-dark);
-}
-
 .recommendation-list-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  height: 100%;
+  // height: 100px;
   overflow-y: scroll;
 }
