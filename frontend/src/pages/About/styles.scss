@@ -1,0 +1,21 @@
+.about-page-container {
+  height: 100%;
+  margin-top: 40px;
+}
+
+.about-page-container .about-page-header {
+  margin-bottom: 20px;
+}
+
+.about-page-header {
+  text-align: center;
+}
+
+.team-member-container {
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.team-member-container:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
