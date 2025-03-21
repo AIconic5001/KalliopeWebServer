@@ -1,0 +1,10 @@
+.citations-page-container {
+  margin-top: 42px;
+  .citations-page-title {
+    margin-bottom: 1rem;
+  }
+  .citations-list {
+    max-height: max-content;
+  }
+  height: calc(100vh - 220px);
+}

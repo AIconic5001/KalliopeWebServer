@@ -22,16 +22,16 @@ const teamMembers = [
     work: 'Specializes in data collection methodologies and creates insightful visualizations that transform complex research metrics into actionable intelligence.'
   },
   {
-    name: 'Nhat Phan',
-    role: 'Data Engineer',
-    image: NhatImg,
-    work: 'Design the ETL processes and database systems that form the foundation of Kalliope, optimizing data flow and storage for the platform.'
-  },
-  {
     name: 'Huy Le',
     role: 'AI Engineer',
     image: HuyImg,
     work: "Fine-tunes the AI models that power Kalliope's core features, developing sophisticated algorithms for research synopsis generation and recommendation systems."
+  },
+  {
+    name: 'Nhat Phan',
+    role: 'Data Engineer',
+    image: NhatImg,
+    work: 'Design the ETL processes and database systems that form the foundation of Kalliope, optimizing data flow and storage for the platform.'
   }
 ];
 

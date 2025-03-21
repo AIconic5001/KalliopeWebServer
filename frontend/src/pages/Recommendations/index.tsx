@@ -15,19 +15,19 @@ import { io } from 'socket.io-client';
 // import { useWebSocket } from '../../utils/useWebSocket';
 
 function Recommedations() {
-  const socket = io('http://localhost:8000', { autoConnect: false });
-  useEffect(() => {
-    socket.connect();
-    socket.on('connect', () => {
-      console.log('Connected to WebSocket server');
-    });
-    socket.on('file_status_update', (data: any) => {
-      console.log('Received file status update:', data);
-    });
-    return () => {
-      socket.disconnect();
-    };
-  }, []);
+  // const socket = io('http://localhost:8000', { autoConnect: false });
+  // useEffect(() => {
+  //   socket.connect();
+  //   socket.on('connect', () => {
+  //     console.log('Connected to WebSocket server');
+  //   });
+  //   socket.on('file_status_update', (data: any) => {
+  //     console.log('Received file status update:', data);
+  //   });
+  //   return () => {
+  //     socket.disconnect();
+  //   };
+  // }, []);
   const res = useGetRecommendations();
   const [recommendations, setRecommendations] = useState<GridDataType[]>([]);
   const [page, setPage] = useState(1);
@@ -93,7 +93,6 @@ function Recommedations() {
                 padding: '20px'
               }}
               onChange={(event: React.ChangeEvent<unknown>, value: number) => {
-                console.log(event);
                 setPage(value);
                 window.scrollTo(0, 0);
               }}
