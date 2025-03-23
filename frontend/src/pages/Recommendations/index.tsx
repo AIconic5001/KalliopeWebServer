@@ -15,6 +15,19 @@ import { io } from 'socket.io-client';
 // import { useWebSocket } from '../../utils/useWebSocket';
 
 function Recommedations() {
+  // const socket = io('http://localhost:8000', { autoConnect: false });
+  // useEffect(() => {
+  //   socket.connect();
+  //   socket.on('connect', () => {
+  //     console.log('Connected to WebSocket server');
+  //   });
+  //   socket.on('file_status_update', (data: any) => {
+  //     console.log('Received file status update:', data);
+  //   });
+  //   return () => {
+  //     socket.disconnect();
+  //   };
+  // }, []);
   const res = useGetRecommendations();
   const [recommendations, setRecommendations] = useState<GridDataType[]>([]);
   const [page, setPage] = useState(1);
@@ -56,40 +69,32 @@ function Recommedations() {
             </Grid>
           </Grid>
         </div>
-      </div>
-
-      <div>
-        <Grid container spacing={0}>
-          <Grid size={1}></Grid>
-          <Grid size={10} padding={1}>
-            {recommendations.length ? (
-              <div className='recommendation-list-container'>
-                <Stack spacing={3}>
-                  {data.map((data: GridDataType, index: number) => (
-                    <div key={index}>
-                      <ItemCard {...data} />
-                    </div>
-                  ))}
-                </Stack>
-                <Pagination
-                  count={pageSize}
-                  color='primary'
-                  page={page}
-                  sx={{
-                    backgroundColor: 'none',
-                    padding: '20px'
-                  }}
-                  onChange={(event: React.ChangeEvent<unknown>, value: number) => {
-                    setPage(value);
-                    window.scrollTo(0, 0);
-                  }}
-                />
-              </div>
-            ) : (
-              <LoadingSuspense />
-            )}
-          </Grid>
-        </Grid>
+        {recommendations.length ? (
+          <div className='recommendation-list-container'>
+            <Stack spacing={3}>
+              {data.map((data: GridDataType, index: number) => (
+                <div key={index}>
+                  <ItemCard {...data} />
+                </div>
+              ))}
+            </Stack>
+            <Pagination
+              count={pageSize}
+              color='primary'
+              page={page}
+              sx={{
+                backgroundColor: 'none',
+                padding: '20px'
+              }}
+              onChange={(event: React.ChangeEvent<unknown>, value: number) => {
+                setPage(value);
+                window.scrollTo(0, 0);
+              }}
+            />
+          </div>
+        ) : (
+          <LoadingSuspense />
+        )}
       </div>
     </div>
   );
