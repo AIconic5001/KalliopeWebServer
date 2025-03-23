@@ -11,7 +11,7 @@ function HeroSection() {
         <Grid container spacing={8}>
           <Grid container size={6} spacing={8}>
             <Grid size={12}>
-              <Typography variant='h1' align='center' fontSize='120px' color={'var(--primary)'} fontWeight='bold'>
+              <Typography variant='h1' align='center' fontSize='120px' color={'var(--primary-dark)'} fontWeight='bold'>
                 {' '}
                 Kalliope{' '}
               </Typography>

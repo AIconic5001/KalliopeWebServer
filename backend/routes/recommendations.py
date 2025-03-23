@@ -16,7 +16,7 @@ logger.info(f"Upload directory configured at: {MOCK_FOLDER}")
 
 @recommendations.route('/', methods=['GET'])
 def recommendationList():
-    """Get all summaries"""
+    """Get all recommendations"""
     # TODO: Change to a dynamic file path or web socket
     file_path = 'recommendations_mock.json'
     time.sleep(2) # Simulate a long process

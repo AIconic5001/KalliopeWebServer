@@ -2,13 +2,11 @@ import ArrowCircleRightTwoToneIcon from '@mui/icons-material/ArrowCircleRightTwo
 import SearchIcon from '@mui/icons-material/Search';
 import { Box, IconButton, InputAdornment, OutlinedInput, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid2';
-import { useCallback, useEffect, useState } from 'react';
 import debounce from 'lodash/debounce';
-import './styles.scss';
+import { useCallback, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useSendQuery } from '../../../Recommendations/handleRecommendationApi';
-import { send } from 'process';
-SearchBox.propTypes = {};
+import './styles.scss';
 
 function SearchBox() {
   let navigate = useNavigate();
@@ -62,7 +60,13 @@ function SearchBox() {
                   sx={{ color: 'var(--primary)', lineHeight: '1.5', fontSize: '20px' }}
                 />
               </Grid>
-              <IconButton aria-label='search' onClick={handleSearchClick} type='submit' disabled={!searchQuery}>
+              <IconButton
+                aria-label='search'
+                onClick={handleSearchClick}
+                type='submit'
+                sx={{ display: !searchQuery ? 'none' : 'flex' }}
+                disabled={!searchQuery}
+              >
                 <ArrowCircleRightTwoToneIcon
                   sx={{ color: searchQuery ? 'var(--primary)' : 'var(--tertiary)', fontSize: '40px' }}
                 />

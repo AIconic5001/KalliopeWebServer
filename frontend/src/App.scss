@@ -213,8 +213,8 @@ body {
   background-color: var(--bg);
   font-size: 1.15rem;
   line-height: 1.5;
-  display: grid;
-  grid-template-columns: 1fr min(100vw, 85%) 1fr;
+  // display: grid;
+  // grid-template-columns: 1fr min(100vw, 85%) 1fr;
   margin: 0;
 
   ul {

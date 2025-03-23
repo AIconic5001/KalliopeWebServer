@@ -8,7 +8,7 @@ function PromptingFeat() {
   return (
     <section className='prompt-container' id='prompt'>
       <Grid container spacing={3}>
-        <Grid size={12} mb={12}>
+        <Grid size={12} mb={10}>
           <Typography variant='h1' align='center' className='title'>
             Find your next research papers
           </Typography>
