@@ -14,7 +14,7 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Register blueprints
 app.register_blueprint(files_blueprint, url_prefix='/api/files')
-app.register_blueprint(test_blueprint, url_prefix='/api/test')
+# app.register_blueprint(test_blueprint, url_prefix='/api/test')
 app.register_blueprint(synopsis_blueprint, url_prefix='/api/synopsis')
 app.register_blueprint(recommendations_blueprint, url_prefix='/api/recommendations')
 app.register_blueprint(citations_blueprint, url_prefix='/api/citations')
