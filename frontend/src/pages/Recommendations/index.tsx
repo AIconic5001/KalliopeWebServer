@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { GridDataType } from '../../@types/SynopsisData/grid.type';
 import { mockData } from '../../assets/mock/mockRecommendationList';
 import NameTag from '../../components/NameTag/NameTag';
-import ItemCard from './Components/ItemCard/ItemCard';
+import ItemCard from './ItemCard/ItemCard';
 
 import './styles.scss';
 import { useGetRecommendations } from './handleRecommendationApi';
@@ -35,7 +35,6 @@ function Recommedations() {
   const [data, setData] = useState(mockData.slice(0, 5));
   useEffect(() => {
     if (res?.data) {
-      console.log(res?.data['recommendations']);
       const recs = res?.data['recommendations'].map((rec: GridDataType) => rec);
       setRecommendations(recs);
     }
@@ -49,25 +48,20 @@ function Recommedations() {
   }, [page, recommendations]);
   return (
     <div className='recommendations-container'>
-      <div className='back-button-container'>
-        <Grid container spacing={2}>
-          <Grid>
-            <a href='/'>
-              <Button variant='contained' startIcon={<ReplyIcon sx={{ color: 'var(--primary-dark' }} />}>
-                Back
-              </Button>
-            </a>
-          </Grid>
-        </Grid>
-      </div>
-
-      <div>
+      <div className='recommendations-list-header'>
         <div className='recommendations-list-header'>
           <Grid container spacing={0}>
-            <Grid size={12}>
+            <Grid size={1} padding={1}>
+              <a href='/'>
+                <Button variant='contained' startIcon={<ReplyIcon sx={{ color: 'var(--primary-dark' }} />}>
+                  Back
+                </Button>
+              </a>
+            </Grid>
+            <Grid size={10}>
               <div style={{ display: 'flex', justifyContent: 'flex-start', height: '100%' }}>
                 <Typography variant='h2' mr={'20px'}>
-                  Next-to-read List for {'Topic1'}
+                  Next readings for {'Topic1'}
                 </Typography>
                 <NameTag data='Topic1' />
                 {/* <FileProcessor /> */}

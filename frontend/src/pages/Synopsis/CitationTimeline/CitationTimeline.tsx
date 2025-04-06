@@ -1,5 +1,4 @@
 import './styles.scss';
-
 function CitationTimeline() {
   return (
     <div className='container'>

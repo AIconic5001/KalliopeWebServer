@@ -8,6 +8,9 @@ import logging
 import asyncio
 import websockets
 import json
+from config import (
+    LOCALMACHINEADDR,
+)
 
 
 # Create a blueprint for auth routes
@@ -20,8 +23,8 @@ localFiles = Blueprint('files', __name__, static_folder='uploads')
 UPLOAD_FOLDER = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'uploads')
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg'}
 
-# ngrok_url = "1861-129-137-96-12.ngrok-free.app"
-ngrok_url = "localhost:8000"
+# ngrok_url = "poor-parrots-tickle.loca.lt" # Replace with your ngrok URL
+ngrok_url = LOCALMACHINEADDR
 result ={}
 # Ensure the upload folder exists
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -34,20 +37,11 @@ logger = logging.getLogger('FileUpload')
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 logger.info(f"Upload directory configured at: {UPLOAD_FOLDER}")
 
-def allowed_file(filename):
-    """Check if file extension is allowed"""
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-
-def send_post_req(file_path):
-    url = f'http://{ngrok_url}/uploadedFileTransaction'
-    try:
-        files = {'file': open(file_path, 'rb')}
-        response = requests.post(url, files=files)
-
-    except Exception as e :
-        logger.error(f"Error sending file: {str(e)}")
+@localFiles.route('/')
+def index():
+    """Serve the index page"""
+    return jsonify({"message": "File upload API"}), 200
     
 
 @localFiles.route('/upload', methods=['POST'])
@@ -67,12 +61,14 @@ def upload_file():
         if not (file and allowed_file(file.filename)):
             logger.error(f"Disallowed file type: {file.filename}")
             return jsonify({"error": "File type not allowed"}), 400
-
+        # save the file
         filename = secure_filename(file.filename)
         save_path = os.path.join(UPLOAD_FOLDER, filename)
         logger.info(f"Saving file: {filename}")
         file.save(save_path)
         logger.info(f"File saved successfully: {save_path}")
+        
+        # send the file to the ngrok server for processing and get the result
         result = send_post_req(save_path)
             
         
@@ -88,34 +84,24 @@ def upload_file():
             "details": str(e)
         }), 500
 
-# @localFiles.route('/files', methods=['GET'])
-# def list_files():
-#     """List uploaded files"""
-#     try:
-#         files = os.listdir(UPLOAD_FOLDER)
-#         return jsonify({
-#             "files": files,
-#             "count": len(files)
-#         })
-#     except Exception as e:
-#         logger.error(f"File list error: {str(e)}")
-#         return jsonify({"error": "Could not retrieve files"}), 500
 
-# @localFiles.route('/files/<filename>', methods=['GET'])
-# def download_file(filename):
-#     """Download a specific file"""
-#     try:
-#         return send_from_directory(
-#             UPLOAD_FOLDER,
-#             filename,
-#             as_attachment=True
-#         )
-#     except FileNotFoundError:
-#         logger.error(f"File not found: {filename}")
-#         return jsonify({"error": "File not found"}), 404
-#     except Exception as e:
-#         logger.error(f"Download error: {str(e)}")
-#         return jsonify({"error": "File download failed"}), 500
+# helper
+
+def allowed_file(filename):
+    """Check if file extension is allowed"""
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
+def send_post_req(file_path):
+    url = f'http://{ngrok_url}/uploadedFileTransaction'
+    try:
+        files = {'file': open(file_path, 'rb')}
+        response = requests.post(url, files=files)
+
+    except Exception as e :
+        logger.error(f"Error sending file: {str(e)}")
+
 
 
 
