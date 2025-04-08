@@ -57,7 +57,7 @@ export default function CarItemList({ summariesData }: CarItemListProps) {
                   </Typography>
                   <Divider />
                   {summariesData[key] && (
-                    <Typography variant='body2' color='text.secondary' mt={2}>
+                    <Typography variant='body2' color='text.secondary' mt={2} textAlign={'justify'}>
                       {summariesData[key]}
                     </Typography>
                   )}

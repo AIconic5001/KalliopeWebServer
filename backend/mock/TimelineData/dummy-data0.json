@@ -1,0 +1,12 @@
+{
+  "yearReferences": [
+    { "year": 2005, "count_of_ref": 3 },
+    { "year": 2006, "count_of_ref": 5 },
+    { "year": 2007, "count_of_ref": 7 },
+    { "year": 2008, "count_of_ref": 10 },
+    { "year": 2009, "count_of_ref": 13 },
+    { "year": 2010, "count_of_ref": 15 },
+    { "year": 2011, "count_of_ref": 18 },
+    { "year": 2012, "count_of_ref": 22 }
+  ]
+}

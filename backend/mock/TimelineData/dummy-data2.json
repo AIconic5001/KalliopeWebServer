@@ -1,0 +1,11 @@
+{
+  "yearReferences": [
+    { "year": 2018, "count_of_ref": 30 },
+    { "year": 2019, "count_of_ref": 20 },
+    { "year": 2020, "count_of_ref": 10 },
+    { "year": 2021, "count_of_ref": 200 },
+    { "year": 2022, "count_of_ref": 500 },
+    { "year": 2023, "count_of_ref": 15 },
+    { "year": 2024, "count_of_ref": 80 }
+  ]
+}

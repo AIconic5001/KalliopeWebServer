@@ -1,94 +1,107 @@
 {
-  "recommendations": [
+  "res": [
     {
-      "title": "Title1",
-      "authors": ["Author1", "Author2"],
-      "publicationDate": "2021-01-01",
-      "relatedtopics": ["Topic1", "Topic2"]
+      "abstract": "We present a reformulation of the regression and classification, which aims to validate the result of a machine learning algorithm. Our reformulation simplifies the original problem and validates the result of the machine learning algorithm using the training data. Since the validation of machine learning algorithms must always be explainable, we perform our experiments with the kNN algorithm as well as with an algorithm based on conditional probabilities, which is proposed in this work. For the evaluation of our approach, three publicly available data sets were used and three classification and two regression problems were evaluated. The presented algorithm based on conditional probabilities is also online capable and requires only a fraction of memory compared to the kNN algorithm.",
+      "authors": "Wolfgang Fuhl, Yao Rong, Thomas Motz, Michael Scheidt, Andreas Hartel, Andreas Koch, Enkelejda Kasneci",
+      "component_scores": {
+        "bm25": 1.0,
+        "coverage": 1.0,
+        "metadata": 1.0,
+        "recency": 0.571344471222833,
+        "vector": 1.0
+      },
+      "matching_text": "Abstract—We present a reformulation of the regression and\nclassiﬁcation, which aims to validate the result of a machine\nlearning algorithm. Our reformulation simpliﬁes the original\nproblem and validates the result of the machine learning al-\ngorithm using the training data. Since the validation of machine\nlearning algorithms must always be explainable, we perform our\nexperiments with the kNN algor",
+      "paper_title": "Explainable Online Validation of Machine Learning Models for Practical\n  Applications",
+      "pdf_name": "./pdfs\\arxiv_2010.00821.pdf",
+      "publication": 2020,
+      "relevance_score": 0.9785672354820706,
+      "tags": []
     },
     {
-      "title": "Title2",
-      "authors": ["Author3", "Author4"],
-      "publicationDate": "2021-01-01",
-      "relatedtopics": ["Topic3", "Topic4"]
+      "abstract": "Inverse problems are ubiquitous in nature, arising in almost all areas of science and engineering ranging from geophysics and climate science to astrophysics and biomechanics. One of the central challenges in solving inverse problems is tackling their ill-posed nature. Bayesian inference provides a principled approach for overcoming this by formulating the inverse problem into a statistical framework. However, it is challenging to apply when inferring fields that have discrete representations of large dimensions (the so-called \"curse of dimensionality\") and/or when prior information is available only in the form of previously acquired solutions. In this work, we present a novel method for efficient and accurate Bayesian inversion using deep generative models. Specifically, we demonstrate how using the approximate distribution learned by a Generative Adversarial Network (GAN) as a prior in a Bayesian update and reformulating the resulting inference problem in the low-dimensional latent space of the GAN, enables the efficient solution of large-scale Bayesian inverse problems. Our statistical framework preserves the underlying physics and is demonstrated to yield accurate results with reliable uncertainty estimates, even in the absence of information about underlying noise model, which is a significant challenge with many existing methods. We demonstrate the effectiveness of proposed method on a variety of inverse problems which include both synthetic as well as experimentally observed data.",
+      "authors": "Dhruv V Patel, Deep Ray, Assad A Oberai",
+      "component_scores": {
+        "bm25": 1.0,
+        "coverage": 1.0,
+        "metadata": 0.6090667214649668,
+        "recency": 0.6408382546639746,
+        "vector": 1.0
+      },
+      "matching_text": "Machine Learning, Vol. 70 of Proceedings of Machine Learning Research, PMLR, Inter-\nnational Convention Centre, Sydney, Australia, 2017, pp. 214–223.\nURL http://proceedings.mlr.press/v70/arjovsky17a.html\n35",
+      "paper_title": "Solution of Physics-based Bayesian Inverse Problems with Deep Generative\n  Priors",
+      "pdf_name": "./pdfs\\arxiv_2107.02926.pdf",
+      "publication": 2021,
+      "relevance_score": 0.9429485968006244,
+      "tags": []
     },
     {
-      "title": "Title3",
-      "authors": ["Author5", "Author6"],
-      "publicationDate": "2021-01-01",
-      "relatedtopics": ["Topic5", "Topic6"]
+      "abstract": "This paper proposes a simple yet powerful ensemble classifier, called Random Hyperboxes, constructed from individual hyperbox-based classifiers trained on the random subsets of sample and feature spaces of the training set. We also show a generalization error bound of the proposed classifier based on the strength of the individual hyperbox-based classifiers as well as the correlation among them. The effectiveness of the proposed classifier is analyzed using a carefully selected illustrative example and compared empirically with other popular single and ensemble classifiers via 20 datasets using statistical testing methods. The experimental results confirmed that our proposed method outperformed other fuzzy min-max neural networks, popular learning algorithms, and is competitive with other ensemble methods. Finally, we identify the existing issues related to the generalization error bounds of the real datasets and inform the potential research directions.",
+      "authors": "Thanh Tung Khuat, Bogdan Gabrys",
+      "component_scores": {
+        "bm25": 1.0,
+        "coverage": 1.0,
+        "metadata": 0.7602835966980925,
+        "recency": 0.571344471222833,
+        "vector": 0.9301121830940247
+      },
+      "matching_text": "[45] D. Dua and C. Graff, “UCI machine learning repository,” 2019.\n[Online]. Available: http://archive.ics.uci.edu/ml\n[46] F. Pedregosa, G. Varoquaux, A. Gramfort, V . Michel, B. Thirion,\nO. Grisel, M. Blondel, P. Prettenhofer, R. Weiss, V . Dubourg, J. Vander-\nplas, A. Passos, D. Cournapeau, M. Brucher, M. Perrot, and E. Duch-\nesnay, “Scikit-learn: Machine learning in python,” Journal of Machine\n",
+      "paper_title": "Random Hyperboxes",
+      "pdf_name": "./pdfs\\arxiv_2006.00695.pdf",
+      "publication": 2020,
+      "relevance_score": 0.9336292441196228,
+      "tags": []
     },
     {
-      "title": "Title4",
-      "authors": ["Author7", "Author8"],
-      "publicationDate": "2021-01-01",
-      "relatedtopics": ["Topic7", "Topic8"]
+      "abstract": "Background: Predictive modeling is a key component of solutions to many healthcare problems. Among all predictive modeling approaches, machine learning methods often achieve the highest prediction accuracy, but suffer from a long-standing open problem precluding their widespread use in healthcare. Most machine learning models give no explanation for their prediction results, whereas interpretability is essential for a predictive model to be adopted in typical healthcare settings. Methods: This paper presents the first complete method for automatically explaining results for any machine learning predictive model without degrading accuracy. We did a computer coding implementation of the method. Using the electronic medical record data set from the Practice Fusion diabetes classification competition containing patient records from all 50 states in the United States, we demonstrated the method on predicting type 2 diabetes diagnosis within the next year. Results: For the champion machine learning model of the competition, our method explained prediction results for 87.4% of patients who were correctly predicted by the model to have type 2 diabetes diagnosis within the next year. Conclusions: Our demonstration showed the feasibility of automatically explaining results for any machine learning predictive model without degrading accuracy.",
+      "authors": "Gang Luo",
+      "component_scores": {
+        "bm25": 0.8344172066900656,
+        "coverage": 1.0,
+        "metadata": 0.9769970189752103,
+        "recency": 0.45156719799339656,
+        "vector": 0.9830308556556702
+      },
+      "matching_text": "4 \n \nmachine learning model and arbitrarily complex. The second model is a rule-based associative classifier [19-22] used solely \nfor explaining the first model’s results without being concerned about its own accuracy. \n \nAssociative classifier \nThe associative classifier can handle both categorical and continuous features, a.k.a. input or independent variables. Before \nbeing used, continuous feat",
+      "paper_title": "Automatically Explaining Machine Learning Prediction Results: A\n  Demonstration on Type 2 Diabetes Risk Prediction",
+      "pdf_name": "./pdfs\\arxiv_1812.02852.pdf",
+      "publication": 2018,
+      "relevance_score": 0.9155124924218405,
+      "tags": []
     },
     {
-      "title": "Title5",
-      "authors": ["Author9", "Author10"],
-      "publicationDate": "2021-01-01",
-      "relatedtopics": ["Topic9", "Topic10"]
+      "abstract": "Sampling from distributions to find the one with the largest mean arises in a broad range of applications, and it can be mathematically modeled as a multi-armed bandit problem in which each distribution is associated with an arm. This paper studies the sample complexity of identifying the best arm (largest mean) in a multi-armed bandit problem. Motivated by large-scale applications, we are especially interested in identifying situations where the total number of samples that are necessary and sufficient to find the best arm scale linearly with the number of arms. We present a single-parameter multi-armed bandit model that spans the range from linear to superlinear sample complexity. We also give a new algorithm for best arm identification, called PRISM, with linear sample complexity for a wide range of mean distributions. The algorithm, like most exploration procedures for multi-armed bandits, is adaptive in the sense that the next arms to sample are selected based on previous samples. We compare the sample complexity of adaptive procedures with simpler non-adaptive procedures using new lower bounds. For many problem instances, the increased sample complexity required by non-adaptive procedures is a polynomial factor of the number of arms.",
+      "authors": "Kevin Jamieson, Matthew Malloy, Robert Nowak, Sebastien Bubeck",
+      "component_scores": {
+        "bm25": 1.0,
+        "coverage": 1.0,
+        "metadata": 0.6650875923983584,
+        "recency": 0.23870316201371986,
+        "vector": 0.9480012059211731
+      },
+      "matching_text": "of the 30th International Conference on Machine Learning , June 2013.\n7",
+      "paper_title": "On Finding the Largest Mean Among Many",
+      "pdf_name": "./pdfs\\arxiv_1306.3917.pdf",
+      "publication": 2013,
+      "relevance_score": 0.9128442910378027,
+      "tags": []
     },
     {
-      "title": "Title6",
-      "authors": ["Author11", "Author12"],
-      "publicationDate": "2021-01-01",
-      "relatedtopics": ["Topic11", "Topic12"]
-    },
-    {
-      "title": "Title7",
-      "authors": ["Author13", "Author14"],
-      "publicationDate": "2021-01-01",
-      "relatedtopics": ["Topic13", "Topic14"]
-    },
-    {
-      "title": "Title8",
-      "authors": ["Author15", "Author16"],
-      "publicationDate": "2021-01-01",
-      "relatedtopics": ["Topic15", "Topic16"]
-    },
-    {
-      "title": "Title9",
-      "authors": ["Author17", "Author18"],
-      "publicationDate": "2021-01-01",
-      "relatedtopics": ["Topic17", "Topic18"]
-    },
-    {
-      "title": "Title10",
-      "authors": ["Author19", "Author20"],
-      "publicationDate": "2021-01-01",
-      "relatedtopics": ["Topic19", "Topic20"]
-    },
-    {
-      "title": "Title11",
-      "authors": ["Author21", "Author22"],
-      "publicationDate": "2021-01-01",
-      "relatedtopics": ["Topic21", "Topic22"]
-    },
-    {
-      "title": "Title12",
-      "authors": ["Author23", "Author24"],
-      "publicationDate": "2021-01-01",
-      "relatedtopics": ["Topic23", "Topic24"]
-    },
-    {
-      "title": "Title13",
-      "authors": ["Author25", "Author26"],
-      "publicationDate": "2021-01-01",
-      "relatedtopics": ["Topic25", "Topic26"]
-    },
-    {
-      "title": "Title14",
-      "authors": ["Author27", "Author28"],
-      "publicationDate": "2021-01-01",
-      "relatedtopics": ["Topic27", "Topic28"]
-    },
-    {
-      "title": "Title15",
-      "authors": ["Author29", "Author30"],
-      "publicationDate": "2021-01-01",
-      "relatedtopics": ["Topic29", "Topic30"]
+      "abstract": "We propose a simple generalization of standard and empirically successful decision tree learning algorithms such as ID3, C4.5, and CART. These algorithms, which have been central to machine learning for decades, are greedy in nature: they grow a decision tree by iteratively splitting on the best attribute. Our algorithm, Top-$k$, considers the $k$ best attributes as possible splits instead of just the single best attribute. We demonstrate, theoretically and empirically, the power of this simple generalization. We first prove a {\\sl greediness hierarchy theorem} showing that for every $k \\in \\mathbb{N}$, Top-$(k+1)$ can be dramatically more powerful than Top-$k$: there are data distributions for which the former achieves accuracy $1-\\varepsilon$, whereas the latter only achieves accuracy $\\frac1{2}+\\varepsilon$. We then show, through extensive experiments, that Top-$k$ outperforms the two main approaches to decision tree learning: classic greedy algorithms and more recent \"optimal decision tree\" algorithms. On one hand, Top-$k$ consistently enjoys significant accuracy gains over greedy algorithms across a wide range of benchmarks. On the other hand, Top-$k$ is markedly more scalable than optimal decision tree algorithms and is able to handle dataset and feature set sizes that remain far beyond the reach of these algorithms.",
+      "authors": "Guy Blanc, Jane Lange, Chirag Pabbaraju, Colin Sullivan, Li-Yang Tan, Mo Tiwari",
+      "component_scores": {
+        "bm25": 0.8279502487910683,
+        "coverage": 1.0,
+        "metadata": 0.867111159996931,
+        "recency": 0.8025206618801669,
+        "vector": 0.9472208619117737
+      },
+      "matching_text": "Machine Learning (ICML), 2020.\n[BLT20b] Guy Blanc, Jane Lange, and Li-Yang Tan. Top-down induction of decision trees:\nrigorous guarantees and inherent limitations. InProceedings of the 11th Innovations in\nTheoretical Computer Science Conference (ITCS), volume 151, pages 1–44, 2020.\n[Bre01a] Leo Breiman. Random forests.Machine learning, 45(1):5–32, 2001.\n[Bre01b] Leo Breiman. Statistical Modeling: ",
+      "paper_title": "Harnessing the Power of Choices in Decision Tree Learning",
+      "pdf_name": "./pdfs\\arxiv_2310.01551.pdf",
+      "publication": 2023,
+      "relevance_score": 0.9093885001859474,
+      "tags": []
     }
-  ]
+  ],
+  "success": true
 }

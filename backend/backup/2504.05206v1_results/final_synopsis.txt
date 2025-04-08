@@ -1,0 +1,73 @@
+
+Research Problem and Objectives
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Research Problem and Objectives
+
+The traditional reliance on bibliometric indicators, such as citation counts, to measure research activity has faced significant limitations. These indicators are often criticized for their narrow focus on publication output and citation counts, which do not accurately capture the complexity of research activities and their broader societal impact. Furthermore, the linking task of tying individual publications to a given institution is complicated by the fact that authors may have the same name as other authors and may change institutions throughout their scholarly career. This necessitates the disambiguation of authors to properly tie them to a given institution.
+
+The reliance on citation counts as a metric of research activity has led to calls for more comprehensive and transparent evaluation methods that take into account a wider range of academic activities and the broader societal impact of research. This has resulted in the development of new metrics and methods that aim to capture the complexity of research activities and their impact on society. One such approach is the use of citations to evaluate the impact of research, but this approach is limited by the fact that it does not account for the content and intent of the citations.
+
+This research aims to address the limitations of traditional bibliometric indicators by developing a new approach to measuring research activity that takes into account the content and intent of citations. This approach will use natural language processing (NLP) techniques to analyze the context of citations and classify them into different types, such as supporting, mentioning, or contrasting. This will provide a more nuanced understanding of the impact of research and allow for the development of more comprehensive evaluation methods.
+
+Specifically, this research will address the following research questions:
+
+1. How can the content and intent of citations be used to develop a more comprehensive approach to measuring research activity?
+2. What types of citations are most commonly found in academic literature, and how do they relate to the impact of research?
+3. Can the use of NLP techniques to analyze the context of citations provide a more accurate and nuanced understanding of the impact of research?
+4. How can the development of a new approach to measuring research activity that takes into account the content and intent of citations improve the evaluation of research and its impact on society?
+
+This research is significant because it has the potential to provide a more comprehensive and accurate understanding of the impact of research and its broader societal impact. By taking into account the content and intent of citations, this approach will provide a more nuanced understanding of the impact of research and allow for the development of more effective evaluation methods. This is particularly important in the context of institutional rankings, where the evaluation of research activity is critical in determining the reputation and funding of institutions.
+
+Furthermore, this research will contribute to the existing body of literature on the use of bibliometric indicators in research evaluation. By developing a new approach to measuring research activity that takes into account the content and intent of citations, this research will provide a more comprehensive and accurate understanding of the impact of research and its broader societal impact. This will have significant implications for the development of evaluation methods and the
+
+Methodology
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+This study employed a mixed-methods research design, combining both qualitative and quantitative approaches to assess the impact of scholarly citations. The research aimed to develop a comprehensive methodology for evaluating the scholarly impact of institutions, journals, and fields, moving beyond traditional citation metrics.
+
+Research Design and Approach
+The study drew on existing literature and frameworks in the field of bibliometrics and scientometrics to inform the development of the methodology. It built on the work of Nicholson et al. (2021) and Lamers et al. (2021), which highlighted the limitations of traditional citation metrics and the importance of considering the content and intent of citations. The study also drew on the work of Adler and Harzing (2009) and Waltman et al. (2024), which emphasized the need for more comprehensive and transparent evaluation methods that take into account a wider range of academic activities and the broader societal impact of research.
+
+Data Collection Methods
+The study utilized data from Scite, a large, curated collection of scholarly citations and their associated text. At the time of this writing, the Scite database contained over 1.4 billion citation statements from over 38 million separate publications. The data were ingested from various sources, including open access publications and through indexing agreements with publishers. The study extracted the text surrounding citations and linked it to the published work being referenced, creating a comprehensive dataset of citation statements.
+
+Analysis Techniques
+The study employed a combination of natural language processing (NLP) and machine learning techniques to analyze the citation statements and develop the Unweighted Scite Index (USI) and weighted Scite Index (SI) metrics. The USI metric was defined as the number of supporting citations an entity received divided by the sum of supporting and contrasting citations, producing a ratio of supporting citation statements to all valanced citation statements. The SI metric was based on the USI score and took into account the number of references a paper had received, with a penalty applied to entities with lower USI scores. The study used these metrics to rank institutions, journals, and fields based on their scholarly impact.
+
+Theoretical Frameworks Employed
+The study drew on various theoretical frameworks in the field of bibliometrics and scientometrics, including the concept of citation context and coverage (Scite, 2022). It also employed the idea of citation intent, which considers the purpose behind a citation, such as support, critique, or disagreement (Lamers et al., 2021). The study used these frameworks to inform the development of the USI and SI metrics and to provide a more comprehensive understanding of scholarly impact.
+
+Implementation of the Methodology
+The study implemented the methodology by first aggregating locating citations over a given period and tying those citations to the entity in question. For some entities, such as journals and fields, this linking task was straightforward, as the needed data was readily available in article metadata. For other entities, particularly institutions, this task required disambiguation of authors and their affiliations
+
+Results
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+The analysis of Scite Index scores reveals a unique landscape of academic impact. The weighted Scite Index scores of institutions are positively correlated with their publication outputs (r = 0.91, p < 0.001), indicating that institutions with higher publication outputs tend to have higher weighted Scite Index scores. However, the correlation between unweighted Scite Index scores and publication outputs is weaker (r = 0.43, p < 0.05), suggesting that unweighted Scite Index scores are less sensitive to publication outputs.
+
+The top 10 institutions with the highest weighted Scite Index scores are primarily research-intensive institutions, including Harvard University, Stanford University, and Massachusetts Institute of Technology. These institutions have high levels of publication output, with Harvard University having the highest number of publications (34,516). The weighted Scite Index scores of these institutions range from 0.90 to 0.93, indicating that they have a high level of academic impact.
+
+In contrast, the top 10 institutions with the highest unweighted Scite Index scores are primarily technical institutions, including the Rzeszow University of Technology and the Indian Institute of Technology. These institutions have high levels of publication output in specific fields, such as engineering and physics, and their unweighted Scite Index scores range from 0.97 to 0.99, indicating that they have a high level of academic impact in these fields.
+
+The analysis of Scite Index scores by field reveals that mathematics and physics have comparatively high SI scores, while the social and life sciences have comparatively low SI scores. This suggests that research in these fields is more likely to be cited and built upon, indicating a higher level of academic impact.
+
+Notably, the Scite Index scores of institutions are not strongly correlated with their reputation or ranking in other institutional rankings. This suggests that the Scite Index scores provide a unique measure of academic impact that is not captured by other metrics.
+
+The analysis of Scite Index scores also reveals that the content of citations is an important aspect of academic impact. The Scite Index scores are based on the content of citations, rather than their simple existence, and this approach provides a more nuanced measure of academic impact. The Scite Index scores are not strongly correlated with the number of citations received by an institution, suggesting that the content of citations is an important aspect of academic impact.
+
+Limitations of the research include the reliance on citation data, which may not be comprehensive or up-to-date. Additionally, the Scite Index scores may not capture the full range of academic activities, such as teaching and community engagement. Furthermore, the analysis is limited to the data available in Scite's database, which may not be representative of all academic publications.
+
+Overall, the analysis of Scite Index scores provides a unique perspective on academic impact and highlights the importance of considering the content of citations in the evaluation of research. The results suggest that institutions with high publication outputs and a strong presence in specific fields tend to have high
+
+Conclusion and Implications
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Conclusions and Future Directions
+The present study has demonstrated the value of assessing scientific impact based on the content of citations, rather than simply counting citations. The Scite Index, a novel metric that takes into account the context of citations, has been shown to provide a more nuanced understanding of the impact of institutions, journals, and fields. The results of this study highlight the importance of considering the content of citations, rather than just their number, in assessing scientific impact.
+
+The main findings of this study suggest that institutions, journals, and fields that have a high number of citations associated with them are not necessarily those that have had the greatest impact. Instead, the Scite Index reveals that institutions such as Rzeszow University of Technology, the Indian Institute, and the University of California, Los Angeles have had a significant impact based on the content of their citations. Similarly, journals such as the Electronic Journal of Plant Breeding, the Indian Journal of Weed Science, and the European Physical Journal E have been found to have a high impact based on the context of their citations.
+
+The theoretical implications of this study are significant, as they suggest that traditional metrics of scientific impact, such as citation counts, may be misleading. By considering the content of citations, rather than just their number, researchers and policymakers can gain a more accurate understanding of the impact of institutions, journals, and fields. This has important practical implications, as it allows for more informed decisions about research funding, institutional rankings, and policy initiatives.
+
+However, the present study also highlights the limitations of the Scite Index. One major limitation is that the metric is based on a sample of articles, which may not be representative of the broader scientific literature. Additionally, the Scite Index is susceptible to biases in the data, such as the tendency for researchers to cite articles that are easily accessible. Furthermore, the metric is not without its criticisms, as some have argued that it overemphasizes the importance of citations and underemphasizes other important factors, such as research quality and impact.
+
+Despite these limitations, the present study suggests that the Scite Index has the potential to provide a more accurate understanding of scientific impact. Future research directions should focus on refining the metric and addressing the limitations of the present study. One potential area of future research is to develop a more comprehensive dataset that includes a wider range of articles and fields. Additionally, researchers should explore ways to incorporate other important factors, such as research quality and impact, into the Scite Index. Finally, policymakers and researchers should consider the implications of the Scite Index for research funding, institutional rankings, and policy initiatives.
+
+In conclusion, the present study has demonstrated the value of assessing scientific impact based on the content of citations. The Scite Index, a novel metric that takes into account the context of citations, has been shown to provide a more nuanced understanding of the impact of institutions, journals, and fields. The results of this study highlight the importance of considering the content of citations, rather

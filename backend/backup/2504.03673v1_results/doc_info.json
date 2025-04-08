@@ -1,0 +1,10 @@
+[
+  {
+    "pdf_name": "./data/input/2504.03673v1.pdf",
+    "paper_title": "Strong ionospheric activity at the MWA site associated with plasma\n  bubble measured by GNSS",
+    "abstract": "The Earth's ionosphere refracts radio signals, shifting the apparent position of radio sources. Wide-field measurements with a radio interferometer can measure the ionospheric distortion. The Murchison Widefield Array (MWA) has the ability to capture ionospheric structures that are smaller than 100 km in extent. We report unusually strong ionospheric activity in MWA data during a magnetic storm on 2023 December 1. The duct-like structure (roughly 50 km $\\times$ $>$100 km) passes through the MWA field-of-view (FOV) with a velocity of ~ 100 m/s. The offsets of the apparent position of the radio source are more than 1 degree in the MWA observation data at around 180 MHz. By comparing the Total Electron Content (TEC) data obtained from the GNSS receiver network, we have found that the TEC fluctuations represented by a high Rate of TEC change index (ROTI) coincided with the strong ionospheric activity observed by the MWA. This result suggests that unusual ionospheric signatures detected by the MWA could be caused by plasma bubbles extending across Western Australia during a magnetic storm.",
+    "authors": "Shintaro Yoshiura, Yuichi Otsuka, Cathryn M. Trott, Dev Null, Nozomu Nishitani, Keitaro Takahashi, Michi Nishioka, Septi Perwitasari, Atsuki Shinbori",
+    "publication": 2025,
+    "tags": []
+  }
+]

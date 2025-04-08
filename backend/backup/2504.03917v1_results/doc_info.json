@@ -1,0 +1,10 @@
+[
+  {
+    "pdf_name": "./data/input/2504.03917v1.pdf",
+    "paper_title": "Neutron stars in the theory of gravity with nonminimal derivative\n  coupling and realistic equations of state",
+    "abstract": "We numerically construct compact stars in the scalar-tensor theory of gravity with non-minimal derivative coupling of a scalar field to the curvature and nonzero cosmological constant. There are two free parameters in this model of gravity: the non-minimal derivative coupling parameter $\\ell$ and the cosmological constant parameter $\\xi$. We study the relationship between the model parameters and characteristic of the neutron star, what allowed us to limit the permissible range of $\\xi$ and $\\ell$. In particular, in the case $\\xi=-1$ the external geometry of the neutron star coincides with the Schwarzschild anti-de Sitter geometry, while the internal geometry of the star differs from the case of the standard gravity theory. Plenty realistic equations of state of neutron star matter were considered. In general the neutron star model in the theory of gravity with a non-minimal derivative coupling does not contradict astronomical data and is viable.",
+    "authors": "P. E. Kashargin, A. A. Lebedev, S. V. Sushkov",
+    "publication": 2025,
+    "tags": []
+  }
+]

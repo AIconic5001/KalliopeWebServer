@@ -1,17 +1,14 @@
 import ReplyIcon from '@mui/icons-material/Reply';
 import { Button, Stack } from '@mui/material';
 import Grid from '@mui/material/Grid2';
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { GridDataType, SummariesDataType } from '../../@types/SynopsisData/grid.type';
-import DataGrid from '../../components/DataGrid/DataGrid';
+import { useEffect, useState } from 'react';
+import { GridDataType, RecommendationListProps, SummariesDataType } from '../../@types/SynopsisData/grid.type';
+import LoadingSuspense from '../../components/LoadingSuspense';
 import ButtonGrid from './ButtonGrid/ButtonGrid';
 import CardItem from './CardItemList/CardItemList';
-import { useGetSummaries } from './handleFilesApi';
+import { useGetRecommendations, useGetSummaries } from './handleFilesApi';
 import './styles.scss';
-import { useNavigate, useParams } from 'react-router';
-import LoadingSuspense from '../../components/LoadingSuspense';
-import { io, Socket } from 'socket.io-client';
-
+import TitleGrid from './TitleGrid/TitleGrid';
 // Main component
 function SynopsisPage() {
   // const [status, setStatus] = useState('loading');
@@ -21,12 +18,14 @@ function SynopsisPage() {
     Results: '',
     'Research Problem and Objectives': ''
   });
+  const [recommendations, setRecommendations] = useState<RecommendationListProps[]>([]);
 
   // Use the custom hook
   // const { socket, isConnected, files, status } = useSocket('http://localhost:8000');
 
   // Get summaries data
   const res = useGetSummaries();
+  const recs = useGetRecommendations();
 
   // Update data when API response changes
   useEffect(() => {
@@ -34,6 +33,11 @@ function SynopsisPage() {
       setData(res.data);
     }
   }, [res]);
+
+  useEffect(() => {
+    const recommendationList = recs?.data['res'].map((rec: GridDataType) => rec);
+    setRecommendations(recommendationList);
+  }, [recs]);
 
   const row: GridDataType = {
     title: 'Demo Paper',
@@ -60,8 +64,10 @@ function SynopsisPage() {
                 </Grid>
               </Grid>
             </div>
-            <DataGrid row={row} />
-            <div> </div>
+            {/* <DataGrid row={row} children={<RecommendationList recommendations={tempRecommendations} />} /> */}
+            <TitleGrid data={row} recommendations={recommendations} />
+
+            <div></div>
           </div>
           <CardItem summariesData={data} />
 

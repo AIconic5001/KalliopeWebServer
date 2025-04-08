@@ -1,0 +1,10 @@
+[
+  {
+    "pdf_name": "./data/input/2504.05251v1.pdf",
+    "paper_title": "Rationalizing dynamic choices",
+    "abstract": "An analyst observes an agent take a sequence of actions. The analyst does not have access to the agent's information and ponders whether the observed actions could be justified through a rational Bayesian model with a known utility function. We show that the observed actions cannot be justified if and only if there is a single deviation argument that leaves the agent better off, regardless of the information. The result is then extended to allow for distributions over possible action sequences. Four applications are presented: monotonicity of rationalization with risk aversion, a potential rejection of the Bayesian model with observable data, feasible outcomes in dynamic information design, and partial identification of preferences without assumptions on information.",
+    "authors": "Henrique de Oliveira, Rohit Lamba",
+    "publication": 2025,
+    "tags": []
+  }
+]

@@ -14,10 +14,10 @@ export default defineConfig({
     // origin: "http://0.0.0.0:8080",
     proxy: {
       "/api": {
-        target: "http://18.220.21.201",
-        changeOrigin: true,
-        secure: false,
-        // target: "http://localhost:5000",
+        // target: "http://18.220.21.201",
+        // changeOrigin: true,
+        // secure: false,
+        target: "http://localhost:5000",
       },
     },
   },
