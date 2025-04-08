@@ -1,5 +1,4 @@
 import axios from 'axios';
-import theme from '../assets/theme';
 const url = '/api/recommendations';
 const recommendationService = {
   sendQuery(query: string) {
