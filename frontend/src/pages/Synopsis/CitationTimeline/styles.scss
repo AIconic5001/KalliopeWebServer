@@ -1,4 +1,4 @@
-.container {
+.chart-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,4 +7,5 @@
   padding: 0 24px;
   margin: 24px auto;
   height: fit-content;
+  overflow: hidden;
 }

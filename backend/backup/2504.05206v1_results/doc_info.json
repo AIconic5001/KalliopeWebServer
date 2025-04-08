@@ -1,0 +1,10 @@
+[
+  {
+    "pdf_name": "./data/input/2504.05206v1.pdf",
+    "paper_title": "Content-aware rankings: a new approach to rankings in scholarship",
+    "abstract": "Entity rankings (e.g., institutions, journals) are a core component of academia and related industries. Existing approaches to institutional rankings have relied on a variety of data sources, and approaches to computing outcomes, but remain controversial. One limitation of existing approaches is reliance on scholarly output (e.g., number of publications associated with a given institution during a time period). We propose a new approach to rankings - one that relies not on scholarly output, but rather on the type of citations received (an implementation of the Scite Index). We describe how the necessary data can be gathered, as well as how relevant metrics are computed. To demonstrate the utility of our approach, we present rankings of fields, journals, and institutions, and discuss the various ways Scite's data can be deployed in the context of rankings. Implications, limitations, and future directions are discussed.",
+    "authors": "Sean C. Rife, Joshua M. Nicholson, Beatriz Bosques, Domenic Rosati, Ashish Uppala, Igor A. Osipov",
+    "publication": 2025,
+    "tags": []
+  }
+]

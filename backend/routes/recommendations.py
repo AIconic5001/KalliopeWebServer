@@ -19,13 +19,9 @@ logger.info(f"Upload directory configured at: {MOCK_FOLDER}")
 
 
 @recommendations.route('/', methods=['GET'])
-def recommendationList():
-    """Get all recommendations"""
-    # TODO: Change to a dynamic file path or web socket
-    file_path = 'recommendations_mock.json'
-    time.sleep(2) # Simulate a long process
-    
-    return send_from_directory(MOCK_FOLDER, file_path), 200
+def index():
+    """Index route for recommendations"""
+    return jsonify({"message": "Recommendations index"}), 200
 
 
 @recommendations.route('/query', methods=['POST'])
@@ -42,16 +38,22 @@ def query():
 @recommendations.route('/getRecommendations', methods=['GET'])
 def get_recommendations():
     """Get recommendations"""
+    tracker = 0
     result = get_recommendations_result()
     try:
-        while (result is None):
+        while (result is None and tracker < 1):
+            tracker += 1
             logger.info("Waiting for recommendations result...")
-            time.sleep(5)
+            time.sleep(60)
             result = get_recommendations_result()  
         logger.info("Recommendations result received")
     except Exception as e:
         logger.error(f"Error fetching recommendations result: {e}")
-        return jsonify({"error": "Failed to fetch recommendations result"}), 500
+        file_path = os.path.join(MOCK_FOLDER, 'mock_recommendations.json')
+        if os.path.exists(file_path):
+            logger.info("Using mock recommendations")
+            with open(file_path, 'r') as f:
+                result = f.read()
     return jsonify(result), 200
 
 

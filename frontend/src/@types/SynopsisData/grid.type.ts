@@ -16,3 +16,17 @@ export interface RecommendationDataType {
   'Related Papers': Array<GridDataType>;
   'Potential Fields': Array<string>;
 }
+
+export interface RecommendationListProps {
+  abstract: string;
+  authors: string;
+  paper_title: string;
+  publication: string;
+}
+
+export interface DocumentInfoType {
+  title: string;
+  authors: string;
+  publication: string;
+  abstract: string;
+}

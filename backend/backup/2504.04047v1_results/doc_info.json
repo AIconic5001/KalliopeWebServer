@@ -1,0 +1,10 @@
+[
+  {
+    "pdf_name": "./data/input/2504.04047v1.pdf",
+    "paper_title": "The Labor Market Incidence of New Technologies",
+    "abstract": "This paper develops a general framework for evaluating the incidence of labor market shocks, focusing particularly on automation and artificial intelligence. Unequal labor market shocks are shared among workers across occupations depending on their substitutability. Central to our theory is the concept of distance-dependent elasticity of substitution (DIDES), where substitutability between occupations declines with their distance in skill space. Our analysis reveals that automation and AI cluster in skill-adjacent occupations, generating limited employment shifts but significant wage disparities. Furthermore, the dynamic model demonstrates that limited mobility persists both during the transition and in the long run, limiting the labor market's capacity to absorb rapid technological progress.",
+    "authors": "Tianyu Fan",
+    "publication": 2025,
+    "tags": []
+  }
+]

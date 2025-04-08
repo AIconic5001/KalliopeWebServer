@@ -7,15 +7,17 @@ import { useCallback, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useSendQuery } from '../../../Recommendations/handleRecommendationApi';
 import './styles.scss';
+import { useQueryContext } from '../../../../context/QueryContext';
 
 function SearchBox() {
   let navigate = useNavigate();
+  const { setQuery } = useQueryContext();
   const { mutate: sendQuery } = useSendQuery();
   const [searchQuery, setSearchQuery] = useState('');
   const debouncedFetchData = useCallback(
     debounce((value: string) => {
       setSearchQuery(value);
-    }, 50),
+    }, 10),
     []
   );
 
@@ -25,9 +27,15 @@ function SearchBox() {
     debouncedFetchData(inputText);
   }
 
-  function handleSearchClick() {
-    sendQuery(searchQuery);
-    navigate('/recommendations');
+  function handleSearchClick(e: any) {
+    e.preventDefault();
+    setQuery(searchQuery);
+    setTimeout(() => {
+      sendQuery(searchQuery);
+    }, 100);
+    setTimeout(() => {
+      navigate('/recommendations');
+    }, 200);
   }
   return (
     <div className='search-box'>
@@ -53,11 +61,21 @@ function SearchBox() {
                       <SearchIcon sx={{ color: 'var(--primary)', fontSize: '28px' }} />
                     </InputAdornment>
                   }
+                  multiline
+                  maxRows={2}
+                  minRows={1}
                   value={searchQuery}
                   onChange={handleQueryChange}
                   placeholder='Tell us what you are researching'
                   fullWidth
-                  sx={{ color: 'var(--primary)', lineHeight: '1.5', fontSize: '20px' }}
+                  sx={{
+                    padding: 1,
+                    color: 'var(--primary)',
+                    lineHeight: '1.5',
+                    fontSize: '20px',
+                    wordWrap: 'break-word',
+                    overflowWrap: 'break-word'
+                  }}
                 />
               </Grid>
               <IconButton

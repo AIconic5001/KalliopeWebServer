@@ -1,12 +1,21 @@
 import { Box, Card, CardContent, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid2';
-import { GridDataType } from '../../../@types/SynopsisData/grid.type';
+import { RecommendationListProps } from '../../../@types/SynopsisData/grid.type';
 import NameTag from '../../../components/NameTag/NameTag';
 import './styles.scss';
 
-function ItemCard({ title, authors, publicationDate, relatedtopics }: GridDataType) {
+function ItemCard({ paper_title, authors, publication, abstract }: RecommendationListProps) {
+  function authorsFullList(authors: string) {
+    const authorsList = authors.split(',').map((author: string, index: number) => author.trim());
+    return authorsList;
+  }
+
+  function authorsFullListLength(authors: string) {
+    const authorsList = authors.split(',').map((author: string, index: number) => author.trim());
+    return authorsList.length;
+  }
   return (
-    <div key={title}>
+    <div key={paper_title}>
       <Box
         sx={{
           width: '100%',
@@ -23,7 +32,7 @@ function ItemCard({ title, authors, publicationDate, relatedtopics }: GridDataTy
               </Grid>
               <Grid size={10} direction='row' justifyContent={'flex-start'}>
                 <Typography variant='h4' component='div' color='text.secondary'>
-                  {`${title}`}
+                  {`${paper_title}`}
                 </Typography>
               </Grid>
             </Grid>
@@ -34,13 +43,13 @@ function ItemCard({ title, authors, publicationDate, relatedtopics }: GridDataTy
                 </Typography>
               </Grid>
               <Grid container size={10} direction='row' justifyContent={'flex-start'} textAlign={'center'} mt={1}>
-                {authors.map((author: string) => (
+                {authorsFullList(authors).map((author: string) => (
                   <NameTag data={author} key={author} />
                 ))}
               </Grid>
             </Grid>
             <Grid container spacing={1} mt={1}>
-              <Grid size={2}>
+              <Grid size={1}>
                 <Typography
                   variant='h5'
                   component='div'
@@ -48,7 +57,7 @@ function ItemCard({ title, authors, publicationDate, relatedtopics }: GridDataTy
                   fontSize={'23px'}
                   justifyContent={'flex-start'}
                 >
-                  {`Publication Date:`}
+                  {`Publication:`}
                 </Typography>
               </Grid>
               <Grid size={10} direction='row' justifyContent={'flex-start'}>
@@ -59,7 +68,7 @@ function ItemCard({ title, authors, publicationDate, relatedtopics }: GridDataTy
                   justifyContent={'flex-start'}
                   fontSize={'23px'}
                 >
-                  {`${new Date(publicationDate).toDateString()}`}
+                  {`${publication}`}
                 </Typography>
               </Grid>
             </Grid>
@@ -67,13 +76,13 @@ function ItemCard({ title, authors, publicationDate, relatedtopics }: GridDataTy
             <Grid container spacing={1}>
               <Grid size={1}>
                 <Typography variant='h5' component='div' color='text.primary' mt={1}>
-                  {`Topics:`}
+                  {`Abstract:`}
                 </Typography>
               </Grid>
-              <Grid container size={10} direction='row' justifyContent={'flex-start'} textAlign={'center'} mt={1}>
-                {relatedtopics.map((topic: string) => (
-                  <NameTag data={topic} key={topic} />
-                ))}
+              <Grid container size={10} direction='row' justifyContent={'flex-start'} textAlign={'left'} mt={1}>
+                <Typography variant='body2' component='div' color='text.secondary'>
+                  {`${abstract}`}
+                </Typography>
               </Grid>
             </Grid>
           </CardContent>

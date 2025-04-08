@@ -2,35 +2,58 @@ import ReplyIcon from '@mui/icons-material/Reply';
 import { Button, Stack } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import { useEffect, useState } from 'react';
-import { GridDataType, SummariesDataType } from '../../@types/SynopsisData/grid.type';
-import { mockData } from '../../assets/mock/mockRecommendationList';
-import DataGrid from '../../components/DataGrid/DataGrid';
+import {
+  DocumentInfoType,
+  GridDataType,
+  RecommendationListProps,
+  SummariesDataType
+} from '../../@types/SynopsisData/grid.type';
 import LoadingSuspense from '../../components/LoadingSuspense';
-import RecommendationList from '../../components/RecommendationList/RecommendationList';
 import ButtonGrid from './ButtonGrid/ButtonGrid';
 import CardItem from './CardItemList/CardItemList';
-import { useGetRecommendations, useGetSummaries } from './handleFilesApi';
+import { useGetDocInfo, useGetRecommendations, useGetSummaries } from './handleFilesApi';
 import './styles.scss';
 import TitleGrid from './TitleGrid/TitleGrid';
 // Main component
+
+// interface DocumentInfoType {
 function SynopsisPage() {
-  // const [status, setStatus] = useState('loading');
+  const [documentInfo, setDocumentInfo] = useState<DocumentInfoType>({
+    title: '',
+    authors: '',
+    publication: '',
+    abstract: ''
+  });
   const [data, setData] = useState<SummariesDataType>({
     'Conclusion and Implications': '',
     Methodology: '',
     Results: '',
     'Research Problem and Objectives': ''
   });
-  const [recommendations, setRecommendations] = useState<GridDataType[]>([]);
+  const [recommendations, setRecommendations] = useState<RecommendationListProps[]>([]);
 
   // Use the custom hook
-  // const { socket, isConnected, files, status } = useSocket('http://localhost:8000');
-
-  // Get summaries data
+  const docInfo = useGetDocInfo();
   const res = useGetSummaries();
   const recs = useGetRecommendations();
 
+  // Scroll to top on component mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Update data when API response changes
+  useEffect(() => {
+    if (docInfo?.data) {
+      console.log(docInfo.data);
+      setDocumentInfo({
+        title: docInfo.data[0]['paper_title'],
+        authors: docInfo.data[0]['authors'],
+        publication: docInfo.data[0]['publication'],
+        abstract: docInfo.data[0]['abstract']
+      });
+    }
+  }, [docInfo]);
   useEffect(() => {
     if (res?.data) {
       setData(res.data);
@@ -38,21 +61,13 @@ function SynopsisPage() {
   }, [res]);
 
   useEffect(() => {
-    const recommendationList = recs?.data['recommendations'].map((rec: GridDataType) => rec);
+    const recommendationList = recs?.data['res'].map((rec: GridDataType) => rec);
     setRecommendations(recommendationList);
   }, [recs]);
 
-  const row: GridDataType = {
-    title: 'Demo Paper',
-    authors: ['Prf. A', 'Prf. B'],
-    publicationDate: new Date('08/09/1996'),
-    relatedtopics: ['CS', 'AI', 'SWE']
-  };
-
   return (
     <div className='synopsis-page-container'>
-      {/* {data && status === 'done' ? ( */}
-      {data ? (
+      {documentInfo.title ? (
         <Stack spacing={6} mt={8}>
           <div className='title-container'></div>
           <div className='dataGrid-container'>
@@ -67,14 +82,10 @@ function SynopsisPage() {
                 </Grid>
               </Grid>
             </div>
-            {/* <DataGrid row={row} children={<RecommendationList recommendations={tempRecommendations} />} /> */}
-            <TitleGrid data={row} recommendations={recommendations} />
-
+            <TitleGrid data={documentInfo} recommendations={recommendations} />
             <div></div>
           </div>
-          <CardItem summariesData={data} />
-
-          {/* <PdfDisplay /> */}
+          {data['Conclusion and Implications'] ? <CardItem summariesData={data} /> : <LoadingSuspense />}
           <div className='dataGrid-container'>
             <div></div>
             <ButtonGrid />

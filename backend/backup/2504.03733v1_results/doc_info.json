@@ -1,0 +1,10 @@
+[
+  {
+    "pdf_name": "./data/input/2504.03733v1.pdf",
+    "paper_title": "Artificial Intelligence and Deep Learning Algorithms for Epigenetic\n  Sequence Analysis: A Review for Epigeneticists and AI Experts",
+    "abstract": "Epigenetics encompasses mechanisms that can alter the expression of genes without changing the underlying genetic sequence. The epigenetic regulation of gene expression is initiated and sustained by several mechanisms such as DNA methylation, histone modifications, chromatin conformation, and non-coding RNA. The changes in gene regulation and expression can manifest in the form of various diseases and disorders such as cancer and congenital deformities. Over the last few decades, high throughput experimental approaches have been used to identify and understand epigenetic changes, but these laboratory experimental approaches and biochemical processes are time-consuming and expensive. To overcome these challenges, machine learning and artificial intelligence (AI) approaches have been extensively used for mapping epigenetic modifications to their phenotypic manifestations. In this paper we provide a narrative review of published research on AI models trained on epigenomic data to address a variety of problems such as prediction of disease markers, gene expression, enhancer promoter interaction, and chromatin states. The purpose of this review is twofold as it is addressed to both AI experts and epigeneticists. For AI researchers, we provided a taxonomy of epigenetics research problems that can benefit from an AI-based approach. For epigeneticists, given each of the above problems we provide a list of candidate AI solutions in the literature. We have also identified several gaps in the literature, research challenges, and recommendations to address these challenges.",
+    "authors": "Muhammad Tahir, Mahboobeh Norouzi, Shehroz S. Khan, James R. Davie, Soichiro Yamanaka, Ahmed Ashraf",
+    "publication": 2025,
+    "tags": []
+  }
+]

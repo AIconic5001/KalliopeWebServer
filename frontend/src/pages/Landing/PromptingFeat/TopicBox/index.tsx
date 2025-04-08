@@ -3,18 +3,37 @@ import Grid from '@mui/material/Grid2';
 import './styles.scss';
 import { useNavigate } from 'react-router';
 import { useSendQuery } from '../../../Recommendations/handleRecommendationApi';
+import { useQueryContext } from '../../../../context/QueryContext';
 
 TopicBox.propTypes = {};
 
-const demoTopic = ['Topic 1', 'Topic 2', 'Topic 3', 'Topic 4', 'Topic 5', 'Topic 6', 'Topic 7', 'Topic 8'];
+const demoTopic = [
+  'Quantum Physics',
+  'Mathematical Physics',
+  'Phenomenology',
+  'Machine Learning',
+  'Artificial Intelligence',
+  'Statistics Theory',
+  'Statistical Mechanics',
+  'Quantum Cosmology',
+  'Natural Language Processing (NLP)'
+];
 
 function TopicBox() {
+  const { setQuery } = useQueryContext();
+
   const dynamicNumOfCol = Math.floor(demoTopic.length / 2);
   const { mutate: sendQuery } = useSendQuery();
   const navigate = useNavigate();
   function handleTopicClick(e: any) {
-    sendQuery(e.target.value);
-    navigate('/recommendations');
+    e.preventDefault();
+    setQuery(e.target.value);
+    setTimeout(() => {
+      sendQuery(e.target.value);
+    }, 100);
+    setTimeout(() => {
+      navigate('/recommendations');
+    }, 200);
   }
   return (
     <div className='topic-box'>

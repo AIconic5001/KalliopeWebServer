@@ -2,7 +2,7 @@ import ReplyIcon from '@mui/icons-material/Reply';
 import { Button, Pagination, Stack, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import { useEffect, useState } from 'react';
-import { GridDataType } from '../../@types/SynopsisData/grid.type';
+import { GridDataType, RecommendationListProps } from '../../@types/SynopsisData/grid.type';
 import { mockData } from '../../assets/mock/mockRecommendationList';
 import NameTag from '../../components/NameTag/NameTag';
 import ItemCard from './ItemCard/ItemCard';
@@ -11,31 +11,21 @@ import './styles.scss';
 import { useGetRecommendations } from './handleRecommendationApi';
 import LoadingSuspense from '../../components/LoadingSuspense';
 import { io } from 'socket.io-client';
+import { useQueryContext } from '../../context/QueryContext';
 // import FileProcessor from './Components/FileProcessor';
 // import { useWebSocket } from '../../utils/useWebSocket';
 
 function Recommedations() {
-  // const socket = io('http://localhost:8000', { autoConnect: false });
-  // useEffect(() => {
-  //   socket.connect();
-  //   socket.on('connect', () => {
-  //     console.log('Connected to WebSocket server');
-  //   });
-  //   socket.on('file_status_update', (data: any) => {
-  //     console.log('Received file status update:', data);
-  //   });
-  //   return () => {
-  //     socket.disconnect();
-  //   };
-  // }, []);
+  const { query } = useQueryContext();
   const res = useGetRecommendations();
-  const [recommendations, setRecommendations] = useState<GridDataType[]>([]);
+  const [recommendations, setRecommendations] = useState<RecommendationListProps[]>([]);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(3);
-  const [data, setData] = useState(mockData.slice(0, 5));
+  const [data, setData] = useState<RecommendationListProps[]>([]);
   useEffect(() => {
     if (res?.data) {
-      const recs = res?.data['recommendations'].map((rec: GridDataType) => rec);
+      console.log(res);
+      const recs = res?.data['res'].map((rec: any) => rec);
       setRecommendations(recs);
     }
   }, [res]);
@@ -58,12 +48,15 @@ function Recommedations() {
                 </Button>
               </a>
             </Grid>
-            <Grid size={10}>
+            <Grid size={11}>
               <div style={{ display: 'flex', justifyContent: 'flex-start', height: '100%' }}>
-                <Typography variant='h2' mr={'20px'}>
-                  Next readings for {'Topic1'}
+                <Typography variant='h3' mr={'20px'}>
+                  {`Next readings for`}
                 </Typography>
-                <NameTag data='Topic1' />
+                <Typography variant='h2' mr={'20px'} fontWeight={'light'}>
+                  "{`${query}`}"
+                </Typography>
+                {/* <NameTag data='Topic1' /> */}
                 {/* <FileProcessor /> */}
               </div>
             </Grid>
@@ -72,7 +65,7 @@ function Recommedations() {
         {recommendations.length ? (
           <div className='recommendation-list-container'>
             <Stack spacing={3}>
-              {data.map((data: GridDataType, index: number) => (
+              {data.map((data: RecommendationListProps, index: number) => (
                 <div key={index}>
                   <ItemCard {...data} />
                 </div>
