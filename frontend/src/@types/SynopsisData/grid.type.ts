@@ -23,3 +23,10 @@ export interface RecommendationListProps {
   paper_title: string;
   publication: string;
 }
+
+export interface DocumentInfoType {
+  title: string;
+  authors: string;
+  publication: string;
+  abstract: string;
+}

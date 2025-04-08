@@ -1,14 +1,19 @@
 import { Divider, Stack } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import Typography from '@mui/material/Typography';
-import { GridDataType, RecommendationListProps, SummariesDataType } from '../../../@types/SynopsisData/grid.type';
+import {
+  DocumentInfoType,
+  GridDataType,
+  RecommendationListProps,
+  SummariesDataType
+} from '../../../@types/SynopsisData/grid.type';
 import './styles.scss';
 import NameTag from '../../../components/NameTag/NameTag';
 import ItemCard from '../../Recommendations/ItemCard/ItemCard';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 interface TitleGridProps {
-  data: GridDataType;
+  data: DocumentInfoType;
   recommendations?: RecommendationListProps[];
 }
 
@@ -31,7 +36,7 @@ function TitleGrid({ data, recommendations }: TitleGridProps) {
     <div className='title-grid-container'>
       <Grid container spacing={2}>
         <Grid container size={7} padding={2}>
-          <Grid container size={12} height={'30%'}>
+          <Grid container size={12} height={'20%'}>
             <Grid size={4}>
               <Typography variant='h3' color='text.primary'>
                 {'Title:'}
@@ -41,7 +46,7 @@ function TitleGrid({ data, recommendations }: TitleGridProps) {
               <Typography variant='h5'>{data.title}</Typography>
             </Grid>
           </Grid>
-          <Grid container height={'50%'}>
+          <Grid container gap={1}>
             <Grid container size={12} height={'fit-content'}>
               <Grid size={4}>
                 <Typography variant='h4' color='text.primary'>
@@ -49,7 +54,7 @@ function TitleGrid({ data, recommendations }: TitleGridProps) {
                 </Typography>
               </Grid>
               <Grid size={8} alignContent={'center'}>
-                {data.authors.map((author) => (
+                {authorsFullList(data.authors).map((author) => (
                   <NameTag key={author} data={author} defaultColor='black' />
                 ))}
               </Grid>
@@ -62,20 +67,20 @@ function TitleGrid({ data, recommendations }: TitleGridProps) {
               </Grid>
               <Grid size={8}>
                 <Typography variant='h6' color='black' margin={1}>
-                  {data.publicationDate.toString()}
+                  {data.publication.toString()}
                 </Typography>
               </Grid>
             </Grid>
             <Grid container size={12} height={'fit-content'}>
               <Grid size={4}>
                 <Typography variant='h4' color='text.primary'>
-                  {'Topics:'}
+                  {'Abstract:'}
                 </Typography>
               </Grid>
               <Grid size={8}>
-                {data.relatedtopics.map((topic) => (
-                  <NameTag key={topic} data={topic} defaultColor='' />
-                ))}
+                <Typography variant='body2' color='black' margin={1} fontSize={10} lineHeight={1.1}>
+                  {data.abstract}
+                </Typography>
               </Grid>
             </Grid>
           </Grid>

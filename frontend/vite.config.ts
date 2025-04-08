@@ -15,9 +15,10 @@ export default defineConfig({
     proxy: {
       "/api": {
         // target: "http://18.220.21.201",
-        // changeOrigin: true,
+        target: "https://upset-carpets-attend.loca.lt",
+        changeOrigin: true,
         // secure: false,
-        target: "http://localhost:5000",
+        // target: "http://localhost:5000",
       },
     },
   },
