@@ -1,16 +1,13 @@
-import { Divider, Stack } from '@mui/material';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import { Divider } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import Typography from '@mui/material/Typography';
 import {
   DocumentInfoType,
-  GridDataType,
-  RecommendationListProps,
-  SummariesDataType
+  RecommendationListProps
 } from '../../../@types/SynopsisData/grid.type';
-import './styles.scss';
 import NameTag from '../../../components/NameTag/NameTag';
-import ItemCard from '../../Recommendations/ItemCard/ItemCard';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import './styles.scss';
 
 interface TitleGridProps {
   data: DocumentInfoType;
