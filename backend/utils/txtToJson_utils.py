@@ -13,15 +13,11 @@ def split_text_sections(file_path, output_json_path=None):
         'Results': '',
         'Conclusion and Implications': ''
     }
-    file_path = os.path.join(MOCK_DATA_PATH, file_path)
-    delimiter = '-' * 80
-    if (file_path == None):
-        file_path = 'final_synopsis.txt'
+    delimiter = '--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
     try:
-        
+
         with open(file_path, 'r', encoding='utf-8') as file:
-            content = file.read()
-        
+            content = file.read()      
         # Find the starting positions of each section
         section_positions = []
         for section in sections.keys():

@@ -1,6 +1,6 @@
 import { Alert, Button, Stack, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid2';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { FileTypes } from '../../../@types/FileTypes/file.type';
 import { ALLOWED_TYPES } from '../../../constants/api.constant';
@@ -8,10 +8,12 @@ import { useUploadFile } from '../handleFilesApi';
 import FeatSummaries from './Components/FeatSummaries';
 import './styles.scss';
 import { useNavigate } from 'react-router';
+import { useFileContext } from '../../../context/FileContext';
 
 UploadFeature.propTypes = {};
 
 function UploadFeature() {
+  const { setFilename } = useFileContext();
   const [file, setFile] = useState<Array<FileTypes>>([]);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [fileError, setFileError] = useState<string | null>(null);
@@ -46,8 +48,13 @@ function UploadFeature() {
 
   const handleUpload = () => {
     if (selectedFile && validateFile(selectedFile)) {
-      uploadFile(selectedFile);
-      navigate(`/synopsis/${selectedFile.name}`);
+      setFilename(selectedFile.name.replace(/\.pdf$/i, ''));
+      setTimeout(() => {
+        uploadFile(selectedFile);
+      }, 100);
+      setTimeout(() => {
+        navigate(`/synopsis/${selectedFile.name}`);
+      }, 200);
     }
   };
 

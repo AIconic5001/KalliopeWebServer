@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { get } from 'http';
 
 const synopsisService = {
   getDemoSummaries() {
@@ -11,9 +12,17 @@ const synopsisService = {
       console.error(error);
     }
   },
-  getSummaries() {
-    const url = '/api/synopsis/getSummaries'; // change this to the correct endpoint later
+  getSummaries(pdf_name: string) {
+    const url = `/api/synopsis/getSummaries?pdf_name=${pdf_name}`; // change this to the correct endpoint later
 
+    try {
+      return axios.get(url);
+    } catch (error) {
+      console.error(error);
+    }
+  },
+  getDocInfo(pdf_name: string) {
+    const url = `/api/synopsis/getDocInfo?pdf_name=${pdf_name}`; // change this to the correct endpoint later
     try {
       return axios.get(url);
     } catch (error) {
