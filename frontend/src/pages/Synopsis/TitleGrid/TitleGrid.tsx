@@ -1,20 +1,32 @@
 import { Divider, Stack } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import Typography from '@mui/material/Typography';
-import { GridDataType, SummariesDataType } from '../../../@types/SynopsisData/grid.type';
+import { GridDataType, RecommendationListProps, SummariesDataType } from '../../../@types/SynopsisData/grid.type';
 import './styles.scss';
 import NameTag from '../../../components/NameTag/NameTag';
 import ItemCard from '../../Recommendations/ItemCard/ItemCard';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 interface TitleGridProps {
   data: GridDataType;
-  recommendations?: GridDataType[];
+  recommendations?: RecommendationListProps[];
 }
 
 function TitleGrid({ data, recommendations }: TitleGridProps) {
   function handleClick() {
     console.log('clicked');
   }
+
+  function authorsFullList(authors: string) {
+    const authorsList = authors.split(',').map((author: string, index: number) => author.trim());
+    return authorsList;
+  }
+
+  function authorsFullListLength(authors: string) {
+    const authorsList = authors.split(',').map((author: string, index: number) => author.trim());
+    return authorsList.length;
+  }
+
   return (
     <div className='title-grid-container'>
       <Grid container spacing={2}>
@@ -50,7 +62,7 @@ function TitleGrid({ data, recommendations }: TitleGridProps) {
               </Grid>
               <Grid size={8}>
                 <Typography variant='h6' color='black' margin={1}>
-                  {data.publicationDate.toLocaleDateString()}
+                  {data.publicationDate.toString()}
                 </Typography>
               </Grid>
             </Grid>
@@ -79,7 +91,7 @@ function TitleGrid({ data, recommendations }: TitleGridProps) {
             <Grid size={12} sx={{ height: '90%', overflowY: 'scroll' }} padding={2}>
               <div className='recommendation-list-container'>
                 {recommendations?.length ? (
-                  recommendations.slice(0, 5).map((data: GridDataType, index: number) => (
+                  recommendations.map((data: RecommendationListProps, index: number) => (
                     <Grid
                       container
                       spacing={0}
@@ -88,28 +100,38 @@ function TitleGrid({ data, recommendations }: TitleGridProps) {
                       mb={'20px'}
                       onClick={handleClick}
                     >
-                      <Grid container size={12}>
-                        <Grid size={2}>
-                          <Typography variant='h6' component='div' color='text.primary'>
+                      <Grid container size={12} padding={1}>
+                        <Grid size={2} mb={1}>
+                          <Typography variant='h6' component='div' color='text.primary' textAlign={'left'}>
                             {`Title:`}
                           </Typography>
                         </Grid>
-                        <Grid size={9} justifyContent={'flex-start'}>
-                          <Typography variant='h6' component='div' color='text.secondary'>
-                            {`${data.title}`}
+                        <Grid size={10} justifyContent={'flex-start'}>
+                          <Typography variant='body1' component='div' color='text.secondary'>
+                            {`${data.paper_title}`}
                           </Typography>
                         </Grid>
                       </Grid>
                       <Grid container size={12}>
-                        <Grid size={2} pt={1} pb={1}>
+                        <Grid size={2} pt={1} pb={1} mr={'5px'}>
                           <Typography variant='h6' component='div' color='text.primary'>
-                            {`Topics:`}
+                            {`Authors:`}
                           </Typography>
                         </Grid>
-                        <Grid container size={10} direction='row' justifyContent={'flex-start'} textAlign={'center'}>
-                          {data.relatedtopics.map((topic: string) => (
-                            <NameTag data={topic} key={topic} />
-                          ))}
+                        <Grid container size={9} direction='row' justifyContent={'flex-start'} textAlign={'center'}>
+                          {authorsFullList(data.authors)
+                            .splice(0, 2)
+                            .map((author: string, index: number) => (
+                              <Grid key={index} size={4} ml={'10px'}>
+                                <NameTag data={author} defaultColor='black' size={11} />
+                              </Grid>
+                            ))}
+
+                          {authorsFullListLength(data.authors) > 2 && (
+                            <Grid size={1} ml={'10px'}>
+                              <MoreHorizIcon fontSize='small' color='primary' />
+                            </Grid>
+                          )}
                         </Grid>
                       </Grid>
                     </Grid>

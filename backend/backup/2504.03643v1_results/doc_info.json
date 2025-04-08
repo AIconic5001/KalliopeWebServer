@@ -1,0 +1,10 @@
+[
+  {
+    "pdf_name": "./data/input/2504.03643v1.pdf",
+    "paper_title": "Potential Indicator for Continuous Emotion Arousal by Dynamic Neural\n  Synchrony",
+    "abstract": "The need for automatic and high-quality emotion annotation is paramount in applications such as continuous emotion recognition and video highlight detection, yet achieving this through manual human annotations is challenging. Inspired by inter-subject correlation (ISC) utilized in neuroscience, this study introduces a novel Electroencephalography (EEG) based ISC methodology that leverages a single-electrode and feature-based dynamic approach. Our contributions are three folds. Firstly, we reidentify two potent emotion features suitable for classifying emotions-first-order difference (FD) an differential entropy (DE). Secondly, through the use of overall correlation analysis, we demonstrate the heterogeneous synchronized performance of electrodes. This performance aligns with neural emotion patterns established in prior studies, thus validating the effectiveness of our approach. Thirdly, by employing a sliding window correlation technique, we showcase the significant consistency of dynamic ISCs across various features or key electrodes in each analyzed film clip. Our findings indicate the method's reliability in capturing consistent, dynamic shared neural synchrony among individuals, triggered by evocative film stimuli. This underscores the potential of our approach to serve as an indicator of continuous human emotion arousal. The implications of this research are significant for advancements in affective computing and the broader neuroscience field, suggesting a streamlined and effective tool for emotion analysis in real-world applications.",
+    "authors": "Guandong Pan, Zhaobang Wu, Yaqian Yang, Xin Wang, Longzhao Liu, Zhiming Zheng, Shaoting Tang",
+    "publication": 2025,
+    "tags": []
+  }
+]

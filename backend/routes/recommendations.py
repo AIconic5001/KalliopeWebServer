@@ -46,7 +46,7 @@ def get_recommendations():
     try:
         while (result is None):
             logger.info("Waiting for recommendations result...")
-            time.sleep(5)
+            time.sleep(60)
             result = get_recommendations_result()  
         logger.info("Recommendations result received")
     except Exception as e:

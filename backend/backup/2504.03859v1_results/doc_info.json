@@ -1,0 +1,10 @@
+[
+  {
+    "pdf_name": "./data/input/2504.03859v1.pdf",
+    "paper_title": "Bayesian Modal Regression for Forecast Combinations",
+    "abstract": "Forecast combination methods have traditionally emphasized symmetric loss functions, particularly squared error loss, with equally weighted combinations often justified as a robust approach under such criteria. However, these justifications do not extend to asymmetric loss functions, where optimally weighted combinations may provide superior predictive performance. This study introduces a novel contribution by incorporating modal regression into forecast combinations, offering a Bayesian hierarchical framework that models the conditional mode of the response through combinations of time-varying parameters and exponential discounting. The proposed approach utilizes error distributions characterized by asymmetry and heavy tails, specifically the asymmetric Laplace, asymmetric normal, and reverse Gumbel distributions. Simulated data validate the parameter estimation for the modal regression models, confirming the robustness of the proposed methodology. Application of these methodologies to a real-world analyst forecast dataset shows that modal regression with asymmetric Laplace errors outperforms mean regression based on two key performance metrics: the hit rate, which measures the accuracy of classifying the sign of revenue surprises, and the win rate, which assesses the proportion of forecasts surpassing the equally weighted consensus. These results underscore the presence of skewness and fat-tailed behavior in forecast combination errors for revenue forecasting, highlighting the advantages of modal regression in financial applications.",
+    "authors": "Henry D. van Eijk, Sujit K. Ghosh",
+    "publication": 2025,
+    "tags": []
+  }
+]

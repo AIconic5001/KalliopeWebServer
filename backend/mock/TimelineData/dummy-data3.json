@@ -1,0 +1,15 @@
+{
+  "yearReferences": [
+    { "year": 1990, "count_of_ref": 2 },
+    { "year": 1991, "count_of_ref": 1 },
+    { "year": 1992, "count_of_ref": 3 },
+    { "year": 1993, "count_of_ref": 4 },
+    { "year": 1994, "count_of_ref": 3 },
+    { "year": 1995, "count_of_ref": 5 },
+    { "year": 1996, "count_of_ref": 7 },
+    { "year": 1997, "count_of_ref": 4 },
+    { "year": 1998, "count_of_ref": 8 },
+    { "year": 1999, "count_of_ref": 6 },
+    { "year": 2000, "count_of_ref": 5 }
+  ]
+}

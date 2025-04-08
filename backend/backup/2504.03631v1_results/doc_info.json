@@ -1,0 +1,10 @@
+[
+  {
+    "pdf_name": "./data/input/2504.03631v1.pdf",
+    "paper_title": "Towards data analysis with diagrammatics",
+    "abstract": "Systems with many interacting stochastic constituents are fully characterized by their free energy. Computing this quantity is therefore the objective of various approaches, notably perturbative expansions, which are applied in problems ranging from high-dimensional statistics to complex systems. However, a lot of these techniques are complicated to apply in practice because they lack a sufficient organization of the terms of the perturbative series. In this manuscript, we tackle this problem by using Feynman diagrams, extending a framework introduced earlier to the case of free energies at fixed variances. These diagrammatics do not require the theory to expand around to be Gaussian, which allows its application to the free energy of a spin system studied to derive message-passing algorithms by Maillard et al. 2019. We complete their perturbative derivation of the free energy in the thermodynamic limit. Furthermore, we derive resummations to estimate the entropies of poorly sampled systems requiring only limited statistics and we revisit earlier approaches to compute the free energy of the Ising model, revealing new insights due to the extension of our framework to the free energy at fixed variances. We expect our approach to be useful also for future applications, notably for problems of high-dimensional statistics, like matrix factorization, and the study of complex networks.",
+    "authors": "Tobias Kuhn",
+    "publication": 2025,
+    "tags": []
+  }
+]

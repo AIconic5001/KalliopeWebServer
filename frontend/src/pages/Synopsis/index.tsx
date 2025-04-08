@@ -2,11 +2,8 @@ import ReplyIcon from '@mui/icons-material/Reply';
 import { Button, Stack } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import { useEffect, useState } from 'react';
-import { GridDataType, SummariesDataType } from '../../@types/SynopsisData/grid.type';
-import { mockData } from '../../assets/mock/mockRecommendationList';
-import DataGrid from '../../components/DataGrid/DataGrid';
+import { GridDataType, RecommendationListProps, SummariesDataType } from '../../@types/SynopsisData/grid.type';
 import LoadingSuspense from '../../components/LoadingSuspense';
-import RecommendationList from '../../components/RecommendationList/RecommendationList';
 import ButtonGrid from './ButtonGrid/ButtonGrid';
 import CardItem from './CardItemList/CardItemList';
 import { useGetRecommendations, useGetSummaries } from './handleFilesApi';
@@ -21,7 +18,7 @@ function SynopsisPage() {
     Results: '',
     'Research Problem and Objectives': ''
   });
-  const [recommendations, setRecommendations] = useState<GridDataType[]>([]);
+  const [recommendations, setRecommendations] = useState<RecommendationListProps[]>([]);
 
   // Use the custom hook
   // const { socket, isConnected, files, status } = useSocket('http://localhost:8000');
@@ -38,7 +35,7 @@ function SynopsisPage() {
   }, [res]);
 
   useEffect(() => {
-    const recommendationList = recs?.data['recommendations'].map((rec: GridDataType) => rec);
+    const recommendationList = recs?.data['res'].map((rec: GridDataType) => rec);
     setRecommendations(recommendationList);
   }, [recs]);
 

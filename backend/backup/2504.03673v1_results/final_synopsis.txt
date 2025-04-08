@@ -1,0 +1,70 @@
+
+Research Problem and Objectives
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Research Problem and Objectives
+
+        The ionosphere, a critical component of the Earth's atmosphere, plays a vital role in shaping our understanding of the universe. The ionospheric irregularities, particularly those associated with plasma bubbles, pose significant challenges to radio astronomy. The Epoch of Reionization (EoR) signal, a faint signature of the first stars and galaxies, is masked by these irregularities, hindering our ability to study the early universe. Recent observations have revealed the ionospheric irregularities over the Murchison Radio-astronomy Observatory (MRO) in Western Australia, suggesting a potential impact on radio astronomical research.
+
+        The research problem centers on understanding the ionospheric irregularities, particularly plasma bubbles, and their effects on radio astronomical observations. The primary goal is to investigate the ionospheric conditions and their impact on the EoR signal detection. This involves analyzing the ionospheric irregularities, their spatial and temporal variations, and the effects on the radio astronomical data.
+
+        The research objectives are multifaceted, focusing on:
+
+        1.  Investigating the ionospheric irregularities, specifically plasma bubbles, over the MRO using GNSS and MWA data.
+        2.  Analyzing the spatial and temporal variations of the ionospheric irregularities and their impact on the radio astronomical data.
+        3.  Examining the effects of ionospheric irregularities on the EoR signal detection and the resulting implications for radio astronomical research.
+
+        Specific research questions guiding this investigation include:
+
+        1.  What are the characteristics of the ionospheric irregularities, particularly plasma bubbles, observed over the MRO using GNSS and MWA data?
+        2.  How do the ionospheric irregularities affect the radio astronomical data, particularly the EoR signal detection?
+        3.  What are the spatial and temporal variations of the ionospheric irregularities, and how do they impact the radio astronomical data?
+
+        The significance of this research lies in its potential to improve our understanding of the ionosphere and its effects on radio astronomical observations. By investigating the ionospheric irregularities and their impact on the EoR signal detection, this research aims to provide valuable insights for radio astronomers and ionospheric scientists. The findings will contribute to the development of strategies for mitigating the effects of ionospheric irregularities on radio astronomical research, ultimately enhancing our ability to study the early universe.
+
+        The research will employ a multi-disciplinary approach, combining data from GNSS and MWA to analyze the ionospheric irregularities and their effects on radio astronomical data. The research will utilize advanced techniques, such as the Rate Of TEC (ROT) change and ROTI (Rate Of TEC change of Ionospheric irregularities), to investigate the ionospheric conditions and their impact on the EoR signal detection. The results will be presented in a clear and concise manner
+
+Methodology
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+The methodology of this study employed a combination of radio astronomy and ionospheric analysis to investigate the impact of plasma bubbles on the ionosphere. This research design and approach aimed to utilize the capabilities of the Murchison Widefield Array (MWA) and Global Navigation Satellite Systems (GNSS) to detect and characterize plasma bubbles and their effects on the ionosphere.
+
+To begin, the study utilized data from the MWA, a low-frequency radio interferometer, to observe the radio sky and detect changes in the ionosphere. Specifically, the MWA's wide field of view and sensitivity to low-frequency radio waves made it an ideal tool for studying the ionosphere. The data collected by the MWA were then analyzed using the WSCLEAN software with uniform weighting to produce high-quality images of the radio sky. The images were then processed using the peeling mode of the Hyperdrive to measure the offset of bright sources against the catalogue position, allowing the researchers to assess the ionospheric activity.
+
+In parallel, the study employed the GNSS system to collect data on the Total Electron Content (TEC) of the ionosphere. The GNSS system provided a comprehensive and global dataset of TEC, allowing the researchers to map the ionospheric activity and identify regions of high TEC. The TEC data were then used to calculate the Rate Of TEC change Index (ROTI), which is a measure of the rate of change in the TEC over a given period. The ROTI was used to detect plasma density irregularities in the F region of the ionosphere.
+
+The analysis of the data involved the use of several theoretical frameworks, including the ionospheric model and the plasma bubble model. The ionospheric model was used to simulate the behavior of the ionosphere under different conditions, while the plasma bubble model was used to understand the formation and behavior of plasma bubbles. The combination of these theoretical frameworks with the observational data allowed the researchers to gain a comprehensive understanding of the ionosphere and the effects of plasma bubbles.
+
+In addition to the theoretical frameworks, the study also employed several analysis techniques to analyze the data. These techniques included the use of the ROTI map, which is a graphical representation of the ROTI values, and the vector fields, which show the offsets of radio sources observed by the MWA. The ROTI map was used to identify regions of high TEC and plasma density irregularities, while the vector fields were used to visualize the movement of the high ROTI region and the effects of plasma bubbles on the ionosphere.
+
+The study's research design and approach was also informed by several theoretical frameworks, including the concept of the ionospheric duct, which is a region of the ionosphere where the plasma density is higher than in the surrounding areas. The ionospheric duct is thought to be responsible for the formation of plasma bubbles and the associated effects on the ionosphere. The study also employed the concept of the travelling ionospheric disturbance (TID), which
+
+Results
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+The detailed results section of this study reveals significant ionospheric activity at the MWA site associated with plasma bubbles measured by GNSS. Key findings include the arrival of a plasma bubble in the ROTI map and ionospheric offset, as well as the observation of a duct-like large structure in radio images and split sources. Statistical significance was observed in the ionospheric phase errors, which were reported to be one of the most significant ionospheric phase errors in the past MWA observations.
+
+The ROTI map showed a large cluster of high ROTI values arriving over the MWA site at 13:00 (UT) on 1st Dec 2023, with a median value of radio source position offset of 1 arcmin. This value is significantly higher than the typical value for a calm state of the ionosphere, which is around 0.1 arcmin (Jordan et al. 2017). The large-scale patch of high ROTI values was observed to move towards the north, indicating the propagation of the plasma bubble. The ionospheric offsets, however, did not show any reaction to the plasma bubble's arrival.
+
+The radio images using 2 minutes of MWA data revealed smearing caused by the ionospheric phase error within 2 minutes, which started to change at 12:52 (UT) at RA=2h. The region with clear smearing moved to the north-west, indicating the propagation of the plasma bubble. The right panel in figure 3 shows the radio image with clear smearing, while the left panel shows the ionospheric offsets, which do not show any reaction to the plasma bubble's arrival.
+
+Notable results include the observation of a duct-like large structure in the radio images, which is aligned with the Earth's magnetic field. This structure is thought to be caused by the alignment of the field with the ionosphere, resulting in a large-scale smeared region. The flux mitigation of 12 orders of magnitude was reported in the plasma bubble, which is significantly higher than the typical value of 1 order of magnitude (Otsuka et al. 2006).
+
+Limitations of this research include the use of GNSS data, which may have systematic errors at low elevation angles, and the lack of clear propagation of the plasma bubble in the ionospheric offsets. Further research is needed to understand the ionospheric activity and its impact on radio astronomical observations. The study's findings suggest that the MWA's large field of view can capture the propagation of a duct-like structure, which is 50 km wide to the east-west and more than 100 km to the north-south. This is one of the most significant ionospheric phase errors reported in the past MWA observations.
+
+In conclusion, this study provides new insights into the ionospheric activity and its impact on radio astronomical observations. The findings highlight the importance of understanding the ionospheric conditions for radio astronomy and the need for further research
+
+Conclusion and Implications
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Conclusion
+
+        This study has provided new insights into the ionospheric activity and its impact on radio astronomical observations. The ROTI map and ionospheric offsets observed by the MWA have revealed a large-scale patch of high ROTI values propagating over the MWA site, indicating the arrival of a plasma bubble. The ionospheric offsets observed by the MWA have shown significant changes, with the region of clear smearing moving to the north-west. The results have demonstrated the importance of considering ionospheric activity in radio astronomical observations.
+
+        The study has significant theoretical and practical implications. The ionospheric activity has been shown to affect the quality of radio astronomical observations, and the ROTI map and ionospheric offsets have provided a new tool for monitoring ionospheric activity. The results have also highlighted the need for further research into the ionospheric activity and its impact on radio astronomical observations.
+
+        However, the study has some limitations. The ROTI map and ionospheric offsets observed by the MWA have been affected by the ionospheric phase error, which has limited the accuracy of the results. The study has also been limited by the availability of data, with the MWA only providing 2 minutes of data for each image. Furthermore, the study has been limited by the lack of understanding of the ionospheric activity and its impact on radio astronomical observations.
+
+        Despite these limitations, the study has provided new insights into the ionospheric activity and its impact on radio astronomical observations. The results have demonstrated the importance of considering ionospheric activity in radio astronomical observations and have highlighted the need for further research into the ionospheric activity and its impact on radio astronomical observations.
+
+        Future research directions include further investigation into the ionospheric activity and its impact on radio astronomical observations. This could involve the use of more advanced techniques, such as machine learning algorithms, to analyze the ROTI map and ionospheric offsets. Additionally, the study could be extended to include more data from the MWA and other radio astronomical observations. Furthermore, the study could be used to develop new tools for monitoring ionospheric activity and its impact on radio astronomical observations.
+
+        The study has also highlighted the importance of considering the ionospheric activity in radio astronomical observations. The results have shown that the ionospheric activity can affect the quality of radio astronomical observations and that the ROTI map and ionospheric offsets can provide a new tool for monitoring ionospheric activity. The study has demonstrated the need for further research into the ionospheric activity and its impact on radio astronomical observations.
+
+        The study has significant implications for the field of radio astronomy. The results have shown that the ionospheric activity can affect the quality of radio astronomical observations and that the ROTI map and ionospheric offsets can provide a new tool for monitoring ionospheric activity. The study has highlighted the need for further research into the ionospheric activity and its impact on radio astronomical observations.

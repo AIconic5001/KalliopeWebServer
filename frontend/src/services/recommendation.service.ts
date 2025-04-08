@@ -1,4 +1,5 @@
 import axios from 'axios';
+import theme from '../assets/theme';
 const url = '/api/recommendations';
 const recommendationService = {
   sendQuery(query: string) {
@@ -11,7 +12,9 @@ const recommendationService = {
 
   getRecommendations() {
     try {
-      return axios.get(`${url}/`);
+      // change this to the correct endpoint later
+      // return axios.get(`${url}/`); // testing purposes
+      return axios.get(`${url}/getRecommendations`);
     } catch (error) {
       console.log('Error getting recommendations: ', error);
     }

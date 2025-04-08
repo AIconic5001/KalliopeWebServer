@@ -1,0 +1,10 @@
+[
+  {
+    "pdf_name": "./data/input/2504.04431v1.pdf",
+    "paper_title": "Observation of Dislocation Non-Hermitian Skin Effect",
+    "abstract": "The non-Hermitian skin effect (NHSE), a striking phenomenon where a large number of states accumulate toward open boundaries, has garnered significant attention in both fundamental physics and emerging applications. Recent theoretical studies unveiled a distinctive dislocation NHSE by disentangling it from the established boundary NHSE, thereby bridging the gap between topological defects and non-Hermitian effects. In this Letter, we report the first experimental observation of the dislocation NHSE, achieved using an ingeniously designed nonreciprocal, torus-like acoustic lattice with two dislocations of opposite Burgers vectors. Our results show that the sound energy density inside the sample dramatically accumulates at one dislocation, while being unusually depleted at the other, a response distinct from all existing NHSE phenomena. This novel non-Hermitian effect not only probes the interplay between nontrivial defects and point-gap topology, but also holds promise for practical applications, such as the design of topological sound vacuum pumps.",
+    "authors": "Wenquan Wu, Qicheng Zhang, Liangjun Qi, Kun Zhang, Shuaishuai Tong, Chunyin Qiu",
+    "publication": 2025,
+    "tags": []
+  }
+]
