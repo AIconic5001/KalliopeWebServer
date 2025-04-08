@@ -15,7 +15,7 @@ export default defineConfig({
     proxy: {
       "/api": {
         // target: "http://18.220.21.201",
-        target: "https://upset-carpets-attend.loca.lt",
+        target: "https://whole-keys-give.loca.lt",
         changeOrigin: true,
         // secure: false,
         // target: "http://localhost:5000",
