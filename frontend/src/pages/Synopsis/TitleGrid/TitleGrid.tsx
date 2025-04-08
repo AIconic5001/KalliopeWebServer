@@ -2,10 +2,7 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { Divider } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import Typography from '@mui/material/Typography';
-import {
-  DocumentInfoType,
-  RecommendationListProps
-} from '../../../@types/SynopsisData/grid.type';
+import { DocumentInfoType, RecommendationListProps } from '../../../@types/SynopsisData/grid.type';
 import NameTag from '../../../components/NameTag/NameTag';
 import './styles.scss';
 
@@ -43,7 +40,7 @@ function TitleGrid({ data, recommendations }: TitleGridProps) {
               <Typography variant='h5'>{data.title}</Typography>
             </Grid>
           </Grid>
-          <Grid container gap={1}>
+          <Grid container gap={0}>
             <Grid container size={12} height={'fit-content'}>
               <Grid size={4}>
                 <Typography variant='h4' color='text.primary'>
@@ -82,7 +79,7 @@ function TitleGrid({ data, recommendations }: TitleGridProps) {
             </Grid>
           </Grid>
         </Grid>
-        <Grid size={5} sx={{ borderLeft: 0.5, borderColor: 'var(--primary-dark)' }} padding={2}>
+        <Grid size={5} sx={{ borderLeft: 0.5, borderColor: 'var(--primary)' }} padding={2}>
           <Grid container size={12} sx={{ height: '355px', marginBottom: '10px' }}>
             <Grid size={12}>
               <Typography variant='h5' color='text.primary' mb={2}>

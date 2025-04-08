@@ -11,13 +11,16 @@ import {
 import LoadingSuspense from '../../components/LoadingSuspense';
 import ButtonGrid from './ButtonGrid/ButtonGrid';
 import CardItem from './CardItemList/CardItemList';
-import { useGetDocInfo, useGetRecommendations, useGetSummaries } from './handleFilesApi';
+import { useGetDemoRecommendations, useGetDocInfo, useGetRecommendations, useGetSummaries } from './handleFilesApi';
 import './styles.scss';
 import TitleGrid from './TitleGrid/TitleGrid';
+import { useQueryContext } from '../../context/QueryContext';
+import { useSendQuery } from '../Recommendations/handleRecommendationApi';
 // Main component
 
 // interface DocumentInfoType {
 function SynopsisPage() {
+  const { mutate: sendQuery } = useSendQuery();
   const [documentInfo, setDocumentInfo] = useState<DocumentInfoType>({
     title: '',
     authors: '',
@@ -35,7 +38,6 @@ function SynopsisPage() {
   // Use the custom hook
   const docInfo = useGetDocInfo();
   const res = useGetSummaries();
-  const recs = useGetRecommendations();
 
   // Scroll to top on component mount
   useEffect(() => {
@@ -52,8 +54,12 @@ function SynopsisPage() {
         publication: docInfo.data[0]['publication'],
         abstract: docInfo.data[0]['abstract']
       });
+      sendQuery(docInfo.data[0]['paper_title']);
     }
   }, [docInfo]);
+
+  const recs = useGetRecommendations();
+
   useEffect(() => {
     if (res?.data) {
       setData(res.data);
@@ -61,8 +67,10 @@ function SynopsisPage() {
   }, [res]);
 
   useEffect(() => {
-    const recommendationList = recs?.data['res'].map((rec: GridDataType) => rec);
-    setRecommendations(recommendationList);
+    if (recs?.data) {
+      const recommendations = recs?.data['res'].map((rec: any) => rec);
+      setRecommendations(recommendations);
+    }
   }, [recs]);
 
   return (

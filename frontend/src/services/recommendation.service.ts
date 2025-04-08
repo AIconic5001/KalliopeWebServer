@@ -17,6 +17,13 @@ const recommendationService = {
     } catch (error) {
       console.log('Error getting recommendations: ', error);
     }
+  },
+  getDemoRecommendations() {
+    try {
+      return axios.get(`${url}/getDemoRecommendations`);
+    } catch (error) {
+      console.log('Error getting demo recommendations: ', error);
+    }
   }
 };
 

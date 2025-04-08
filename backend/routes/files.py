@@ -37,6 +37,18 @@ logger = logging.getLogger('FileUpload')
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 logger.info(f"Upload directory configured at: {UPLOAD_FOLDER}")
 
+preprocessing = [
+    "2504.03631v1.pdf",
+    "2504.03643v1.pdf",
+    "2504.03673v1.pdf",
+    "2504.03733v1.pdf",
+    "2504.03859v1.pdf",
+    "2504.03917v1.pdf",
+    "2504.04047v1.pdf",
+    "2504.04431v1.pdf",
+    "2504.05206v1.pdf",
+    "2504.05251v1.pdf"
+]
 
 @localFiles.route('/')
 def index():
@@ -69,7 +81,14 @@ def upload_file():
         logger.info(f"File saved successfully: {save_path}")
         
         # send the file to the ngrok server for processing and get the result
-        result = send_post_req(save_path)
+        if filename in preprocessing:
+            logger.info("File is in preprocessing list")
+            return jsonify({
+                    "message": "File uploaded successfully",
+                    "filename": filename,
+                }), 200
+        else:
+            result = send_post_req(save_path)
             
         
         return jsonify({

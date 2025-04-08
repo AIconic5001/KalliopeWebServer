@@ -46,7 +46,7 @@ def get_doc_info_route():
         logger.info("PDF is in preprocessing list")
         folder_path = os.path.join(BACKUP_DIR, f"{pdf_name}_results")
         if os.path.exists(folder_path):
-            time.sleep(1)  # Simulate a long process
+            time.sleep(180)  # Simulate a long process
             return send_from_directory(folder_path, 'doc_info.json', as_attachment=True)
         else:
             logger.info("File does not exist")
@@ -56,7 +56,7 @@ def get_doc_info_route():
         tracker = 0
         result = get_doc_info()
         try:
-            while (result is None and tracker < 1):
+            while (result is None and tracker < 5):
                 logger.info("Waiting for document info...")
                 tracker += 1
                 time.sleep(90)
@@ -85,15 +85,17 @@ def get_summaries():
         folder_path = os.path.join(BACKUP_DIR, f"{pdf_name}_results")
         if os.path.exists(folder_path):
             result = split_text_sections(os.path.join(folder_path, 'final_synopsis.txt'))
+            time.sleep(240) # Simulate a long process
+            
     else:
         logger.info("PDF is not in preprocessing list")
         tracker = 0
         result = get_synopsis_result()
         try:
-            while (result is None and tracker < 1):
+            while (result is None and tracker < 10):
                 logger.info("Waiting for synopsis result...")
                 tracker += 1
-                time.sleep(2)
+                time.sleep(90)
                 result = get_synopsis_result()  
         except Exception as e:
             logger.error(f"Error fetching synopsis result: {e}")
@@ -104,7 +106,6 @@ def get_summaries():
             file_path = os.path.join(folder_path, 'final_synopsis.txt')
             # output_json_path = '../mock/Output/output_sections.json'
             result = split_text_sections(file_path)    
-    time.sleep(10) # Simulate a long process
     return jsonify(result), 200    
 
 def get_synopsis_result():

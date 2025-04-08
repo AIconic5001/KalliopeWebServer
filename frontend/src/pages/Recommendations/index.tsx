@@ -23,6 +23,9 @@ function Recommedations() {
   const [pageSize, setPageSize] = useState(3);
   const [data, setData] = useState<RecommendationListProps[]>([]);
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  useEffect(() => {
     if (res?.data) {
       console.log(res);
       const recs = res?.data['res'].map((rec: any) => rec);

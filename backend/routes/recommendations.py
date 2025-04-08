@@ -15,13 +15,19 @@ MOCK_FOLDER = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger('RecommendationsFetch')
 logger.info("Recommendations fetch registered")
-logger.info(f"Upload directory configured at: {MOCK_FOLDER}")
 
 
 @recommendations.route('/', methods=['GET'])
 def index():
     """Index route for recommendations"""
     return jsonify({"message": "Recommendations index"}), 200
+
+@recommendations.route('/getDemoRecommendations', methods=['GET'])
+def get_demo_recommendations():
+    file_path = os.path.join(MOCK_FOLDER, 'recommendations_mock.json')
+    if os.path.exists(file_path):
+        logger.info("Using mock recommendations")
+        return send_from_directory(MOCK_FOLDER, 'recommendations_mock.json', as_attachment=True)
 
 
 @recommendations.route('/query', methods=['POST'])

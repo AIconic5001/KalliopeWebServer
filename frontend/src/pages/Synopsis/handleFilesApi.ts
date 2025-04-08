@@ -43,3 +43,16 @@ export const useGetRecommendations = () => {
     console.error('getRecommendations error:', error.response?.data?.error || error.message);
   }
 };
+
+export const useGetDemoRecommendations = () => {
+  try {
+    const { data } = useQuery({
+      queryKey: ['demoRecommendations'],
+      queryFn: () => recommendationService.getDemoRecommendations(),
+      staleTime: 1000 * 60 * 2 // 5 minutes
+    });
+    return data;
+  } catch (error) {
+    console.error('getDemoRecommendations error:', error.response?.data?.error || error.message);
+  }
+};
